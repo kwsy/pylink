@@ -12,6 +12,10 @@ def extract_links(html):
     :return:
     """
 
+
 if __name__ == '__main__':
-    lst = crawler_baidu_by_keyword('python 教程')
-    print(lst)
+    # lst = crawler_baidu_by_keyword('python 教程')
+    # print(lst)
+
+    with open("../baidu.txt")as f:
+        extract_links(f.read())
