@@ -1,5 +1,6 @@
 import requests
-from urllib.parse import quote #URL只允许一部分ASCII字符，其他字符（如汉字）是不符合标准的，此时就要进行编码
+from urllib.parse import quote  # URL只允许一部分ASCII字符，其他字符（如汉字）是不符合标准的，此时就要进行编码
+
 
 def crawler_baidu_by_keyword(keyword):
     """
@@ -22,11 +23,11 @@ def crawler_baidu_by_keyword(keyword):
         'wd': 'keyword',
         'pn': 0
     }
-    session = requests.session() #跨请求，保持某些参数
+    session = requests.session() # 跨请求，保持某些参数
     res = session.get(url, params=params, headers=headers, allow_redirects=False)
     res.encoding = 'utf-8'
-    print(res.status_code)
-    return res.text
+    url_lst = extract_links(res.text)
+    return url_lst
 
 
 def extract_links(html):
@@ -35,7 +36,7 @@ def extract_links(html):
     :param html:
     :return:
     """
-
+    return []
 
 if __name__ == '__main__':
     lst = crawler_baidu_by_keyword('python 教程')
