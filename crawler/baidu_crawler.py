@@ -7,7 +7,8 @@ from urllib.parse import quote
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
 
-def extract_links_test(filepath):
+#测试用，从制定文件文件读取html，采用etree从中获取需要的url
+def extract_links_test(filename):
     """
     测试函数，从文件中读取html，测试url获取是否正确
     从文件里读取html解析出搜索结果的连接
@@ -18,11 +19,10 @@ def extract_links_test(filepath):
         html = f.read()
 
     tree = etree.HTML(html)
-
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
     print(url_list)
 
-
+#判断指定路径是否存在，无则创建
 def create_folder_htmlfile(path):
     if os.path.exists(path):
         print("{0}文件夹已存在，直接写入".format(path))
@@ -30,7 +30,7 @@ def create_folder_htmlfile(path):
         os.mkdir(path)
         print("{0}文件夹不存在，新建成功".format(path))
 
-
+#保存html至以爬虫关键字及页码命名的文件
 def save_htmlfile(path_folder, keyword, num, html):
     create_folder_htmlfile(path_folder)
 
@@ -41,6 +41,7 @@ def save_htmlfile(path_folder, keyword, num, html):
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html)
 
+#保存url列表至以爬虫关键字命名的文件
 def save_urlfile(path_folder, keyword, url_list):
     create_folder_htmlfile(path_folder)
 
@@ -54,7 +55,7 @@ def save_urlfile(path_folder, keyword, url_list):
             f.write("\n")
 
 
-
+#根据关键字及爬取页面数，生成字典，用于session请求
 def generate_params(keyword, num):
     # 根据关键字生成字典params，用于sesion请求,pn根据页码数(n)变化，对应值为(n-1)*10
     params = {
@@ -66,18 +67,18 @@ def generate_params(keyword, num):
     return params
 
 
-''''''''''''''''''''''''''''''''''''''
-''''''''''''''''''''''''''''''''''''''
-
-
 # 将百度链接转化为真实链接，并得到主页
 def url_baidu_to_realmain(url):
     res = requests.get(url, allow_redirects=False)
     real_url = res.headers['location']
+    #得到真实主页链接，都是平台，需要针对性处理
     #realmain_url = get_netloc(real_url)
     #return realmain_url
 
+    #得到真是链接
     return real_url
+
+#将百度链接列表转化为真实链接列表
 def urlist_baidu_to_realmain(url_list):
     realmain_url_list=[]
     print(url_list)
@@ -90,6 +91,8 @@ def urlist_baidu_to_realmain(url_list):
         #print("Real_url_list")
         #print(realmain_url_list)
     return realmain_url_list
+
+#根据html，获取真实链接列表
 def extract_links(html):
     """
     从网页源码里解析出搜索结果的连接
@@ -97,25 +100,14 @@ def extract_links(html):
     :return:
     """
     tree = etree.HTML(html)
-
+    #得到网址列表
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
-    print()
-    Real_url_list = urlist_baidu_to_realmain(url_list)
-    return Real_url_list
-
-def crawler_baidu_by_all_keyword(keywords):
-    url_all_keywords_list_temp=[]
-    for keyword in keywords:
-        url_keyword_list = crawler_baidu_by_keyword(keyword)
-        print("百度爬取关键字完毕_{0}".format(keyword))
-        save_urlfile(global_path_urlfile, keyword, url_keyword_list)
-
-        url_all_keywords_list_temp.extend(url_keyword_list)
-    #去重
-    url_all_keywords_list = list(set(url_all_keywords_list_temp))
-    save_urlfile(global_path_urlfile, "汇总", url_all_keywords_list)
+    #将网址列表（百度）生成真实列表
+    real_url_list = urlist_baidu_to_realmain(url_list)
+    return real_url_list
 
 
+#根据单个关键字爬取，返回有效url
 def crawler_baidu_by_keyword(keyword):
     """
     根据关键词抓取百度搜索结果
@@ -140,7 +132,6 @@ def crawler_baidu_by_keyword(keyword):
 
         # 生成params参数
         params = generate_params(keyword, tempnum_page)
-
         res = session.get(global_baidu_url, params=params, headers=headers, allow_redirects=False)
         res.encoding = 'utf-8'
         time.sleep(global_sleeptime)
@@ -159,7 +150,26 @@ def crawler_baidu_by_keyword(keyword):
         url_keyword_list.extend(url_list)
         print("url_total_list包含{}组链接".format(len(url_keyword_list)))
         print(url_keyword_list)
+    #返回单个关键字所有页码关键字url清单
     return url_keyword_list
+
+#根据所有关键字爬取，返回有效url
+def crawler_baidu_by_all_keyword(keywords):
+    url_all_keywords_list_temp=[]
+    for keyword in keywords:
+        url_keyword_list = crawler_baidu_by_keyword(keyword)
+        print("百度爬取关键字完毕_{0}".format(keyword))
+
+        #保存单个关键字获取的url地址
+        save_urlfile(global_path_urlfile, keyword, url_keyword_list)
+
+        #将所有关键字的url整合到url_all_keywords_list_temp中
+        url_all_keywords_list_temp.extend(url_keyword_list)
+
+    #url地址去重
+    url_all_keywords_list = list(set(url_all_keywords_list_temp))
+    #保存所有关键字的url地址
+    save_urlfile(global_path_urlfile, "汇总", url_all_keywords_list)
 
 
 
