@@ -3,13 +3,16 @@ import time
 import requests
 from lxml import etree
 from urllib.parse import quote
-
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
 
-#测试用，从制定文件文件读取html，采用etree从中获取需要的url
+global_totalnum_page = 3
+GLOBAL_TOTALNUM_PAGE = 3        # 加注释
+
+
 def extract_links_test(filename):
     """
+    测试用，从制定文件文件读取html，采用etree从中获取需要的url
     测试函数，从文件中读取html，测试url获取是否正确
     从文件里读取html解析出搜索结果的连接
     :param filepath:文件路径
@@ -22,16 +25,29 @@ def extract_links_test(filename):
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
     print(url_list)
 
-#判断指定路径是否存在，无则创建
+
 def create_folder_htmlfile(path):
+    """
+    判断指定路径是否存在，无则创建
+    :param path:
+    :return:
+    """
     if os.path.exists(path):
         print("{0}文件夹已存在，直接写入".format(path))
     else:
         os.mkdir(path)
         print("{0}文件夹不存在，新建成功".format(path))
 
-#保存html至以爬虫关键字及页码命名的文件
+
 def save_htmlfile(path_folder, keyword, num, html):
+    """
+    保存html至以爬虫关键字及页码命名的文件
+    :param path_folder:
+    :param keyword:
+    :param num:
+    :param html:
+    :return:
+    """
     create_folder_htmlfile(path_folder)
 
     keyword_folder = path_folder + "/" + keyword
@@ -57,6 +73,7 @@ def save_urlfile(path_folder, keyword, url_list):
 
 #根据关键字及爬取页面数，生成字典，用于session请求
 def generate_params(keyword, num):
+    # return {'wd': keyword, 'pn': num * 10}
     # 根据关键字生成字典params，用于sesion请求,pn根据页码数(n)变化，对应值为(n-1)*10
     params = {
         'wd': keyword,
@@ -80,17 +97,16 @@ def url_baidu_to_realmain(url):
 
 #将百度链接列表转化为真实链接列表
 def urlist_baidu_to_realmain(url_list):
-    realmain_url_list=[]
-    print(url_list)
-    for url in url_list:
-        print(url)
-        realmain_url = url_baidu_to_realmain(url)
-        #print("Real_url")
-        #print(realmain_url)
-        realmain_url_list.append(realmain_url)
-        #print("Real_url_list")
-        #print(realmain_url_list)
-    return realmain_url_list
+    # realmain_url_list=[]
+    # print(url_list)
+    # for url in url_list:
+    #     print(url)
+    #     realmain_url = url_baidu_to_realmain(url)
+    #     realmain_url_list.append(realmain_url)
+    #
+    # return realmain_url_list
+
+    return [url_baidu_to_realmain(url) for url in url_list]
 
 #根据html，获取真实链接列表
 def extract_links(html):
@@ -150,8 +166,8 @@ def crawler_baidu_by_keyword(keyword):
         url_keyword_list.extend(url_list)
         print("url_total_list包含{}组链接".format(len(url_keyword_list)))
         print(url_keyword_list)
-    #返回单个关键字所有页码关键字url清单
-    return url_keyword_list
+
+    return url_keyword_list     # 返回单个关键字所有页码关键字url清单
 
 #根据所有关键字爬取，返回有效url
 def crawler_baidu_by_all_keyword(keywords):
@@ -173,8 +189,6 @@ def crawler_baidu_by_all_keyword(keywords):
 
 
 
-
-
 if __name__ == '__main__':
     # 全局变量定义
     global_path_htmlfile = "./htmlfile"  # html存储文件夹
@@ -183,7 +197,7 @@ if __name__ == '__main__':
     global_path_urlfile = "./urlfile" # url存储文件夹
 
     global_keyword = "c语言教程"
-    global_totalnum_page = 3
+
     global_baidu_url = 'https://www.baidu.com/s'
 
 
