@@ -5,9 +5,12 @@ def get_netloc(url):
     :param url:
     :return:
     """
+    url_1=url.split("//")[1].split("/")[0]
+    url_2="http://"+url_1
+    return url_2
 
 
 if __name__ == '__main__':
     url = 'http://www.coolpython.net/python_primary/data_type/bin_int_hex_oct.html'
     netloc = get_netloc(url)
-    print(url)
+    print(netloc)
