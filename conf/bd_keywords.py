@@ -2,8 +2,8 @@
 请在脚本里配置合适的搜索词
 """
 
-bd_keywords=["python教程","python论坛","python 个人博客","python社区",
-            "python学习","python项目","python开发","python基础",
-            "python简介","python视频","python问题","python程序",
-            "python专题","python网站","python自学","python交流",
-            "python大全","python培训","python学院","python答疑"]
+bd_keywords=["python 教程","python 论坛","python 个人博客","python 社区",
+            "python 学习","python 项目","python 开发","python 基础",
+            "python 简介","python 视频","python 问题","python 程序",
+            "python 专题","python 网站","python 自学","python 交流",
+            "python 大全","python 培训","python 学院","python 答疑"]
