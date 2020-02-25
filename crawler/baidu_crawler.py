@@ -3,28 +3,25 @@ import time
 import requests
 from lxml import etree
 from urllib.parse import quote
+from requests import exceptions
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
-
-global_totalnum_page = 3
-GLOBAL_TOTALNUM_PAGE = 3        # 加注释
-
+from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TOTALNUM_SEARCH_PAGE,TIME_PAGE_SLEEP,\
+LIST_URL_ONEKEYWORD, LIST_URL_ALLKEYWORD, TIMES_ERR_304_MAX, TIME_GETREALURL_SLEEP
 
 def extract_links_test(filename):
     """
-    测试用，从制定文件文件读取html，采用etree从中获取需要的url
-    测试函数，从文件中读取html，测试url获取是否正确
-    从文件里读取html解析出搜索结果的连接
+    测试函数，从文件中读取html，测试url（搜索结果的连接）获取是否正确
     :param filepath:文件路径
-    :return:
+    :return: url（搜索结果的连接）列表
     """
     with open(filename, 'r', encoding='utf-8') as f:
         html = f.read()
 
     tree = etree.HTML(html)
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
-    print(url_list)
 
+    return url_list
 
 def create_folder_htmlfile(path):
     """
@@ -38,14 +35,13 @@ def create_folder_htmlfile(path):
         os.mkdir(path)
         print("{0}文件夹不存在，新建成功".format(path))
 
-
 def save_htmlfile(path_folder, keyword, num, html):
     """
-    保存html至以爬虫关键字及页码命名的文件
-    :param path_folder:
-    :param keyword:
-    :param num:
-    :param html:
+    保存html至以爬虫关键字及页码命名的文件   "../data/htmlfile/python 教程/百度搜索第1页html内容_python 教程"
+    :param path_folder:文件保存路径
+    :param keyword:爬虫关键词
+    :param num:搜索当前页码
+    :param html:要保存的html信息
     :return:
     """
     create_folder_htmlfile(path_folder)
@@ -57,8 +53,14 @@ def save_htmlfile(path_folder, keyword, num, html):
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(html)
 
-#保存url列表至以爬虫关键字命名的文件
 def save_urlfile(path_folder, keyword, url_list):
+    """
+    保存url列表至以爬虫关键字命名的文件 "../data/urlfile/python 教程/百度搜索url内容_python 教程"
+    :param path_folder:文件保存路径
+    :param keyword:爬虫关键词
+    :param url_list:要保存的url列表
+    :return:
+    """
     create_folder_htmlfile(path_folder)
 
     keyword_folder = path_folder + "/" + keyword
@@ -70,33 +72,45 @@ def save_urlfile(path_folder, keyword, url_list):
             f.write(str_url)
             f.write("\n")
 
-
-#根据关键字及爬取页面数，生成字典，用于session请求
 def generate_params(keyword, num):
-    # return {'wd': keyword, 'pn': num * 10}
-    # 根据关键字生成字典params，用于sesion请求,pn根据页码数(n)变化，对应值为(n-1)*10
+    """
+    根据关键字生成字典params，用于sesion请求,pn根据页码数(n)变化，对应值为(n-1)*10
+    :param keyword:爬虫关键词
+    :param num:当前页码数
+    :return:
+    """
     params = {
         'wd': keyword,
         'pn': num * 10
     }
-    print("params:{}".format(params))
 
     return params
 
+    # return {'wd': keyword, 'pn': num * 10}
 
-# 将百度链接转化为真实链接，并得到主页
+
 def url_baidu_to_realmain(url):
+    """
+    将百度链接转化为真实链接，并得到主页
+    :param url:要转换的链接
+    :return:转换之后的真实链接
+    """
+    time.sleep(TIME_GETREALURL_SLEEP)
     res = requests.get(url, allow_redirects=False)
     real_url = res.headers['location']
-    #得到真实主页链接，都是平台，需要针对性处理
-    #realmain_url = get_netloc(real_url)
-    #return realmain_url
 
-    #得到真是链接
     return real_url
 
-#将百度链接列表转化为真实链接列表
+    # # 得到真实主页链接，都是平台，需要针对性处理
+    # realmain_url = get_netloc(real_url)
+    # return realmain_url
+
 def urlist_baidu_to_realmain(url_list):
+    """
+    将百度链接列表转化为真实链接列表
+    :param url_list:百度链接列表
+    :return:转换之后的真实链接列表
+    """
     # realmain_url_list=[]
     # print(url_list)
     # for url in url_list:
@@ -108,28 +122,72 @@ def urlist_baidu_to_realmain(url_list):
 
     return [url_baidu_to_realmain(url) for url in url_list]
 
-#根据html，获取真实链接列表
+
 def extract_links(html):
     """
     从网页源码里解析出搜索结果的连接
-    :param html:
-    :return:
+    :param html: html信息
+    :return: 搜索结果列表
     """
     tree = etree.HTML(html)
-    #得到网址列表
+    # 得到网址列表
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
-    #将网址列表（百度）生成真实列表
+    # 将网址列表（百度）生成真实列表
     real_url_list = urlist_baidu_to_realmain(url_list)
     return real_url_list
 
 
-#根据单个关键字爬取，返回有效url
+def params_request(session, url,params,headers):
+    """
+    获取session状态及html内容
+    :param session: session参数
+    :param url: 搜索引擎url
+    :param params: url需要增加的键值对
+    :param headers: 请求头
+    :return: session请求状态及html内容
+    """
+    # 通过exceptions异常来判断请求是否成功
+    time.sleep(TIME_PAGE_SLEEP)
+    try:
+        t1 = time.time()
+        response = session.get(url, params=params, headers=headers, allow_redirects=False)
+        response.encoding = 'utf-8'
+        t2 = time.time()
+    except exceptions.Timeout as e:
+        print('请求超时：'+str(e.message))
+        status = "err_timeout"
+        html = ""
+        return status, html
+    except exceptions.HTTPError as e:
+        print('http请求错误:'+str(e.message))
+        status = "err_http"
+        html = ""
+        return status, html
+    else:
+        # 通过status_code判断请求结果是否正确
+        print('请求耗时%ss'%(t2-t1))
+        if response.status_code == 200:
+            status = "ok"
+            html = response.text
+            return status, html
+        elif response.status_code == 302:
+            status = "err_304"
+            html = ""
+            return status, html
+        else:
+            print('请求错误：'+str(response.status_code)+','+str(response.reason))
+            status = "err_others"
+            html = response.text
+            return status, html
+
+
 def crawler_baidu_by_keyword(keyword):
     """
-    根据关键词抓取百度搜索结果
+    根据单个关键词抓取百度搜索结果
     :param keyword:
     :return: list 返回搜索结果的连接
     """
+    list_url_onekeyword = []
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, compress',
@@ -142,73 +200,66 @@ def crawler_baidu_by_keyword(keyword):
     }
 
     session = requests.session()
+    for num_page in range(TOTALNUM_SEARCH_PAGE):      # 根据查询页数进行查询
+        print("{0}关键词第{1}页".format(keyword, (num_page+1)))
+        params = generate_params(keyword, num_page)   # 获取搜索关键字
+        # res = session.get(URL_BAIDU, params=params, headers=headers, allow_redirects=False)
+        # res.encoding = 'utf-8'
+        # time.sleep(TIME_PAGE_SLEEP)
+        status,html = params_request(session, URL_BAIDU, params, headers)
+        if status != "ok":
+            times_err_304 = 0
+            if status == "err_304":  # 如果为304，多次尝试
 
-    # 根据查询页数进行查询
-    for tempnum_page in range(global_totalnum_page):
+                for times in range(TIMES_ERR_304_MAX):
+                    print("err_304第{0}次".format((times+1)))
+                    status, html = params_request(session, URL_BAIDU, params, headers)
+                    if status == "err_304":
+                        continue
+                    elif status == "ok":
+                        break
+                    else:
+                        break
 
-        # 生成params参数
-        params = generate_params(keyword, tempnum_page)
-        res = session.get(global_baidu_url, params=params, headers=headers, allow_redirects=False)
-        res.encoding = 'utf-8'
-        time.sleep(global_sleeptime)
+                if status != "ok":   # 如果尝试之后仍不成功，跳过本页
+                    continue
 
-        # 异常判断处理机制
-        print(res.status_code)
-        print(res.text)
+            else:   # 如果是其他错误，跳过本页
+                continue
 
-        # 保存html文件到指定文件夹global_path_htmlfile，文件名举例：关键词python教程百度搜索第1页html内容
-        if global_save_htmlfileflag == 1:
-            save_htmlfile(global_path_htmlfile, keyword, (tempnum_page + 1), res.text)
+        if FLAG_SAVE_HTMLFILE == 1:                   # 根据配置参数保存html内容
+            save_htmlfile(PATH_HTMLFILE, keyword, (num_page + 1), html)
 
-        # 对每个html页面分析，获取所有的url，添加到列表url_list
-        url_list = extract_links(res.text)
+        url_list = extract_links(html)                # 获取单页有效链接列表
+        list_url_onekeyword.extend(url_list)          # 更新单个关键字有效链接列表
 
-        url_keyword_list.extend(url_list)
-        print("url_total_list包含{}组链接".format(len(url_keyword_list)))
-        print(url_keyword_list)
+    return list_url_onekeyword                        # 返回单个关键字所有页码关键字url列表
 
-    return url_keyword_list     # 返回单个关键字所有页码关键字url清单
 
-#根据所有关键字爬取，返回有效url
 def crawler_baidu_by_all_keyword(keywords):
-    url_all_keywords_list_temp=[]
+    """
+    根据所有关键字爬取，返回有效url
+    :param keywords:搜索关键词
+    :return: list 返回搜索结果的连接
+    """
+    list_url_allkeyword_temp=[]
     for keyword in keywords:
-        url_keyword_list = crawler_baidu_by_keyword(keyword)
-        print("百度爬取关键字完毕_{0}".format(keyword))
+        LIST_URL_ONEKEYWORD = crawler_baidu_by_keyword(keyword)
+        if FLAG_SAVE_URLFILE == 1:
+            save_urlfile(PATH_URLFILE, keyword, LIST_URL_ONEKEYWORD)
+        list_url_allkeyword_temp.extend(LIST_URL_ONEKEYWORD)
 
-        #保存单个关键字获取的url地址
-        save_urlfile(global_path_urlfile, keyword, url_keyword_list)
+    list_url_allkeyword = list(set(list_url_allkeyword_temp))         # url地址去重
 
-        #将所有关键字的url整合到url_all_keywords_list_temp中
-        url_all_keywords_list_temp.extend(url_keyword_list)
+    if FLAG_SAVE_URLFILE == 1:
+        save_urlfile(PATH_URLFILE, "url汇总", list_url_allkeyword)       # 保存所有关键字的url地址
 
-    #url地址去重
-    url_all_keywords_list = list(set(url_all_keywords_list_temp))
-    #保存所有关键字的url地址
-    save_urlfile(global_path_urlfile, "汇总", url_all_keywords_list)
-
+    return list_url_allkeyword
 
 
 if __name__ == '__main__':
-    # 全局变量定义
-    global_path_htmlfile = "./htmlfile"  # html存储文件夹
-    global_save_htmlfileflag = 1
+    LIST_URL_ALLKEYWORD = crawler_baidu_by_all_keyword(keywords)
 
-    global_path_urlfile = "./urlfile" # url存储文件夹
-
-    global_keyword = "c语言教程"
-
-    global_baidu_url = 'https://www.baidu.com/s'
-
-
-    global_sleeptime = 1
-
-    url_keyword_list = []
-    url_all_keywords_list = []
-    #crawler_baidu_by_keyword(global_keyword)
-
-    print(keywords)
-    crawler_baidu_by_all_keyword(keywords)
 
 
 
