@@ -1,3 +1,8 @@
+from lxml import etree
+import requests
+from urllib.parse import quote
+
+
 def crawler_baidu_by_keyword(keyword):
     """
     根据关键词抓取百度搜索结果
@@ -11,7 +16,13 @@ def extract_links(html):
     :param html:
     :return:
     """
+    url_lst = []
+    tree = etree.HTML(html)
+    a_lst = tree.xpath("//div[@class='result c-container ']/h3/a[@data-click]")
+    for a in a_lst:
+        url_lst.append(a.attrib['href'])
 
+    return url_lst
 
 if __name__ == '__main__':
     # lst = crawler_baidu_by_keyword('python 教程')
