@@ -244,6 +244,7 @@ def crawler_baidu_by_all_keyword(keywords):
     """
     list_url_allkeyword_temp=[]
     for keyword in keywords:
+        # LIST_URL_ONEKEYWORD 不要用大写
         LIST_URL_ONEKEYWORD = crawler_baidu_by_keyword(keyword)
         if FLAG_SAVE_URLFILE == 1:
             save_urlfile(PATH_URLFILE, keyword, LIST_URL_ONEKEYWORD)
