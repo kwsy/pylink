@@ -22,7 +22,7 @@ def crawler_baidu_by_keyword(keyword):
     }
     url = 'https://www.baidu.com/s'
     params = {
-        'wd': 'keyword',
+        'wd': keyword,
         'pn': 0
     }
     session = requests.session() #跨请求，保持某些参数
@@ -48,11 +48,9 @@ def extract_links(html):
         result[value] = a_html[index]
     return result
 if __name__ == '__main__':
-    # lst = crawler_baidu_by_keyword('python 教程')
-    # print(lst)
-    # with open(lst, "w")as f:
-    #     f.write(data, )
-
-    with open("../baidu.txt",encoding='utf-8')as f:
-        extract_links(f.read())
-        #print(f.read())
+    lst = crawler_baidu_by_keyword('python 教程')
+    result = extract_links(lst)
+    print(result)
+    # with open("../baidu.txt",encoding='utf-8')as f:
+    #     extract_links(f.read())
+    #     #print(f.read())
