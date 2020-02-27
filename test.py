@@ -32,5 +32,6 @@ def get_baidu_data():
     res.encoding = 'utf-8'
     print(res.status_code)
 
+
 get_baidu_data()
 
