@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import requests
-from urllib.parse import quote #URL只允许一部分ASCII字符，其他字符（如汉字）是不符合标准的，此时就要进行编码
+from urllib.parse import quote
 from lxml import etree
 
 
@@ -20,17 +20,21 @@ def crawler_baidu_by_keyword(keyword):
         'Host': 'www.baidu.com',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
     }
+
     url = 'https://www.baidu.com/s'
+
     params = {
         'wd': keyword,
         'pn': 0
     }
-    session = requests.session() #跨请求，保持某些参数
+
+    session = requests.session()   # 跨请求，保持某些参数
     res = session.get(url, params=params, headers=headers, allow_redirects=False)
     res.encoding = 'utf-8'
-    print(res.status_code)
 
-    return res.text
+    lst = extract_links(res.text)   # 调用解析搜索连接函数
+
+    return lst
 
 
 def extract_links(html):
@@ -43,14 +47,16 @@ def extract_links(html):
     a_nodes = tree.xpath("//h3[@class='t']/a[@href]")
     a_html = tree.xpath("//h3[@class='t']/a/@href")
     a_nodes_list = [i.xpath('string(.)') for i in a_nodes]
+
     result = {}
+
     for index,value in enumerate(a_nodes_list):
         result[value] = a_html[index]
+
     return result
 if __name__ == '__main__':
     lst = crawler_baidu_by_keyword('python 教程')
-    result = extract_links(lst)
-    print(result)
+    print(lst)
     # with open("../baidu.txt",encoding='utf-8')as f:
     #     extract_links(f.read())
     #     #print(f.read())
