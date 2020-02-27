@@ -1,6 +1,32 @@
+import time
 import requests
 from lxml import etree
 from urllib.parse import quote
+from conf import crawler_config
+from conf.bd_keywords import keyword_lst
+
+
+def run():
+    """
+    爬虫启动脚本
+    :return:
+    """
+    url_lst = crawler_all_keywords(keyword_lst)
+    print(url_lst)
+
+
+def crawler_all_keywords(keyword_lst):
+    """
+    抓取所有关键词获得所有关键词搜索结果的链接
+    :param keyword_lst:
+    :return:
+    """
+    all_keywords_lst = []
+    for keyword in keyword_lst:
+        lst = crawler_baidu_by_keyword(keyword)
+        all_keywords_lst.extend(lst)
+
+    return all_keywords_lst
 
 
 def crawler_baidu_by_keyword(keyword):
@@ -20,17 +46,22 @@ def crawler_baidu_by_keyword(keyword):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
     }
 
+    all_link_lst = []
     url = 'https://www.baidu.com/s'
-    params = {
-                'wd': keyword,
-                'pn': 0
-            }
+    for i in range(crawler_config.BD_MAX_CRAWLER_PAGE):
+        params = {
+                    'wd': keyword,
+                    'pn': i * 10
+                }
 
-    session = requests.session()
-    res = session.get(url, params=params, headers=headers)
-    res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
-    link_lst = extract_links(res.text)
-    return link_lst
+        session = requests.session()
+        res = session.get(url, params=params, headers=headers)
+        time.sleep(crawler_config.SLEEP_TIME)
+        res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
+        link_lst = extract_links(res.text)
+        all_link_lst.extend(link_lst)
+
+        return all_link_lst
 
 
 def extract_links(html):
@@ -45,7 +76,18 @@ def extract_links(html):
     for a in a_lst:
         url_lst.append(a.attrib['href'])
 
+    url_lst = [get_real_link(url) for url in url_lst]
+
     return url_lst
+
+def get_real_link(url):
+    """
+    获得真实的链接地址
+    :param url:
+    :return:
+    """
+    res = requests.get(url, allow_redirects = False)
+    return res.headers['Location']
 
 
 def test_extract_links():
@@ -57,4 +99,4 @@ def test_crawler_baidu_by_keyword():
     print(lst)
 
 if __name__ == '__main__':
-    test_crawler_baidu_by_keyword()
+    run()
