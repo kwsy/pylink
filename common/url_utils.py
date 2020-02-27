@@ -1,3 +1,17 @@
+#
+# 不导入模块实现获取地址功能
+# def get_netloc(url):
+#     """
+#     解析url网址,获得网站的主页, 输入 http://www.coolpython.net/python_primary/data_type/bin_int_hex_oct.html
+#     返回http://www.coolpython.net
+#     :param url:
+#     :return:
+#     """
+#     site = url.split("/",3)    # 切片以“/”分隔网址，“//”需要分隔两次
+#     return("http://" + site[2])
+
+from urllib.parse import urlparse
+
 def get_netloc(url):
     """
     解析url网址,获得网站的主页, 输入 http://www.coolpython.net/python_primary/data_type/bin_int_hex_oct.html
@@ -5,9 +19,10 @@ def get_netloc(url):
     :param url:
     :return:
     """
-
+    result = urlparse(url)
+    return result.scheme + "://" + result.netloc
 
 if __name__ == '__main__':
     url = 'http://www.coolpython.net/python_primary/data_type/bin_int_hex_oct.html'
     netloc = get_netloc(url)
-    print(url)
+    print(netloc)
