@@ -5,7 +5,7 @@ from lxml import etree
 from conf.bd_keywords import LST_KEYWORDS
 from conf.Setting_conf import PN
 import time
-
+from common.url_utils import get_netloc,get_real_html
 
 def run():
     '''
@@ -61,7 +61,9 @@ def extract_links(html):
     """
     tree = etree.HTML(html)
     a_nodes = tree.xpath("//div[@class = 'result c-container ']/h3[@class = 't']/a")
-    a_html = tree.xpath("//div[@class = 'result c-container ']/h3[@class = 't']/a/@href")
+    a_html_302 = tree.xpath("//div[@class = 'result c-container ']/h3[@class = 't']/a/@href")
+
+    a_html = [get_netloc(get_real_html(i)) for i in a_html_302]     # 获取真实页面
     a_nodes_list = [i.xpath('string(.)') for i in a_nodes]
     result = {}
 
@@ -69,6 +71,10 @@ def extract_links(html):
         result[value] = a_html[index]
     print(result)
     return result
+
+
+
+
 if __name__ == '__main__':
     # result = run()
     # pprint(result)

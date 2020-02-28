@@ -1,4 +1,6 @@
 from urllib import parse
+import requests
+
 
 def get_netloc(url):
     """
@@ -10,6 +12,15 @@ def get_netloc(url):
     url_split = parse.urlparse(url)
     urlparse = url_split.scheme+'://'+url_split.netloc
     return urlparse
+
+def get_real_html(url):
+    '''
+    返回真实url
+    :param url:
+    :return:
+    '''
+    res = requests.get(url, allow_redirects=False)
+    return res.headers['Location']
 
 
 if __name__ == '__main__':
