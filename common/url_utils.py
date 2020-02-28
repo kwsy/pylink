@@ -8,7 +8,7 @@ def get_netloc(url):
     :return:
     """
     url_split = parse.urlparse(url)
-    urlparse = url_split[0]+'://'+url_split[1]
+    urlparse = url_split.scheme+'://'+url_split.netloc
     return urlparse
 
 

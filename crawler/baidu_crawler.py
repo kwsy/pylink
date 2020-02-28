@@ -2,9 +2,25 @@
 import requests
 from urllib.parse import quote
 from lxml import etree
+from conf.bd_keywords import LST_KEYWORDS
+from conf.Setting_conf import PN
+import time
 
 
-def crawler_baidu_by_keyword(keyword):
+def run():
+    '''
+    执行语句
+    :return: dict={keywords:{网页name:网页html,……}}
+    '''
+    result = {}
+    for keyword in LST_KEYWORDS:
+        for pn in PN:
+            result[keyword] = crawler_baidu_by_keyword(keyword, pn)
+            time.sleep(5)
+    return result
+
+
+def crawler_baidu_by_keyword(keyword, pn):
     """
     根据关键词抓取百度搜索结果
     :param keyword:
@@ -25,13 +41,13 @@ def crawler_baidu_by_keyword(keyword):
 
     params = {
         'wd': keyword,
-        'pn': 0
+        'pn': pn*10
     }
 
     session = requests.session()   # 跨请求，保持某些参数
     res = session.get(url, params=params, headers=headers, allow_redirects=False)
     res.encoding = 'utf-8'
-
+    print(res.status_code)  # 检查状态
     lst = extract_links(res.text)   # 调用解析搜索连接函数
 
     return lst
@@ -44,19 +60,18 @@ def extract_links(html):
     :return:dict
     """
     tree = etree.HTML(html)
-    a_nodes = tree.xpath("//h3[@class='t']/a[@href]")
-    a_html = tree.xpath("//h3[@class='t']/a/@href")
+    a_nodes = tree.xpath("//div[@class = 'result c-container ']/h3[@class = 't']/a")
+    a_html = tree.xpath("//div[@class = 'result c-container ']/h3[@class = 't']/a/@href")
     a_nodes_list = [i.xpath('string(.)') for i in a_nodes]
-
     result = {}
 
     for index, value in enumerate(a_nodes_list):
         result[value] = a_html[index]
-
+    print(result)
     return result
 if __name__ == '__main__':
-    lst = crawler_baidu_by_keyword('python 教程')
-    print(lst)
-    # with open("../baidu.txt",encoding='utf-8')as f:
-    #     extract_links(f.read())
-    #     #print(f.read())
+    # result = run()
+    # pprint(result)
+    with open("../baidu.txt", encoding='utf-8')as f:
+        extract_links(f.read())
+        #print(f.read())
