@@ -50,7 +50,7 @@ def extract_links(html):
 
     result = {}
 
-    for index,value in enumerate(a_nodes_list):
+    for index, value in enumerate(a_nodes_list):
         result[value] = a_html[index]
 
     return result
