@@ -16,8 +16,8 @@ def get_netloc(url):
 def get_real_html(url):
     '''
     返回真实url
-    :param url:
-    :return:
+    :param url:302跳转
+    :return: 真实地址
     '''
     res = requests.get(url, allow_redirects=False)
     return res.headers['Location']

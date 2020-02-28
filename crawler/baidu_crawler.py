@@ -5,7 +5,7 @@ from lxml import etree
 from conf.bd_keywords import LST_KEYWORDS
 from conf.Setting_conf import PN
 import time
-from common.url_utils import get_netloc,get_real_html
+from common.url_utils import get_netloc, get_real_html
 
 def run():
     '''
@@ -70,14 +70,16 @@ def extract_links(html):
     for index, value in enumerate(a_nodes_list):
         result[value] = a_html[index]
     print(result)
+    print(list(set(a_html)))
+
     return result
 
 
 
 
 if __name__ == '__main__':
-    # result = run()
-    # pprint(result)
+    #result = run()
+    #print(result)
     with open("../baidu.txt", encoding='utf-8')as f:
         extract_links(f.read())
         #print(f.read())
