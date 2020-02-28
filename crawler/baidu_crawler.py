@@ -14,8 +14,9 @@ def run():
     '''
     result = {}
     for keyword in LST_KEYWORDS:
+        result[keyword] = {}
         for pn in PN:
-            result[keyword] = crawler_baidu_by_keyword(keyword, pn)
+            result[keyword].update(crawler_baidu_by_keyword(keyword, pn))
             time.sleep(5)
     return result
 
@@ -56,7 +57,7 @@ def crawler_baidu_by_keyword(keyword, pn):
 def extract_links(html):
     """
     从网页源码里解析出搜索结果的连接
-    :param html://h3[@class='t']/a@href
+    :param html: from crawler_baidu_by_keyword
     :return:dict
     """
     tree = etree.HTML(html)
@@ -69,17 +70,19 @@ def extract_links(html):
 
     for index, value in enumerate(a_nodes_list):
         result[value] = a_html[index]
-    print(result)
-    print(list(set(a_html)))
+    #print(list(set(a_html)))  #    列表形式后期考虑去重
 
-    return result
+    return result   # 返回字典形式
 
 
 
 
 if __name__ == '__main__':
-    #result = run()
-    #print(result)
-    with open("../baidu.txt", encoding='utf-8')as f:
-        extract_links(f.read())
+    # result = run()
+    # print(result)
+    # print(len(result))
+    # print(result.keys())
+    # print(result.values())
+    # with open("../baidu.txt", encoding='utf-8')as f:
+    #     extract_links(f.read())
         #print(f.read())
