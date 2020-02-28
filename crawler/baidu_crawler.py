@@ -2,12 +2,31 @@ import os
 import time
 import requests
 from lxml import etree
+from functools import wraps
 from urllib.parse import quote
 from requests import exceptions
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
-from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TOTALNUM_SEARCH_PAGE,TIME_PAGE_SLEEP,\
-LIST_URL_ONEKEYWORD, LIST_URL_ALLKEYWORD, TIMES_ERR_304_MAX, TIME_GETREALURL_SLEEP
+from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP ,TOTALNUM_SEARCH_PAGE
+
+
+def retry(retry_count=5, sleep_time=1):
+    def wrapper(func):
+        @wraps(func)
+        def inner(*args,**kwargs):
+            for i in range(retry_count):
+                try:
+                    res = func(*args,**kwargs)
+                    return res
+                except:
+                    time.sleep(sleep_time)
+                    continue
+            return None
+        return inner
+    return wrapper
+
+class HttpCodeException(Exception):
+    pass
 
 def extract_links_test(filename):
     """
@@ -79,31 +98,32 @@ def generate_params(keyword, num):
     :param num:当前页码数
     :return:
     """
-    params = {
-        'wd': keyword,
-        'pn': num * 10
-    }
-
-    return params
-
-    # return {'wd': keyword, 'pn': num * 10}
+    return {'wd': keyword, 'pn': num * 10}
 
 
+@retry(TIMES_REQUESTS_MAX,TIME_REQUEST_SLEEP)
 def url_baidu_to_realmain(url):
     """
     将百度链接转化为真实链接，并得到主页
     :param url:要转换的链接
     :return:转换之后的真实链接
     """
-    time.sleep(TIME_GETREALURL_SLEEP)
-    res = requests.get(url, allow_redirects=False)
-    real_url = res.headers['location']
+    # res = requests.get(url, allow_redirects=False)
+    # real_url = res.headers['location']
+    #
+    # return real_url
 
+    response = requests.get(url, allow_redirects=False)
+    # if response.status_code != 200 | 302:
+    #     raise HttpCodeException
+    real_url = response.headers['location']
     return real_url
 
     # # 得到真实主页链接，都是平台，需要针对性处理
     # realmain_url = get_netloc(real_url)
     # return realmain_url
+
+
 
 def urlist_baidu_to_realmain(url_list):
     """
@@ -111,14 +131,11 @@ def urlist_baidu_to_realmain(url_list):
     :param url_list:百度链接列表
     :return:转换之后的真实链接列表
     """
-    # realmain_url_list=[]
-    # print(url_list)
-    # for url in url_list:
-    #     print(url)
-    #     realmain_url = url_baidu_to_realmain(url)
-    #     realmain_url_list.append(realmain_url)
+    # url_real_list = []
     #
-    # return realmain_url_list
+    # for url in url_list:
+    #     url_real_list.append(url_baidu_to_realmain(url))
+    # return url_real_list
 
     return [url_baidu_to_realmain(url) for url in url_list]
 
@@ -132,12 +149,15 @@ def extract_links(html):
     tree = etree.HTML(html)
     # 得到网址列表
     url_list = tree.xpath("//div[@class='result c-container ']/h3/a/@href")
+
     # 将网址列表（百度）生成真实列表
     real_url_list = urlist_baidu_to_realmain(url_list)
     return real_url_list
 
 
-def params_request(session, url,params,headers):
+
+@retry(TIMES_REQUESTS_MAX,TIME_REQUEST_SLEEP)
+def params_request(session, url, params, headers):
     """
     获取session状态及html内容
     :param session: session参数
@@ -147,38 +167,11 @@ def params_request(session, url,params,headers):
     :return: session请求状态及html内容
     """
     # 通过exceptions异常来判断请求是否成功
-    time.sleep(TIME_PAGE_SLEEP)
-    try:
-        t1 = time.time()
-        response = session.get(url, params=params, headers=headers, allow_redirects=False)
-        response.encoding = 'utf-8'
-        t2 = time.time()
-    except exceptions.Timeout as e:
-        print('请求超时：'+str(e.message))
-        status = "err_timeout"
-        html = ""
-        return status, html
-    except exceptions.HTTPError as e:
-        print('http请求错误:'+str(e.message))
-        status = "err_http"
-        html = ""
-        return status, html
-    else:
-        # 通过status_code判断请求结果是否正确
-        print('请求耗时%ss'%(t2-t1))
-        if response.status_code == 200:
-            status = "ok"
-            html = response.text
-            return status, html
-        elif response.status_code == 302:
-            status = "err_304"
-            html = ""
-            return status, html
-        else:
-            print('请求错误：'+str(response.status_code)+','+str(response.reason))
-            status = "err_others"
-            html = response.text
-            return status, html
+
+    response = session.get(url, params=params, headers=headers, allow_redirects=False)
+    if response.status_code != 200:
+        raise HttpCodeException
+    return response.text
 
 
 def crawler_baidu_by_keyword(keyword):
@@ -201,37 +194,17 @@ def crawler_baidu_by_keyword(keyword):
 
     session = requests.session()
     for num_page in range(TOTALNUM_SEARCH_PAGE):      # 根据查询页数进行查询
+        time.sleep(TIME_REQUEST_SLEEP)
         print("{0}关键词第{1}页".format(keyword, (num_page+1)))
         params = generate_params(keyword, num_page)   # 获取搜索关键字
-        # res = session.get(URL_BAIDU, params=params, headers=headers, allow_redirects=False)
-        # res.encoding = 'utf-8'
-        # time.sleep(TIME_PAGE_SLEEP)
-        status,html = params_request(session, URL_BAIDU, params, headers)
-        if status != "ok":
-            times_err_304 = 0
-            if status == "err_304":  # 如果为304，多次尝试
+        html = params_request(session, URL_BAIDU, params, headers)
 
-                for times in range(TIMES_ERR_304_MAX):
-                    print("err_304第{0}次".format((times+1)))
-                    status, html = params_request(session, URL_BAIDU, params, headers)
-                    if status == "err_304":
-                        continue
-                    elif status == "ok":
-                        break
-                    else:
-                        break
+        if html != None:
+            url_list = extract_links(html)                # 获取单页有效链接列表
 
-                if status != "ok":   # 如果尝试之后仍不成功，跳过本页
-                    continue
-
-            else:   # 如果是其他错误，跳过本页
-                continue
-
-        if FLAG_SAVE_HTMLFILE == 1:                   # 根据配置参数保存html内容
-            save_htmlfile(PATH_HTMLFILE, keyword, (num_page + 1), html)
-
-        url_list = extract_links(html)                # 获取单页有效链接列表
-        list_url_onekeyword.extend(url_list)          # 更新单个关键字有效链接列表
+            list_url_onekeyword.extend(url_list)          # 更新单个关键字有效链接列表
+            if FLAG_SAVE_HTMLFILE == 1:  # 根据配置参数保存html内容
+                save_htmlfile(PATH_HTMLFILE, keyword, (num_page + 1), html)
 
     return list_url_onekeyword                        # 返回单个关键字所有页码关键字url列表
 
@@ -242,13 +215,13 @@ def crawler_baidu_by_all_keyword(keywords):
     :param keywords:搜索关键词
     :return: list 返回搜索结果的连接
     """
-    list_url_allkeyword_temp=[]
+    list_url_onekeyword = []
+    list_url_allkeyword_temp = []
     for keyword in keywords:
-        # LIST_URL_ONEKEYWORD 不要用大写
-        LIST_URL_ONEKEYWORD = crawler_baidu_by_keyword(keyword)
+        list_url_onekeyword = crawler_baidu_by_keyword(keyword)
         if FLAG_SAVE_URLFILE == 1:
-            save_urlfile(PATH_URLFILE, keyword, LIST_URL_ONEKEYWORD)
-        list_url_allkeyword_temp.extend(LIST_URL_ONEKEYWORD)
+            save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
+        list_url_allkeyword_temp.extend(list_url_onekeyword)
 
     list_url_allkeyword = list(set(list_url_allkeyword_temp))         # url地址去重
 
@@ -257,9 +230,12 @@ def crawler_baidu_by_all_keyword(keywords):
 
     return list_url_allkeyword
 
+def run(keywords):
+    list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
+    return list_url_allkeyword
 
 if __name__ == '__main__':
-    LIST_URL_ALLKEYWORD = crawler_baidu_by_all_keyword(keywords)
+    run(keywords)
 
 
 

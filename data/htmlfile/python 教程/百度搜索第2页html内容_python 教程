@@ -148,6 +148,8 @@ a.m:visited{color:#606}
 .s_btn{width:95px;height:32px;padding-top:2px\9;font-size:14px;padding:0;background-color:#ddd;background-position:0 -48px;border:0;cursor:pointer}
 .s_btn_h{background-position:-240px -48px}
 .s_btn_wr{width:97px;height:34px;display:inline-block;background-position:-120px -48px;*position:relative;z-index:0;vertical-align:top}
+.fm_red .s_ipt_wr,.fm_red .s_ipt_wr.iptfocus,.fm_red .s_ipt_wr:hover,.fm_red .s_ipt_wr.ipthover{border-color:#e10602 transparent #e10602 #e10602}
+.fm_red .s_btn{background-color:#e10602;border-bottom:1px solid #c30602}
 .yy_fm .s_ipt_wr,.yy_fm .s_ipt_wr.iptfocus,.yy_fm .s_ipt_wr:hover,.yy_fm .s_ipt_wr.ipthover{border-color:#e10602 transparent #e10602 #e10602;animation:yy-ipt .2s;-moz-animation:yy-ipt .2s;-webkit-animation:yy-ipt .2s;-o-animation:yy-ipt .2s}
 .yy_fm .s_btn{background-color:#e10602;border-bottom:1px solid #c30602;animation:yunying .2s;-moz-animation:yunying .2s;-webkit-animation:yunying .2s;-o-animation:yunying .2s}
 .yy_fm_blue .s_ipt_wr,.yy_fm_blue .s_ipt_wr.iptfocus,.yy_fm_blue .s_ipt_wr:hover,.yy_fm_blue .s_ipt_wr.ipthover{animation:yy-ipt-blue .2s;border-color:#4791ff transparent #4791ff #4791ff}
@@ -470,8 +472,8 @@ body{padding:0}
 .s_btn{width:100px;height:34px;color:#fff;letter-spacing:1px;background:#3385ff;border-bottom:1px solid #2d78f4;outline:medium;*border-bottom:0;-webkit-appearance:none;-webkit-border-radius:0}
 .s_btn.btnhover{background:#317ef3;border-bottom:1px solid #2868c8;*border-bottom:0;box-shadow:1px 1px 1px #ccc}
 .s_btn_h{background:#3075dc;box-shadow:inset 1px 1px 3px #2964bb;-webkit-box-shadow:inset 1px 1px 3px #2964bb;-moz-box-shadow:inset 1px 1px 3px #2964bb;-o-box-shadow:inset 1px 1px 3px #2964bb}
-.yy_fm .s_btn.btnhover{background:#D10400;border-bottom:1px solid #D10400}
-.yy_fm .s_btn_h{background:#C00400;box-shadow:inset 1px 1px 3px #A00300;-webkit-box-shadow:inset 1px 1px 3px #A00300}
+.yy_fm .s_btn.btnhover,.fm_red .s_btn.btnhover{background:#D10400;border-bottom:1px solid #D10400}
+.yy_fm .s_btn_h,.fm_red .s_btn_h{background:#C00400;box-shadow:inset 1px 1px 3px #A00300;-webkit-box-shadow:inset 1px 1px 3px #A00300}
 #wrapper_wrapper .container_l .EC_ppim_top,#wrapper_wrapper .container_xl .EC_ppim_top{width:640px}
 #wrapper_wrapper .container_s .EC_ppim_top{width:570px}
 #head .c-icon-bear-round{display:none}
@@ -1183,7 +1185,7 @@ button.fb-btn::-moz-focus-inner{padding:0;border:0}
 #wrapper_wrapper{margin-left:-88px}
 #container{-webkit-box-sizing:border-box;box-sizing:border-box;width:1212px;margin:0 auto}
 .foot-inner{width:1212px;margin:0 auto}}
-@font-face{font-family:cicons;font-weight:400;font-style:normal;src:url(//m.baidu.com/se/static/font/cicon.eot?t=1582512397158#);src:url(//m.baidu.com/se/static/font/cicon.eot?t=1582512397158#iefix) format('embedded-opentype'),url(//m.baidu.com/se/static/font/cicon.woff?t=1582512397158#) format('woff'),url(//m.baidu.com/se/static/font/cicon.ttf?t=1582512397158#) format('truetype'),url(//m.baidu.com/se/static/font/cicon.svg?t=1582512397158#cicons) format('svg')}
+@font-face{font-family:cicons;font-weight:400;font-style:normal;src:url(//m.baidu.com/se/static/font/cicon.eot?t=1582636813249#);src:url(//m.baidu.com/se/static/font/cicon.eot?t=1582636813249#iefix) format('embedded-opentype'),url(//m.baidu.com/se/static/font/cicon.woff?t=1582636813249#) format('woff'),url(//m.baidu.com/se/static/font/cicon.ttf?t=1582636813249#) format('truetype'),url(//m.baidu.com/se/static/font/cicon.svg?t=1582636813249#cicons) format('svg')}
 html{font-size:100px}
 html body{font-size:.14rem;font-size:14px}
 [data-pmd] a{color:#333;text-decoration:none;-webkit-tap-highlight-color:rgba(23,23,23,.1)}
@@ -1688,7 +1690,7 @@ button.fb-btn::-moz-focus-inner{padding:0;border:0}
 		
 
 <noscript>
-	<meta http-equiv="refresh" content="0; url=/s?wd=python%20%E6%95%99%E7%A8%8B&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=5369BEHU0mIVoihFzfUcO9FBHHNjZ%2BJkUO6OJi19WVamtBABjBIvpiC3HnI&rqlang=cn&nojs=1&bqid=c8a77a4c0002fc1e"/>
+	<meta http-equiv="refresh" content="0; url=/s?wd=python%20%E6%95%99%E7%A8%8B&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=cf4bKVoE%2BiamhHY24sbjCIw5iae50ceCGJ5G6E2m9pR42rUpxyC1up0NBkU&rqlang=cn&nojs=1&bqid=ba09fe9300034bd8"/>
 </noscript>
 
 
@@ -1836,7 +1838,7 @@ t&&o(t,n,e)}},A.merge=function(n,e){A.mergeFns.push({tplName:n,fn:e})}}());</scr
 
 			
 
-<script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><div id="head"><div class="head_wrapper"><div class="s_form"><div class="s_form_wrapper"><style>.index-logo-srcnew {display: none;}@media (-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){.index-logo-src {display: none;}.index-logo-srcnew {display: inline;}}</style><div id="lg"><img hidefocus="true" src="//www.baidu.com/img/bd_logo1.png" width="270" height="129"></div><a href="/" id="result_logo" onmousedown="return c({'fm':'tab','tab':'logo'})"><img class='index-logo-src' src="//www.baidu.com/img/baidu_jgylogo3.gif" alt="到百度首页" title="到百度首页"><img class='index-logo-srcnew' src="//www.baidu.com/img/baidu_resultlogo@2.png" alt="到百度首页" title="到百度首页"></a><form id="form" name="f" action="/s" class="fm"><input type="hidden" name="ie" value="utf-8"><input type="hidden" name="f" value="8"><input type="hidden" name="rsv_bp" value="1"><input type=hidden name=ch value=""><input type=hidden name=tn value="baidu"><input type=hidden name=bar value=""><span class="bg s_ipt_wr"><input id="kw" name="wd" class="s_ipt" value="python 教程" maxlength="255" autocomplete="off"></span><span class="bg s_btn_wr"><input type="submit" id="su" value="百度一下" class="bg s_btn"></span><span class="tools"><span id="mHolder"><div id="mCon"><span>输入法</span></div><ul id="mMenu"><li><a href="javascript:;" name="ime_hw">手写</a></li><li><a href="javascript:;" name="ime_py">拼音</a></li><li class="ln"></li><li><a href="javascript:;" name="ime_cl">关闭</a></li></ul></span></span><input type="hidden" name="oq" value="python 教程"><input type="hidden" name="rsv_pq" value="c8a77a4c0002fc1e"><input type="hidden" name="rsv_t" value="5369BEHU0mIVoihFzfUcO9FBHHNjZ+JkUO6OJi19WVamtBABjBIvpiC3HnI"><input type="hidden" name="rqlang" value="cn"></form><div id="m"></div></div></div><div id="u"><a class="toindex" href="/">百度首页</a><a href="javascript:;" name="tj_settingicon" class="pf">设置<i class="c-icon c-icon-triangle-down"></i></a><a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="lb" onclick="return false;">登录</a></div><div id="u1"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1" name="tj_trvirus" id="virus-2020" class="mnav sp">抗击肺炎</a><a href="http://news.baidu.com" name="tj_trnews" class="mnav">新闻</a><a href="https://www.hao123.com" name="tj_trhao123" class="mnav">hao123</a><a href="http://map.baidu.com" name="tj_trmap" class="mnav">地图</a><a href="http://v.baidu.com" name="tj_trvideo" class="mnav">视频</a><a href="http://tieba.baidu.com" name="tj_trtieba" class="mnav">贴吧</a><a href="http://xueshu.baidu.com" name="tj_trxueshu" class="mnav">学术</a><a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="lb" onclick="return false;">登录</a><a href="http://www.baidu.com/gaoji/preferences.html" name="tj_settingicon" class="pf">设置</a><a href="http://www.baidu.com/more/" name="tj_briicon" class="bri" style="display: block;">更多产品</a></div></div></div>
+<script>if(window.bds&&bds.util&&bds.util.setContainerWidth){bds.util.setContainerWidth();}</script><div id="head"><div class="head_wrapper"><div class="s_form"><div class="s_form_wrapper"><style>.index-logo-srcnew {display: none;}@media (-webkit-min-device-pixel-ratio: 2),(min--moz-device-pixel-ratio: 2),(-o-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){.index-logo-src {display: none;}.index-logo-srcnew {display: inline;}}</style><div id="lg"><img hidefocus="true" src="//www.baidu.com/img/bd_logo1.png" width="270" height="129"></div><a href="/" id="result_logo" onmousedown="return c({'fm':'tab','tab':'logo'})"><img class='index-logo-src' src="//www.baidu.com/img/baidu_jgylogo3.gif" alt="到百度首页" title="到百度首页"><img class='index-logo-srcnew' src="//www.baidu.com/img/baidu_resultlogo@2.png" alt="到百度首页" title="到百度首页"></a><form id="form" name="f" action="/s" class="fm "><input type="hidden" name="ie" value="utf-8"><input type="hidden" name="f" value="8"><input type="hidden" name="rsv_bp" value="1"><input type=hidden name=ch value=""><input type=hidden name=tn value="baidu"><input type=hidden name=bar value=""><span class="bg s_ipt_wr"><input id="kw" name="wd" class="s_ipt" value="python 教程" maxlength="255" autocomplete="off"></span><span class="bg s_btn_wr"><input type="submit" id="su" value="百度一下" class="bg s_btn"></span><span class="tools"><span id="mHolder"><div id="mCon"><span>输入法</span></div><ul id="mMenu"><li><a href="javascript:;" name="ime_hw">手写</a></li><li><a href="javascript:;" name="ime_py">拼音</a></li><li class="ln"></li><li><a href="javascript:;" name="ime_cl">关闭</a></li></ul></span></span><input type="hidden" name="oq" value="python 教程"><input type="hidden" name="rsv_pq" value="ba09fe9300034bd8"><input type="hidden" name="rsv_t" value="cf4bKVoE+iamhHY24sbjCIw5iae50ceCGJ5G6E2m9pR42rUpxyC1up0NBkU"><input type="hidden" name="rqlang" value="cn"></form><div id="m"></div></div></div><div id="u"><a class="toindex" href="/">百度首页</a><a href="javascript:;" name="tj_settingicon" class="pf">设置<i class="c-icon c-icon-triangle-down"></i></a><a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="lb" onclick="return false;">登录</a></div><div id="u1"><a href="https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_pc_1" name="tj_trvirus" id="virus-2020" class="mnav sp">抗击肺炎</a><a href="http://news.baidu.com" name="tj_trnews" class="mnav">新闻</a><a href="https://www.hao123.com" name="tj_trhao123" class="mnav">hao123</a><a href="http://map.baidu.com" name="tj_trmap" class="mnav">地图</a><a href="http://v.baidu.com" name="tj_trvideo" class="mnav">视频</a><a href="http://tieba.baidu.com" name="tj_trtieba" class="mnav">贴吧</a><a href="http://xueshu.baidu.com" name="tj_trxueshu" class="mnav">学术</a><a href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F" name="tj_login" class="lb" onclick="return false;">登录</a><a href="http://www.baidu.com/gaoji/preferences.html" name="tj_settingicon" class="pf">设置</a><a href="http://www.baidu.com/more/" name="tj_briicon" class="bri" style="display: block;">更多产品</a></div></div></div>
 
 
 <script>
@@ -2296,7 +2298,7 @@ bds.base64 = (function () {
 
 			
 
-<!--cxy_all+baidu+a95ca689744bd99efceb3f712e32021f+0000000000000000000000000000000000000000160801-->
+<!--cxy_all+baidu+dd4031f7c5af8f44351e08f986f70ec7+0000000000000000000000000000000000000000161062-->
 
 
 
@@ -2373,7 +2375,7 @@ bds.base64 = (function () {
 
 
 
-									
+										
 
 				
 
@@ -2447,7 +2449,7 @@ bds.base64 = (function () {
 
             
 	            
-                                                     <div class="s_tab" id="s_tab"><div class="s_tab_inner"><b>网页</b><a href="https://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'news'})" sync="true">资讯</a><a href="/sf/vsearch?pd=video&tn=vsearch&lid=c8a77a4c0002fc1e&ie=utf-8&wd=python+%E6%95%99%E7%A8%8B&rsv_spt=7&rsv_bp=1&f=8&oq=python+%E6%95%99%E7%A8%8B&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"  onmousedown="return c({'fm':'tab','tab':'video'})" >视频</a><a href="http://image.baidu.com/i?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'pic'})" >图片</a><a href="http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&fr=wwwt&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'zhidao'})" >知道</a><a href="http://wenku.baidu.com/search?lm=0&od=0&ie=utf-8&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'wenku'})" >文库</a><a href="http://tieba.baidu.com/f?fr=wwwt&kw=python+%E6%95%99%E7%A8%8B" wdfield="kw"  onmousedown="return c({'fm':'tab','tab':'tieba'})" >贴吧</a><a href="https://b2b.baidu.com/s?fr=wwwt&q=python+%E6%95%99%E7%A8%8B" wdfield="q"  onmousedown="return c({'fm':'tab','tab':'b2b'})" >采购</a><a href="https://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3Dpython+%E6%95%99%E7%A8%8B"  onmousedown="return c({'fm':'tab','tab':'map'})" >地图</a><a href="http://www.baidu.com/more/"  onmousedown="return c({'fm':'tab','tab':'more'})" >更多»</a></div>
+                                                     <div class="s_tab" id="s_tab"><div class="s_tab_inner"><b>网页</b><a href="https://www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'news'})" sync="true">资讯</a><a href="/sf/vsearch?pd=video&tn=vsearch&lid=ba09fe9300034bd8&ie=utf-8&wd=python+%E6%95%99%E7%A8%8B&rsv_spt=7&rsv_bp=1&f=8&oq=python+%E6%95%99%E7%A8%8B&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"  onmousedown="return c({'fm':'tab','tab':'video'})" >视频</a><a href="http://image.baidu.com/i?tn=baiduimage&ps=1&ct=201326592&lm=-1&cl=2&nc=1&ie=utf-8&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'pic'})" >图片</a><a href="http://zhidao.baidu.com/q?ct=17&pn=0&tn=ikaslist&rn=10&fr=wwwt&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'zhidao'})" >知道</a><a href="http://wenku.baidu.com/search?lm=0&od=0&ie=utf-8&word=python+%E6%95%99%E7%A8%8B" wdfield="word"  onmousedown="return c({'fm':'tab','tab':'wenku'})" >文库</a><a href="http://tieba.baidu.com/f?fr=wwwt&kw=python+%E6%95%99%E7%A8%8B" wdfield="kw"  onmousedown="return c({'fm':'tab','tab':'tieba'})" >贴吧</a><a href="https://b2b.baidu.com/s?fr=wwwt&q=python+%E6%95%99%E7%A8%8B" wdfield="q"  onmousedown="return c({'fm':'tab','tab':'b2b'})" >采购</a><a href="https://map.baidu.com/?newmap=1&ie=utf-8&s=s%26wd%3Dpython+%E6%95%99%E7%A8%8B"  onmousedown="return c({'fm':'tab','tab':'map'})" >地图</a><a href="http://www.baidu.com/more/"  onmousedown="return c({'fm':'tab','tab':'more'})" >更多»</a></div>
 </div>
 
 
@@ -2483,29 +2485,29 @@ bds.base64 = (function () {
         bds.comm.tn = "baidu";
         bds.comm.tng = "organic";
         bds.comm.queryEnc = "python+%BD%CC%B3%CC";
-        bds.comm.queryId = "c8a77a4c0002fc1e";
+        bds.comm.queryId = "ba09fe9300034bd8";
         bds.comm.inter = "";
         bds.comm.resTemplateName = "baidu";
         bds.comm.sugHost = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su";
         bds.comm.ishome = 0;
         bds.comm.query = "python 教程";
-        bds.comm.qid = "c8a77a4c0002fc1e";
-        bds.comm.eqid = "c8a77a4c0002fc1e000000025e54d9b7";	
+        bds.comm.qid = "ba09fe9300034bd8";
+        bds.comm.eqid = "ba09fe9300034bd8000000025e591ab3";	
         bds.comm._se_click_track_flag = "";	
         bds.comm.cid = "0";
-        bds.comm.sid = "30745_1453_21088_30823_30717";
+        bds.comm.sid = "1432_21097_30823_28704";
         bds.comm.sampleval = [];
         bds.comm.stoken = "";
-        bds.comm.serverTime = "1582619064";
+        bds.comm.serverTime = "1582897843";
         bds.comm.user = "";
         bds.comm.username = "";
         bds.comm.isUserLogin = "0";
         bds.comm.userid = bds.comm.isUserLogin;
-		bds.comm.__rdNum = "929";
+		bds.comm.__rdNum = "1470";
         bds.comm.useFavo = "";
         bds.comm.pinyin = "python jiaocheng";
         bds.comm.favoOn = "";
-        bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":199.66,\"TimeSelf\":15.02},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"1\"},{\"ModuleId\":9527,\"TimeCost\":176.02,\"TimeSelf\":72.04,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":0,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":11.48,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":24.45,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":79.53}]}]";
+        bds.comm.speedInfo = "[{\"ModuleId\":9537,\"TimeCost\":170.04,\"TimeSelf\":17.28},{\"ModuleId\":9540,\"TimeCost\":-1,\"TimeSelf\":-1,\"Idc\":\"1\"},{\"ModuleId\":9527,\"TimeCost\":130.38,\"TimeSelf\":50.45,\"isHitCache\":true,\"SubProcess\":[{\"ProcessId\":9531,\"TimeCost\":0,\"isHitCache\":true},{\"ProcessId\":9536,\"TimeCost\":9.27,\"isHitCache\":false},{\"ProcessId\":9535,\"TimeCost\":23.72,\"isHitCache\":false},{\"ProcessId\":9532,\"TimeCost\":56.21}]}]";
         bds.comm.topHijack = null;
         bds.comm.isDebug = false;
 		
@@ -2513,10 +2515,10 @@ bds.base64 = (function () {
         
         
         
-                                                                                                                                                
-        bds.comm.iaurl=["http:\/\/www.imooc.com\/learn\/177","https:\/\/www.jb51.net\/Special\/520.htm","https:\/\/www.51zxw.net\/list.aspx?cid=711"];
+                                                                                                                                                            
+        bds.comm.iaurl=["https:\/\/www.w3school.com.cn\/python\/index.asp","https:\/\/www.51zxw.net\/list.aspx?cid=711","http:\/\/www.imooc.com\/learn\/177"];
 
-		bds.comm.curResultNum = "9";
+		bds.comm.curResultNum = "10";
     	bds.comm.rightResultExist = false;
     	bds.comm.protectNum = 0;
     	bds.comm.zxlNum = 0;
@@ -2524,7 +2526,7 @@ bds.base64 = (function () {
 
 		
         bds.comm.pageSize = parseInt('10')||10;
-	bds.comm.encTn = '9920x9/UnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD/gVv91Zo4oHE';		
+	bds.comm.encTn = '4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg';		
         bds.se.mon = {'loadedItems':[],'load':function(){},'srvt':-1};
         try {
             bds.se.mon.srvt = parseInt(document.cookie.match(new RegExp("(^| )BDSVRTM=([^;]*)(;|$)"))[2]);
@@ -2545,11 +2547,11 @@ bds.base64 = (function () {
 		_eclipse = "1";	
         login_success = [];
 
-        bds.comm.seinfo = {'fm':'se','T':'1582619064','y':'B7FBEDFB','rsv_cache': (bds.se.mon.srvt>0)?0:1 };
+        bds.comm.seinfo = {'fm':'se','T':'1582897843','y':'EFF77BB7','rsv_cache': (bds.se.mon.srvt>0)?0:1 };
         bds.comm.cgif = "https://sp0.baidu.com/9foIbT3kAMgDnd_/c.gif?t=0&q=python+%BD%CC%B3%CC&p=0&pn=2";
 
 		bds.comm.upn = {"browser":"chrome","ie":"","os":"mac","win":"","browsertype":"chrome"};
-        bds.comm.cookie = {"BAIDUID":"5DC6FC97B908107D25AF695404B13A62:FG=1","BIDUPSID":"5DC6FC97B908107D8B7778930A09A970","H_PS_PSSID":"30744_1436_21089_30824_22158","PSINO":"2","PSTM":"1582619060","delPer":"0","BDSVRTM":"19","BD_CK_SAM":"1"};
+        bds.comm.cookie = {"BAIDUID":"C33DFEFCD4E524A67ABE7A729EE13872:FG=1","BIDUPSID":"C33DFEFCD4E524A68CF7E5E37917C423","H_PS_PSSID":"1420_21118_30824_26350","PSINO":"2","PSTM":"1582897840","delPer":"0","BDSVRTM":"23","BD_CK_SAM":"1"};
                     bds.comm.urlRecFlag = "0";
                 
                     bds.comm.bfe_sample=null;
@@ -2966,7 +2968,7 @@ bds.base64 = (function () {
 
 
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
     
     
@@ -2986,225 +2988,240 @@ bds.base64 = (function () {
                         <tbody >
                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-index-hot1 c-gap-icon-right-small">1</span><a target="_blank" title="C罗连续11场破门" href="/s?wd=C%E7%BD%97%E8%BF%9E%E7%BB%AD11%E5%9C%BA%E7%A0%B4%E9%97%A8&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_1">C罗连续11场破门</a></span></td>
-                <td class="opr-toplist1-right">1382万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-index-hot1 c-gap-icon-right-small">1</span><a target="_blank" title="东京奥运会或取消" href="/s?wd=%E4%B8%9C%E4%BA%AC%E5%A5%A5%E8%BF%90%E4%BC%9A%E6%88%96%E5%8F%96%E6%B6%88&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_1">东京奥运会或取消</a></span></td>
+                <td class="opr-toplist1-right">149万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-index-hot2 c-gap-icon-right-small">2</span><a target="_blank" title="全玻璃iPhone外壳" href="/s?wd=%E5%85%A8%E7%8E%BB%E7%92%83iPhone%E5%A4%96%E5%A3%B3&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_2">全玻璃iPhone外壳</a></span></td>
-                <td class="opr-toplist1-right">777万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-index-hot2 c-gap-icon-right-small">2</span><a target="_blank" title="多明戈道歉" href="/s?wd=%E5%A4%9A%E6%98%8E%E6%88%88%E9%81%93%E6%AD%89&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_2">多明戈道歉</a></span></td>
+                <td class="opr-toplist1-right">126万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-index-hot3 c-gap-icon-right-small">3</span><a target="_blank" title="二月二龙抬头" href="/s?wd=%E4%BA%8C%E6%9C%88%E4%BA%8C%E9%BE%99%E6%8A%AC%E5%A4%B4&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_3">二月二龙抬头</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
-                <td class="opr-toplist1-right">439万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-index-hot3 c-gap-icon-right-small">3</span><a target="_blank" title="锡安首战詹姆斯" href="/s?wd=%E9%94%A1%E5%AE%89%E9%A6%96%E6%88%98%E8%A9%B9%E5%A7%86%E6%96%AF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_3">锡安首战詹姆斯</a></span></td>
+                <td class="opr-toplist1-right">103万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">4</span><a target="_blank" title="韩国11名军人确诊" href="/s?wd=%E9%9F%A9%E5%9B%BD11%E5%90%8D%E5%86%9B%E4%BA%BA%E7%A1%AE%E8%AF%8A&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_4">韩国11名军人确诊</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
-                <td class="opr-toplist1-right">407万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">4</span><a target="_blank" title="外交部新任发言人" href="/s?wd=%E5%A4%96%E4%BA%A4%E9%83%A8%E6%96%B0%E4%BB%BB%E5%8F%91%E8%A8%80%E4%BA%BA&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_4">外交部新任发言人</a></span></td>
+                <td class="opr-toplist1-right">85万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">5</span><a target="_blank" title="画说战疫科普视频" href="/s?wd=%E7%94%BB%E8%AF%B4%E6%88%98%E7%96%AB%E7%A7%91%E6%99%AE%E8%A7%86%E9%A2%91&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_5">画说战疫科普视频</a></span></td>
-                <td class="opr-toplist1-right">124万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">5</span><a target="_blank" title="莎拉波娃退役" href="/s?wd=%E8%8E%8E%E6%8B%89%E6%B3%A2%E5%A8%83%E9%80%80%E5%BD%B9&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_5">莎拉波娃退役</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
+                <td class="opr-toplist1-right">58万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">6</span><a target="_blank" title="胡靖航加盟卓尔" href="/s?wd=%E8%83%A1%E9%9D%96%E8%88%AA%E5%8A%A0%E7%9B%9F%E5%8D%93%E5%B0%94&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_6">胡靖航加盟卓尔</a></span></td>
-                <td class="opr-toplist1-right">116万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">6</span><a target="_blank" title="一二三航空揭牌" href="/s?wd=%E4%B8%80%E4%BA%8C%E4%B8%89%E8%88%AA%E7%A9%BA%E6%8F%AD%E7%89%8C&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_6">一二三航空揭牌</a></span></td>
+                <td class="opr-toplist1-right">57万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">7</span><a target="_blank" title="詹姆斯谈关键跳投" href="/s?wd=%E8%A9%B9%E5%A7%86%E6%96%AF%E8%B0%88%E5%85%B3%E9%94%AE%E8%B7%B3%E6%8A%95&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_7">詹姆斯谈关键跳投</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
-                <td class="opr-toplist1-right">90万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">7</span><a target="_blank" title="院士蒋亦元逝世" href="/s?wd=%E9%99%A2%E5%A3%AB%E8%92%8B%E4%BA%A6%E5%85%83%E9%80%9D%E4%B8%96&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_7">院士蒋亦元逝世</a></span></td>
+                <td class="opr-toplist1-right">51万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">8</span><a target="_blank" title="网综新标准" href="/s?wd=%E7%BD%91%E7%BB%BC%E6%96%B0%E6%A0%87%E5%87%86&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_8">网综新标准</a></span></td>
-                <td class="opr-toplist1-right">78万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">8</span><a target="_blank" title="库里复出时间" href="/s?wd=%E5%BA%93%E9%87%8C%E5%A4%8D%E5%87%BA%E6%97%B6%E9%97%B4&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_8">库里复出时间</a></span></td>
+                <td class="opr-toplist1-right">45万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">9</span><a target="_blank" title="王思聪晒高档日料" href="/s?wd=%E7%8E%8B%E6%80%9D%E8%81%AA%E6%99%92%E9%AB%98%E6%A1%A3%E6%97%A5%E6%96%99&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_9">王思聪晒高档日料</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">9</span><a target="_blank" title="雄鹿锁定季后赛" href="/s?wd=%E9%9B%84%E9%B9%BF%E9%94%81%E5%AE%9A%E5%AD%A3%E5%90%8E%E8%B5%9B&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_9">雄鹿锁定季后赛</a></span></td>
+                <td class="opr-toplist1-right">45万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">10</span><a target="_blank" title="2PM张祐荣退伍" href="/s?wd=2PM%E5%BC%A0%E7%A5%90%E8%8D%A3%E9%80%80%E4%BC%8D&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_1_10_10">2PM张祐荣退伍</a></span></td>
+                <td class="opr-toplist1-right">45万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+            </tr>
+                </tbody>
+                                <tbody style="display:none">
+                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">11</span><a target="_blank" title="釜山世乒赛延期" href="/s?wd=%E9%87%9C%E5%B1%B1%E4%B8%96%E4%B9%92%E8%B5%9B%E5%BB%B6%E6%9C%9F&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_11">釜山世乒赛延期</a></span></td>
                 <td class="opr-toplist1-right">33万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">10</span><a target="_blank" title="蝙蝠侠片场照" href="/s?wd=%E8%9D%99%E8%9D%A0%E4%BE%A0%E7%89%87%E5%9C%BA%E7%85%A7&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_1_10_10">蝙蝠侠片场照</a></span></td>
-                <td class="opr-toplist1-right">32万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                </tbody>
-                                <tbody style="display:none">
-                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">11</span><a target="_blank" title="蓝天救援队员身亡" href="/s?wd=%E8%93%9D%E5%A4%A9%E6%95%91%E6%8F%B4%E9%98%9F%E5%91%98%E8%BA%AB%E4%BA%A1&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_11">蓝天救援队员身亡</a></span></td>
-                <td class="opr-toplist1-right">29万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">12</span><a target="_blank" title="斯洛伐克总理辟谣" href="/s?wd=%E6%96%AF%E6%B4%9B%E4%BC%90%E5%85%8B%E6%80%BB%E7%90%86%E8%BE%9F%E8%B0%A3&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_12">斯洛伐克总理辟谣</a></span></td>
+                <td class="opr-toplist1-right">24万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">12</span><a target="_blank" title="韦德球衣退役仪式" href="/s?wd=%E9%9F%A6%E5%BE%B7%E7%90%83%E8%A1%A3%E9%80%80%E5%BD%B9%E4%BB%AA%E5%BC%8F&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_12">韦德球衣退役仪式</a></span></td>
-                <td class="opr-toplist1-right">27万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">13</span><a target="_blank" title="兰姆赛季报销" href="/s?wd=%E5%85%B0%E5%A7%86%E8%B5%9B%E5%AD%A3%E6%8A%A5%E9%94%80&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_13">兰姆赛季报销</a></span></td>
+                <td class="opr-toplist1-right">24万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">13</span><a target="_blank" title="刘昊然在家写论文" href="/s?wd=%E5%88%98%E6%98%8A%E7%84%B6%E5%9C%A8%E5%AE%B6%E5%86%99%E8%AE%BA%E6%96%87&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_13">刘昊然在家写论文</a></span></td>
-                <td class="opr-toplist1-right">25万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">14</span><a target="_blank" title="华为去年营收" href="/s?wd=%E5%8D%8E%E4%B8%BA%E5%8E%BB%E5%B9%B4%E8%90%A5%E6%94%B6&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_14">华为去年营收</a></span></td>
+                <td class="opr-toplist1-right">24万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">14</span><a target="_blank" title="艺术家杜雨露去世" href="/s?wd=%E8%89%BA%E6%9C%AF%E5%AE%B6%E6%9D%9C%E9%9B%A8%E9%9C%B2%E5%8E%BB%E4%B8%96&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_14">艺术家杜雨露去世</a></span></td>
-                <td class="opr-toplist1-right">25万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">15</span><a target="_blank" title="华为发布会" href="/s?wd=%E5%8D%8E%E4%B8%BA%E5%8F%91%E5%B8%83%E4%BC%9A&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_15">华为发布会</a></span></td>
+                <td class="opr-toplist1-right">23万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">15</span><a target="_blank" title="黄山景区恢复开放" href="/s?wd=%E9%BB%84%E5%B1%B1%E6%99%AF%E5%8C%BA%E6%81%A2%E5%A4%8D%E5%BC%80%E6%94%BE&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_15">黄山景区恢复开放</a></span></td>
-                <td class="opr-toplist1-right">23万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">16</span><a target="_blank" title="张国伟跳高夺冠" href="/s?wd=%E5%BC%A0%E5%9B%BD%E4%BC%9F%E8%B7%B3%E9%AB%98%E5%A4%BA%E5%86%A0&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_16">张国伟跳高夺冠</a></span></td>
+                <td class="opr-toplist1-right">23万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">16</span><a target="_blank" title="谢娜疑怀二胎" href="/s?wd=%E8%B0%A2%E5%A8%9C%E7%96%91%E6%80%80%E4%BA%8C%E8%83%8E&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_16">谢娜疑怀二胎</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
-                <td class="opr-toplist1-right">20万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">17</span><a target="_blank" title="刘亦菲马甲线" href="/s?wd=%E5%88%98%E4%BA%A6%E8%8F%B2%E9%A9%AC%E7%94%B2%E7%BA%BF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_17">刘亦菲马甲线</a></span></td>
+                <td class="opr-toplist1-right">22万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">17</span><a target="_blank" title="猎豹回应谷歌下架" href="/s?wd=%E7%8C%8E%E8%B1%B9%E5%9B%9E%E5%BA%94%E8%B0%B7%E6%AD%8C%E4%B8%8B%E6%9E%B6&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_17">猎豹回应谷歌下架</a></span></td>
-                <td class="opr-toplist1-right">20万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">18</span><a target="_blank" title="科比追思会" href="/s?wd=%E7%A7%91%E6%AF%94%E8%BF%BD%E6%80%9D%E4%BC%9A&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_18">科比追思会</a></span></td>
+                <td class="opr-toplist1-right">19万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">18</span><a target="_blank" title="巴菲特致股东信" href="/s?wd=%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_18">巴菲特致股东信</a></span></td>
-                <td class="opr-toplist1-right">19万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">19</span><a target="_blank" title="科比追悼会主题" href="/s?wd=%E7%A7%91%E6%AF%94%E8%BF%BD%E6%82%BC%E4%BC%9A%E4%B8%BB%E9%A2%98&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_19">科比追悼会主题</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">19</span><a target="_blank" title="黄智博被提起公诉" href="/s?wd=%E9%BB%84%E6%99%BA%E5%8D%9A%E8%A2%AB%E6%8F%90%E8%B5%B7%E5%85%AC%E8%AF%89&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_19">黄智博被提起公诉</a></span></td>
                 <td class="opr-toplist1-right">18万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">20</span><a target="_blank" title="周杰伦为医护加油" href="/s?wd=%E5%91%A8%E6%9D%B0%E4%BC%A6%E4%B8%BA%E5%8C%BB%E6%8A%A4%E5%8A%A0%E6%B2%B9&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_11_20_20">周杰伦为医护加油</a></span></td>
-                <td class="opr-toplist1-right">16万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">20</span><a target="_blank" title="娜扎张翰疑复合" href="/s?wd=%E5%A8%9C%E6%89%8E%E5%BC%A0%E7%BF%B0%E7%96%91%E5%A4%8D%E5%90%88&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_11_20_20">娜扎张翰疑复合</a></span></td>
+                <td class="opr-toplist1-right">18万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                 </tbody>
                                 <tbody style="display:none">
                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">21</span><a target="_blank" title="江西景区恢复开放" href="/s?wd=%E6%B1%9F%E8%A5%BF%E6%99%AF%E5%8C%BA%E6%81%A2%E5%A4%8D%E5%BC%80%E6%94%BE&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_21">江西景区恢复开放</a></span></td>
-                <td class="opr-toplist1-right">16万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">21</span><a target="_blank" title="拜仁击败切尔西" href="/s?wd=%E6%8B%9C%E4%BB%81%E5%87%BB%E8%B4%A5%E5%88%87%E5%B0%94%E8%A5%BF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_21">拜仁击败切尔西</a></span></td>
+                <td class="opr-toplist1-right">16万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">22</span><a target="_blank" title="百事收购百草味" href="/s?wd=%E7%99%BE%E4%BA%8B%E6%94%B6%E8%B4%AD%E7%99%BE%E8%8D%89%E5%91%B3&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_22">百事收购百草味</a></span></td>
-                <td class="opr-toplist1-right">16万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">23</span><a target="_blank" title="欧洲金靴最新排名" href="/s?wd=%E6%AC%A7%E6%B4%B2%E9%87%91%E9%9D%B4%E6%9C%80%E6%96%B0%E6%8E%92%E5%90%8D&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_23">欧洲金靴最新排名</a></span></td>
-                <td class="opr-toplist1-right">16万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">24</span><a target="_blank" title="湖人裁掉考辛斯" href="/s?wd=%E6%B9%96%E4%BA%BA%E8%A3%81%E6%8E%89%E8%80%83%E8%BE%9B%E6%96%AF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_24">湖人裁掉考辛斯</a></span></td>
-                <td class="opr-toplist1-right">15万<i class="opr-toplist1-st c-icon "></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">25</span><a target="_blank" title="窦靖童妹妹恋情" href="/s?wd=%E7%AA%A6%E9%9D%96%E7%AB%A5%E5%A6%B9%E5%A6%B9%E6%81%8B%E6%83%85&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_25">窦靖童妹妹恋情</a></span></td>
-                <td class="opr-toplist1-right">15万<i class="opr-toplist1-st c-icon "></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">26</span><a target="_blank" title="韩国推迟开学" href="/s?wd=%E9%9F%A9%E5%9B%BD%E6%8E%A8%E8%BF%9F%E5%BC%80%E5%AD%A6&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_26">韩国推迟开学</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">22</span><a target="_blank" title="LPL公开训练赛" href="/s?wd=LPL%E5%85%AC%E5%BC%80%E8%AE%AD%E7%BB%83%E8%B5%9B&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_22">LPL公开训练赛</a></span></td>
                 <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">27</span><a target="_blank" title="湖人5连胜" href="/s?wd=%E6%B9%96%E4%BA%BA5%E8%BF%9E%E8%83%9C&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_27">湖人5连胜</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
-                <td class="opr-toplist1-right">13万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">23</span><a target="_blank" title="乔丹哭了" href="/s?wd=%E4%B9%94%E4%B8%B9%E5%93%AD%E4%BA%86&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_23">乔丹哭了</a></span></td>
+                <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">28</span><a target="_blank" title="平山3.0级地震" href="/s?wd=%E5%B9%B3%E5%B1%B13.0%E7%BA%A7%E5%9C%B0%E9%9C%87&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_28">平山3.0级地震</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">24</span><a target="_blank" title="北海道中小学停课" href="/s?wd=%E5%8C%97%E6%B5%B7%E9%81%93%E4%B8%AD%E5%B0%8F%E5%AD%A6%E5%81%9C%E8%AF%BE&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_24">北海道中小学停课</a></span></td>
+                <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">25</span><a target="_blank" title="刘昊然一抹绯红妆" href="/s?wd=%E5%88%98%E6%98%8A%E7%84%B6%E4%B8%80%E6%8A%B9%E7%BB%AF%E7%BA%A2%E5%A6%86&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_25">刘昊然一抹绯红妆</a></span></td>
+                <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">26</span><a target="_blank" title="易建联捐赠防护服" href="/s?wd=%E6%98%93%E5%BB%BA%E8%81%94%E6%8D%90%E8%B5%A0%E9%98%B2%E6%8A%A4%E6%9C%8D&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_26">易建联捐赠防护服</a></span></td>
+                <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">27</span><a target="_blank" title="福州恢复婚姻登记" href="/s?wd=%E7%A6%8F%E5%B7%9E%E6%81%A2%E5%A4%8D%E5%A9%9A%E5%A7%BB%E7%99%BB%E8%AE%B0&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_27">福州恢复婚姻登记</a></span></td>
+                <td class="opr-toplist1-right">14万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">28</span><a target="_blank" title="潜江小龙虾复市" href="/s?wd=%E6%BD%9C%E6%B1%9F%E5%B0%8F%E9%BE%99%E8%99%BE%E5%A4%8D%E5%B8%82&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_28">潜江小龙虾复市</a></span></td>
                 <td class="opr-toplist1-right">13万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">29</span><a target="_blank" title="24城复工率超80%" href="/s?wd=24%E5%9F%8E%E5%A4%8D%E5%B7%A5%E7%8E%87%E8%B6%8580%25&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_29">24城复工率超80%</a></span></td>
-                <td class="opr-toplist1-right">13万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">29</span><a target="_blank" title="国足世预赛名单" href="/s?wd=%E5%9B%BD%E8%B6%B3%E4%B8%96%E9%A2%84%E8%B5%9B%E5%90%8D%E5%8D%95&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_29">国足世预赛名单</a></span></td>
+                <td class="opr-toplist1-right">11万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">30</span><a target="_blank" title="梅西大四喜" href="/s?wd=%E6%A2%85%E8%A5%BF%E5%A4%A7%E5%9B%9B%E5%96%9C&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_21_30_30">梅西大四喜</a></span></td>
-                <td class="opr-toplist1-right">13万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">30</span><a target="_blank" title="迪士尼换新CEO" href="/s?wd=%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%8D%A2%E6%96%B0CEO&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_21_30_30">迪士尼换新CEO</a></span></td>
+                <td class="opr-toplist1-right">11万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                 </tbody>
                                 <tbody style="display:none">
                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">31</span><a target="_blank" title="好想你出售百草味" href="/s?wd=%E5%A5%BD%E6%83%B3%E4%BD%A0%E5%87%BA%E5%94%AE%E7%99%BE%E8%8D%89%E5%91%B3&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_31">好想你出售百草味</a></span></td>
-                <td class="opr-toplist1-right">12万<i class="opr-toplist1-st c-icon "></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">32</span><a target="_blank" title="李连杰晒年轻旧照" href="/s?wd=%E6%9D%8E%E8%BF%9E%E6%9D%B0%E6%99%92%E5%B9%B4%E8%BD%BB%E6%97%A7%E7%85%A7&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_32">李连杰晒年轻旧照</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">31</span><a target="_blank" title="27省恢复客运班线" href="/s?wd=27%E7%9C%81%E6%81%A2%E5%A4%8D%E5%AE%A2%E8%BF%90%E7%8F%AD%E7%BA%BF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_31">27省恢复客运班线</a></span></td>
                 <td class="opr-toplist1-right">11万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">33</span><a target="_blank" title="活塞买断莫里斯" href="/s?wd=%E6%B4%BB%E5%A1%9E%E4%B9%B0%E6%96%AD%E8%8E%AB%E9%87%8C%E6%96%AF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_33">活塞买断莫里斯</a></span></td>
-                <td class="opr-toplist1-right">11万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">32</span><a target="_blank" title="2020世乒赛延期" href="/s?wd=2020%E4%B8%96%E4%B9%92%E8%B5%9B%E5%BB%B6%E6%9C%9F&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_32">2020世乒赛延期</a></span></td>
+                <td class="opr-toplist1-right">10万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">34</span><a target="_blank" title="伽师县5.1级地震" href="/s?wd=%E4%BC%BD%E5%B8%88%E5%8E%BF5.1%E7%BA%A7%E5%9C%B0%E9%9C%87&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_34">伽师县5.1级地震</a></span></td>
-                <td class="opr-toplist1-right">9万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">35</span><a target="_blank" title="阿森纳险胜埃弗顿" href="/s?wd=%E9%98%BF%E6%A3%AE%E7%BA%B3%E9%99%A9%E8%83%9C%E5%9F%83%E5%BC%97%E9%A1%BF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_35">阿森纳险胜埃弗顿</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">33</span><a target="_blank" title="特朗普访印" href="/s?wd=%E7%89%B9%E6%9C%97%E6%99%AE%E8%AE%BF%E5%8D%B0&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_33">特朗普访印</a></span></td>
                 <td class="opr-toplist1-right">9万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">36</span><a target="_blank" title="莫里斯加盟湖人" href="/s?wd=%E8%8E%AB%E9%87%8C%E6%96%AF%E5%8A%A0%E7%9B%9F%E6%B9%96%E4%BA%BA&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_36">莫里斯加盟湖人</a></span><span class="c-text c-text-danger c-gap-icon-left-small opr-toplist1-new">新</span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">34</span><a target="_blank" title="侏罗纪世界3开机" href="/s?wd=%E4%BE%8F%E7%BD%97%E7%BA%AA%E4%B8%96%E7%95%8C3%E5%BC%80%E6%9C%BA&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_34">侏罗纪世界3开机</a></span></td>
                 <td class="opr-toplist1-right">9万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">37</span><a target="_blank" title="医疗机构拆除门帘" href="/s?wd=%E5%8C%BB%E7%96%97%E6%9C%BA%E6%9E%84%E6%8B%86%E9%99%A4%E9%97%A8%E5%B8%98&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_37">医疗机构拆除门帘</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">35</span><a target="_blank" title="王力宏为医护唱歌" href="/s?wd=%E7%8E%8B%E5%8A%9B%E5%AE%8F%E4%B8%BA%E5%8C%BB%E6%8A%A4%E5%94%B1%E6%AD%8C&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_35">王力宏为医护唱歌</a></span></td>
+                <td class="opr-toplist1-right">7万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">36</span><a target="_blank" title="景区游览实名登记" href="/s?wd=%E6%99%AF%E5%8C%BA%E6%B8%B8%E8%A7%88%E5%AE%9E%E5%90%8D%E7%99%BB%E8%AE%B0&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_36">景区游览实名登记</a></span></td>
                 <td class="opr-toplist1-right">6万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">38</span><a target="_blank" title="宁夏大学回应质疑" href="/s?wd=%E5%AE%81%E5%A4%8F%E5%A4%A7%E5%AD%A6%E5%9B%9E%E5%BA%94%E8%B4%A8%E7%96%91&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_38">宁夏大学回应质疑</a></span></td>
-                <td class="opr-toplist1-right">6万<i class="opr-toplist1-st c-icon "></i></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">37</span><a target="_blank" title="詹姆斯40分" href="/s?wd=%E8%A9%B9%E5%A7%86%E6%96%AF40%E5%88%86&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_37">詹姆斯40分</a></span></td>
+                <td class="opr-toplist1-right">4万<i class="opr-toplist1-st c-icon "></i></td>
             </tr>
                                     <tr>
                                                                                                                                                                         
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">39</span><a target="_blank" title="当当网被约谈" href="/s?wd=%E5%BD%93%E5%BD%93%E7%BD%91%E8%A2%AB%E7%BA%A6%E8%B0%88&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_39">当当网被约谈</a></span></td>
-                <td class="opr-toplist1-right">6万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">40</span><a target="_blank" title="武汉健康码上线" href="/s?wd=%E6%AD%A6%E6%B1%89%E5%81%A5%E5%BA%B7%E7%A0%81%E4%B8%8A%E7%BA%BF&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_31_40_40">武汉健康码上线</a></span></td>
-                <td class="opr-toplist1-right">6万<i class="opr-toplist1-st c-icon "></i></td>
-            </tr>
-                </tbody>
-                                <tbody style="display:none">
-                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">41</span><a target="_blank" title="北大考研成绩" href="/s?wd=%E5%8C%97%E5%A4%A7%E8%80%83%E7%A0%94%E6%88%90%E7%BB%A9&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_41_50_41">北大考研成绩</a></span></td>
-                <td class="opr-toplist1-right">5万<i class="opr-toplist1-st c-icon "></i></td>
-            </tr>
-                                    <tr>
-                                                                                                                                                                        
-                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">42</span><a target="_blank" title="皇马不敌莱万特" href="/s?wd=%E7%9A%87%E9%A9%AC%E4%B8%8D%E6%95%8C%E8%8E%B1%E4%B8%87%E7%89%B9&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=1ae555ce78a5cfab661513cdb6aacffb_41_50_42">皇马不敌莱万特</a></span></td>
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">38</span><a target="_blank" title="华为5G手机发货量" href="/s?wd=%E5%8D%8E%E4%B8%BA5G%E6%89%8B%E6%9C%BA%E5%8F%91%E8%B4%A7%E9%87%8F&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_38">华为5G手机发货量</a></span></td>
                 <td class="opr-toplist1-right">4万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">39</span><a target="_blank" title="谢娜否认怀二胎" href="/s?wd=%E8%B0%A2%E5%A8%9C%E5%90%A6%E8%AE%A4%E6%80%80%E4%BA%8C%E8%83%8E&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_39">谢娜否认怀二胎</a></span></td>
+                <td class="opr-toplist1-right">3万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">40</span><a target="_blank" title="毒液2片场照" href="/s?wd=%E6%AF%92%E6%B6%B22%E7%89%87%E5%9C%BA%E7%85%A7&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_31_40_40">毒液2片场照</a></span></td>
+                <td class="opr-toplist1-right">3万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                </tbody>
+                                <tbody style="display:none">
+                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">41</span><a target="_blank" title="联合国发蝗灾警告" href="/s?wd=%E8%81%94%E5%90%88%E5%9B%BD%E5%8F%91%E8%9D%97%E7%81%BE%E8%AD%A6%E5%91%8A&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_41_50_41">联合国发蝗灾警告</a></span></td>
+                <td class="opr-toplist1-right">2万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">42</span><a target="_blank" title="赖冠霖怼黑粉" href="/s?wd=%E8%B5%96%E5%86%A0%E9%9C%96%E6%80%BC%E9%BB%91%E7%B2%89&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_41_50_42">赖冠霖怼黑粉</a></span></td>
+                <td class="opr-toplist1-right">2万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">43</span><a target="_blank" title="美股三大股指高开" href="/s?wd=%E7%BE%8E%E8%82%A1%E4%B8%89%E5%A4%A7%E8%82%A1%E6%8C%87%E9%AB%98%E5%BC%80&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_41_50_43">美股三大股指高开</a></span></td>
+                <td class="opr-toplist1-right">2万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">44</span><a target="_blank" title="陕西全面恢复交通" href="/s?wd=%E9%99%95%E8%A5%BF%E5%85%A8%E9%9D%A2%E6%81%A2%E5%A4%8D%E4%BA%A4%E9%80%9A&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_41_50_44">陕西全面恢复交通</a></span></td>
+                <td class="opr-toplist1-right">2万<i class="opr-toplist1-st c-icon "></i></td>
+            </tr>
+                                    <tr>
+                                                                                                                                                                        
+                                                                                                                                                            <td><span><span class="c-index  c-gap-icon-right-small">45</span><a target="_blank" title="郭碧婷回应领证" href="/s?wd=%E9%83%AD%E7%A2%A7%E5%A9%B7%E5%9B%9E%E5%BA%94%E9%A2%86%E8%AF%81&ie=utf-8&rsv_cq=python+%E6%95%99%E7%A8%8B&rsv_dl=0_right_fyb_pchot_20811_01&rsf=348429acad98a1a07067f802aa1e8d9d_41_50_45">郭碧婷回应领证</a></span></td>
+                <td class="opr-toplist1-right">1万<i class="opr-toplist1-st c-icon c-icon-up"></i></td>
             </tr>
                         </tbody>    </table>
         <div class="OP_LOG_BTN c-gap-top-small opr-toplist1-from">
-        </span><a target="_blank" href="http://www.baidu.com/link?url=W82xicT9NEPeS0A9ssT7NgVdSbRuBsT8IhLpS0jJ1cKNbW33zQmLzPRriTb5kkKg">查看更多>></a>    </div>
+        </span><a target="_blank" href="http://www.baidu.com/link?url=LVb7E5AA4ByAA2sPrXRg5qUwvBQofn4TCNvsBc9Iv3__VPvIU-gNprzMzzgus4IM">查看更多>></a>    </div>
     </div>
 <script data-compress="off">
     //为阿拉丁单条结果实例创建数据
@@ -3257,7 +3274,7 @@ bds.base64 = (function () {
 
 
 
-<div class="head_nums_cont_outer OP_LOG" ><div class="head_nums_cont_inner" ><div class="search_tool_conter"><span class="c-gap-left-samll search_tool_close"><i class="c-icon searchTool-up c-icon-chevron-top-gray-s"></i>收起工具</span><span class="search_tool_tf ">时间不限<i class="c-icon c-icon-triangle-down"></i></span><span class="search_tool_ft c-gap-left">所有网页和文件<i class="c-icon c-icon-triangle-down"></i></span><span class="search_tool_si c-gap-left">站点内检索<i class="c-icon c-icon-triangle-down"></i></span></div><div class="nums"><div class="search_tool" ><i class="c-icon searchTool-spanner c-icon-setting"></i>搜索工具</div><span class="nums_text">百度为您找到相关结果约326,000个</span></div></div></div>
+<div class="head_nums_cont_outer OP_LOG" ><div class="head_nums_cont_inner" ><div class="search_tool_conter"><span class="c-gap-left-samll search_tool_close"><i class="c-icon searchTool-up c-icon-chevron-top-gray-s"></i>收起工具</span><span class="search_tool_tf ">时间不限<i class="c-icon c-icon-triangle-down"></i></span><span class="search_tool_ft c-gap-left">所有网页和文件<i class="c-icon c-icon-triangle-down"></i></span><span class="search_tool_si c-gap-left">站点内检索<i class="c-icon c-icon-triangle-down"></i></span></div><div class="nums"><div class="search_tool" ><i class="c-icon searchTool-spanner c-icon-setting"></i>搜索工具</div><span class="nums_text">百度为您找到相关结果约258,000个</span></div></div></div>
 <script type="text/javascript">
 	bds.comm.search_tool = {};
 	bds.comm.search_tool.sl_lang = "";
@@ -3267,14 +3284,14 @@ bds.base64 = (function () {
 	bds.comm.search_tool.ft = "";
 	bds.comm.search_tool.si = "";
 	bds.comm.search_tool.exact = "";
-	bds.comm.search_tool.oneDay = "1582532664";
-	bds.comm.search_tool.oneWeek = "1582014264";
-	bds.comm.search_tool.oneMonth = "1579940664";
-	bds.comm.search_tool.oneYear = "1551083064";
-	bds.comm.search_tool.thisDay = "1582473600";
-	bds.comm.search_tool.thisWeek = "1581955200";
-	bds.comm.search_tool.thisMonth = "1579881600";
-	bds.comm.search_tool.thisYear = "1551024000";
+	bds.comm.search_tool.oneDay = "1582811443";
+	bds.comm.search_tool.oneWeek = "1582293043";
+	bds.comm.search_tool.oneMonth = "1580219443";
+	bds.comm.search_tool.oneYear = "1551361843";
+	bds.comm.search_tool.thisDay = "1582732800";
+	bds.comm.search_tool.thisWeek = "1582214400";
+	bds.comm.search_tool.thisMonth = "1580140800";
+	bds.comm.search_tool.thisYear = "1551283200";
 	bds.comm.search_tool.actualResultLang = "cn";
 </script>
 
@@ -3292,7 +3309,7 @@ bds.base64 = (function () {
 
 	
 		
-			<div id="rs_top_new"><div class="c-gap-bottom-small f13"><span class="c-gray"><i class="c-icon c-icon-bear-circle c-gap-right-small res-queryext-pos"></i>相关搜索：</span><a class="res-gap-right16" href="/s?wd=python%E7%AC%AC%E4%B8%89%E7%89%88%E6%95%99%E7%A8%8Bpdf&rsv_rsp=1&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python第三版教程pdf</a><a class="res-gap-right16" href="/s?wd=python%E5%88%9D%E5%AD%A6%E8%80%85%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B&rsv_rsp=2&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python初学者完整教程</a><a class="res-gap-right16" href="/s?wd=%E8%87%AA%E5%AD%A6python%E6%95%99%E7%A8%8B%E8%A7%86%E9%A2%91&rsv_rsp=3&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">自学python教程视频</a></div></div>
+			<div id="rs_top_new"><div class="c-gap-bottom-small f13"><span class="c-gray"><i class="c-icon c-icon-bear-circle c-gap-right-small res-queryext-pos"></i>相关搜索：</span><a class="res-gap-right16" href="/s?wd=python%E7%AC%AC%E4%B8%89%E7%89%88%E6%95%99%E7%A8%8Bpdf&rsv_rsp=1&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python第三版教程pdf</a><a class="res-gap-right16" href="/s?wd=python%E5%88%9D%E5%AD%A6%E8%80%85%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B&rsv_rsp=2&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python初学者完整教程</a><a class="res-gap-right16" href="/s?wd=%E8%87%AA%E5%AD%A6python%E6%95%99%E7%A8%8B%E8%A7%86%E9%A2%91&rsv_rsp=3&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">自学python教程视频</a></div></div>
 	
 	
 
@@ -3326,14 +3343,14 @@ bds.base64 = (function () {
 			'F1':'9D73F1C4',
 			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'E9DFBE7C'
+			'T':'1582897843',
+						'y':'3EBEF355'
 												}"
-        href = "http://www.baidu.com/link?url=IBruZh1ZFcADPyBwvBACtl3z5xKrKdGf8x7sJdcQ0L4lLHv8fFhffxNlXGqQwIwu"
+        href = "http://www.baidu.com/link?url=JKZS32U657735nLS23ZnSRMcpp9P77NJ_Qb3MiDh12MaBRuon1W9utoexx42Jv-EhMTXAsjSxE3_mBRXFH82xq"
 
 		            target="_blank"
         
-		><em>Python</em>入门_<em>Python</em>入门<em>教程</em>_<em>python</em>入门视频<em>教程</em>-慕课网</a></h3><div class="c-abstract">简介:<em>Python教程</em>基础分《<em>Python</em>入门》和《<em>Python</em>进阶》两门课程,本视频<em>教程</em>是<em>Python</em>第一门课程,是<em>Python</em>开发的入门<em>教程</em>,将介绍<em>Python</em>语言的特点和适用范围,<em>Python</em>基本...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=IBruZh1ZFcADPyBwvBACtl3z5xKrKdGf8x7sJdcQ0L4lLHv8fFhffxNlXGqQwIwu" class="c-showurl" style="text-decoration:none;">www.imooc.com/learn/...&nbsp;</a><div class="c-tools" id="tools_5115399324845272446_11" data-tools='{"title":"Python入门_Python入门教程_python入门视频教程-慕课网 ","url":"http://www.baidu.com/link?url=IBruZh1ZFcADPyBwvBACtl3z5xKrKdGf8x7sJdcQ0L4lLHv8fFhffxNlXGqQwIwu"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f738638a8d4468d4e419ce3b461f1035a3e73a211501c780212757a00b17acaa6b2e200351a0ebbe9f3bacace22938f956&p=937cc54ad0c907f40ebe9b7c550c&newp=882a934f848433b302be9b7c1b4792695d0fc20e3bd5d401298ffe0cc4241a1a1a3aecbf22291601d1cf786c0aaa4f56eaf133723d0034f1f689df08d2ecce7e7dcf55282a&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=11"
+		><em>Python</em> <em>教程</em></a></h3><div class="c-abstract">在我们的数据库章节,您将学习如何访问和使用 MySQL 和 MongoDB 数据库: <em>Python</em> MySQL <em>教程</em> <em>Python</em> MongoDB <em>教程Python</em> 实例 通过实例学习!本<em>教程</em>为您提供清晰的实...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=JKZS32U657735nLS23ZnSRMcpp9P77NJ_Qb3MiDh12MaBRuon1W9utoexx42Jv-EhMTXAsjSxE3_mBRXFH82xq" class="c-showurl" style="text-decoration:none;">https://www.w3school.com.cn/<b>py</b>...&nbsp;</a><div class="c-tools" id="tools_16352018246103110865_11" data-tools='{"title":"Python 教程","url":"http://www.baidu.com/link?url=JKZS32U657735nLS23ZnSRMcpp9P77NJ_Qb3MiDh12MaBRuon1W9utoexx42Jv-EhMTXAsjSxE3_mBRXFH82xq"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce80392216af3e19ebb167286a5e7ea09bbfd91782ac925f7ed43a763b5adc1c4ece42f39d116fd620e709a8ed&p=8b2a975486cc42ac5ba8d5684b5f86&newp=882a9646d58b59b40be2962b1c0dcf231610db2151d7d5106b82c825d7331b001c3bbfb423271b00d8c1766202ac4e5de1f13d72310923a3dda5c91d9fb4c57479c03f2f&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=11"
                         target="_blank"
                     class="m">百度快照</a></div></div>
 											
@@ -3348,28 +3365,25 @@ bds.base64 = (function () {
 		
 				
 														
-																																									<div class="result c-container " id="12" srcid="1525" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a
+																																									<div class="result c-container " id="12" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a
 	        data-click="{
-			'F':'778717EA',
+			'F':'778317EA',
 			'F1':'9D73F1C4',
-			'F2':'4CA6DD6B',
+			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'D7F7EFFE'
+			'T':'1582897843',
+						'y':'B9EBEFF9'
 												}"
-        href = "http://www.baidu.com/link?url=cP4aIp7H2s4KGSLOzLP1xG1wd_ih3vVsliH70y35XTNEV4GNsYt5OSr3_S_5VayvQ-DDJ7W5eJsVIRZAS21soZIGr09CKMF_4qC-CMZDhgGRSqDYI9M9o7xn08y2g90e"
+        href = "http://www.baidu.com/link?url=LS7oXEOs0AU4ASn2q77Ss4P6YeFBIyImxbIelO-jSf_5sGxmkk3q2KWh4LvWrdtyBN2Dz1ik6t_IledCA6Ln5q"
 
 		            target="_blank"
         
-		><em>Python</em>基础<em>教程</em>第1章_图文_百度文库</a></h3><p class="f13 m"><span class="c-icon c-icon-ppt c-gap-icon-right-small"></span>49页 发布时间: 2019年07月10日</p><div class="c-abstract"><em>Python</em>基础<em>教程</em>第1章 - <em>Python</em>程序设计<em>教程</em> 第1章 <em>Python</em>概述 课程描述 <em>Python</em>诞生于20世纪90年 代初,是一种解释型、面 向对象、动态数据类型的 高级程序设计语...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=cP4aIp7H2s4KGSLOzLP1xG1wd_ih3vVsliH70y35XTNEV4GNsYt5OSr3_S_5VayvQ-DDJ7W5eJsVIRZAS21soZIGr09CKMF_4qC-CMZDhgGRSqDYI9M9o7xn08y2g90e" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
-.nor-src-icon {vertical-align: middle;width: 14px;height: 14px;border: 1px solid #eee;border-radius: 100%;margin-right: 5px;margin-top: -3px;position: relative;}
-.nor-src-icon-with-v {margin-right: 10px;}
-.nor-src-icon-v {display: inline-block;width: 10px;height: 10px;border-radius: 100%;position: absolute;left: 8px;bottom: 0;background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);background-size: 10px 10px;}
-.nor-src-icon-v.vicon-1 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/red-v.png);}
-.nor-src-icon-v.vicon-2 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/blue-v.png);}
-.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://pic.rmb.bdstatic.com/86207b67cb0c88d82589c0280e5f6682.jpeg">百度文库</span></a><div class="c-tools" id="tools_14389333244556468520_12" data-tools='{"title":"Python基础教程第1章_图文_百度文库","url":"http://www.baidu.com/link?url=cP4aIp7H2s4KGSLOzLP1xG1wd_ih3vVsliH70y35XTNEV4GNsYt5OSr3_S_5VayvQ-DDJ7W5eJsVIRZAS21soZIGr09CKMF_4qC-CMZDhgGRSqDYI9M9o7xn08y2g90e"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce802b3b58e85e5c9da06529614437b7ec99d515c0ffc97f6a9527672148d14218d61ffcca41729674c60be3f918e2bea765c0f98180895707cb55017181f388510303ca18aa526ebd&p=ce578f0a8d904ead08e292784f40&newp=c47fcd1b86cc47a910abc7710f5592695c03dc3a7bc8944e3db9974b8732002c0331a3fa7c7f4c0bd7c0776104ad4358e1fb3376300123b19dc38d5e9bd6d37f6d8770682654c0&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=12"
+		><em>Python</em>入门<em>教程</em>-我要自学网</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=LS7oXEOs0AU4ASn2q77Ss4P6YeFBIyImxbIelO-jSf_5sGxmkk3q2KWh4LvWrdtyBN2Dz1ik6t_IledCA6Ln5q"
+                target="_blank"
+      ><img class="c-img c-img6" src="https://dss0.baidu.com/73F1bjeh1BF3odCf/it/u=214375341,1124539986&fm=85&s=66B317C542025B5F102525DB0300C060"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>Python</em>入门<em>教程</em> 共106小节 已有149969人学过 2018年12月推出 课程概要 本门课程是一门真正的零基础入门课程,但绝不止于入门水平,本课程还会逐步带你从入门走向...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=LS7oXEOs0AU4ASn2q77Ss4P6YeFBIyImxbIelO-jSf_5sGxmkk3q2KWh4LvWrdtyBN2Dz1ik6t_IledCA6Ln5q" class="c-showurl" style="text-decoration:none;">https://www.51zxw.net/li...asp...&nbsp;</a><div class="c-tools" id="tools_17072123496002396964_12" data-tools='{"title":"Python入门教程-我要自学网","url":"http://www.baidu.com/link?url=LS7oXEOs0AU4ASn2q77Ss4P6YeFBIyImxbIelO-jSf_5sGxmkk3q2KWh4LvWrdtyBN2Dz1ik6t_IledCA6Ln5q"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b92235c4380143bd4985f3ac3933fcf331d5c193da2fd302267579287367000db1807bce73704320023a3de95c81cd2f9d96e75d57b23706d913164c468dedc3624d651e1&p=987883059e934eab5ca9c7710f7a&newp=c27e8e15d9c745be34be9b7c165192695d0fc20e38ddd601298ffe0cc4241a1a1a3aecbf2229140fd7cf796402a84857ebfb36743d0034f1f689df08d2ecce7e3ee4&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=12"
                         target="_blank"
-                    class="m">百度快照</a></div></div>
+                    class="m">百度快照</a></div></div></div></div>
 											
 		
 						
@@ -3388,20 +3402,14 @@ bds.base64 = (function () {
 			'F1':'9D73F1C4',
 			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'BFF1FDFF'
+			'T':'1582897843',
+						'y':'E97FEEDE'
 												}"
-        href = "http://www.baidu.com/link?url=0gE8Kyh6oAWDbqEMBnD7rH4qGWzjvCSOIVzutBB8nQI3bm4Fsr1w8ux3qjSzhJ0-"
+        href = "http://www.baidu.com/link?url=fbW-dqvlfmRjDC2wzSBBCTXa5xwURWRlWSpPiBDz3Cpa33syZrdpeYGjkb59FwiW"
 
 		            target="_blank"
         
-		><em>Python</em>经典<em>教程</em>_专题_脚本之家</a></h3><div class="c-abstract">跟老齐学<em>Python</em>之赋值,简单也不简单 <em>python</em>赋值操作方法分享 <em>python</em>局部赋值的规则 <em>Python</em>语句 <em>Python</em>中的条件判断语句基础学习<em>教程</em> 一波神奇的<em>Python</em>语句、函数与方法的...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=0gE8Kyh6oAWDbqEMBnD7rH4qGWzjvCSOIVzutBB8nQI3bm4Fsr1w8ux3qjSzhJ0-" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
-.nor-src-icon {vertical-align: middle;width: 14px;height: 14px;border: 1px solid #eee;border-radius: 100%;margin-right: 5px;margin-top: -3px;position: relative;}
-.nor-src-icon-with-v {margin-right: 10px;}
-.nor-src-icon-v {display: inline-block;width: 10px;height: 10px;border-radius: 100%;position: absolute;left: 8px;bottom: 0;background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);background-size: 10px 10px;}
-.nor-src-icon-v.vicon-1 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/red-v.png);}
-.nor-src-icon-v.vicon-2 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/blue-v.png);}
-.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://timg01.bdimg.com/timg?pacompress&amp;imgtype=0&amp;sec=1439619614&amp;di=22381dca34c76fa54451ccaa476ee9b4&amp;quality=90&amp;size=b870_10000&amp;src=http%3A%2F%2Fbos.nj.bpc.baidu.com%2Fv1%2Fmediaspot%2F518b3712ae43027b89d9ca332fb032f3.jpeg">脚本之家</span></a><div class="c-tools" id="tools_11762333543608893979_13" data-tools='{"title":"Python经典教程_专题_脚本之家","url":"http://www.baidu.com/link?url=0gE8Kyh6oAWDbqEMBnD7rH4qGWzjvCSOIVzutBB8nQI3bm4Fsr1w8ux3qjSzhJ0-"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce80392216af3e04baf7356537747ce0ddd5e9088aeac97b71952034720b8636489546&p=882a9644d18650bc1dbe9b7c570890&newp=882a9644d1d216fc57efd7211505a5231610db2151d6d11f6b82c825d7331b001c3bbfb423271b02d6c776630aa44c5ae0f03777370923a3dda5c91d9fb4c574799970&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=13"
+		><em>Python</em>入门_<em>Python</em>入门<em>教程</em>_<em>python</em>入门视频<em>教程</em>-慕课网</a></h3><div class="c-abstract">简介:<em>Python教程</em>基础分《<em>Python</em>入门》和《<em>Python</em>进阶》两门课程,本视频<em>教程</em>是<em>Python</em>第一门课程,是<em>Python</em>开发的入门<em>教程</em>,将介绍<em>Python</em>语言的特点和适用范围,<em>Python</em>基本...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=fbW-dqvlfmRjDC2wzSBBCTXa5xwURWRlWSpPiBDz3Cpa33syZrdpeYGjkb59FwiW" class="c-showurl" style="text-decoration:none;">www.imooc.com/learn/...&nbsp;</a><div class="c-tools" id="tools_5115399324845272446_13" data-tools='{"title":"Python入门_Python入门教程_python入门视频教程-慕课网 ","url":"http://www.baidu.com/link?url=fbW-dqvlfmRjDC2wzSBBCTXa5xwURWRlWSpPiBDz3Cpa33syZrdpeYGjkb59FwiW"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f738638a8d4468d4e419ce3b461f1035a3e73a211501c780212757a00b17acaa6b2e200351a0ebbe9f3bacace22938f956&p=987883059e934ea952a9c7710f7a&newp=c27e8e15d9c54bbe34be9b7c165192695d0fc20e3bd5d401298ffe0cc4241a1a1a3aecbf22291500d6c07d6d02ac4f5deaf136743d0034f1f689df08d2ecce7e3ee4&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=13"
                         target="_blank"
                     class="m">百度快照</a></div></div>
 											
@@ -3418,23 +3426,20 @@ bds.base64 = (function () {
 														
 																																									<div class="result c-container " id="14" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a
 	        data-click="{
-			'F':'778317EA',
+			'F':'778717EA',
 			'F1':'9D73F1C4',
-			'F2':'4CA6DE6B',
+			'F2':'4CA6DD6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'BF2F4EFE'
+			'T':'1582897843',
+						'y':'D8F6BD7B'
 												}"
-        href = "http://www.baidu.com/link?url=T8PV3h0a45R1OqFtUWL0nji5awoGusbPD4ze2c7RoEoSlE5mO9Uc3WNPM0iogTvMZhkLtS4Hi_nIiTttXJku8a"
+        href = "http://www.baidu.com/link?url=TRDEe1IOlbkQ4HSqIndtx4a4-MEEGz9lBfDPrZu5zy8l6iyt5zHUbj8uqP4rT2bL"
 
 		            target="_blank"
         
-		><em>Python</em>入门<em>教程</em>-我要自学网</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
-          href="http://www.baidu.com/link?url=T8PV3h0a45R1OqFtUWL0nji5awoGusbPD4ze2c7RoEoSlE5mO9Uc3WNPM0iogTvMZhkLtS4Hi_nIiTttXJku8a"
-                target="_blank"
-      ><img class="c-img c-img6" src="https://dss0.baidu.com/73F1bjeh1BF3odCf/it/u=214375341,1124539986&fm=85&s=66B317C542025B5F102525DB0300C060"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><em>Python</em>入门<em>教程</em> 共106小节 已有145363人学过 2018年12月推出 课程概要 本门课程是一门真正的零基础入门课程,但绝不止于入门水平,本课程还会逐步带你从入门走向...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=T8PV3h0a45R1OqFtUWL0nji5awoGusbPD4ze2c7RoEoSlE5mO9Uc3WNPM0iogTvMZhkLtS4Hi_nIiTttXJku8a" class="c-showurl" style="text-decoration:none;">https://www.51zxw.net/li...asp...&nbsp;</a><div class="c-tools" id="tools_17072123496002396964_14" data-tools='{"title":"Python入门教程-我要自学网","url":"http://www.baidu.com/link?url=T8PV3h0a45R1OqFtUWL0nji5awoGusbPD4ze2c7RoEoSlE5mO9Uc3WNPM0iogTvMZhkLtS4Hi_nIiTttXJku8a"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b92235c4380143bd4985f3ac3933fcf331d5c193da2fd302267579287367000db1807bce73704320023a3de95c81cd2f9d96e75d57b23706d913164c468dedc3624d651e1&p=903dc64ad49e11a05ce9c027514c&newp=c273d415d9c745f911a5c7710f5d92695d0fc20e38ddd601298ffe0cc4241a1a1a3aecbf22291601d1cf786c0aaa4f56eaf133723d0034f1f689df08d2ecce7e79c16f&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=14"
+		><em>Python</em> 基础<em>教程</em> - 自强学堂</a></h3><div class="c-abstract">自强学堂提供的<em>Python</em> 基础<em>教程</em>。 <em>Python</em>是一种解释型、面向对象、动态数据类型的高级程序设计语言。</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=TRDEe1IOlbkQ4HSqIndtx4a4-MEEGz9lBfDPrZu5zy8l6iyt5zHUbj8uqP4rT2bL" class="c-showurl" style="text-decoration:none;">https://code.ziqiangxuetang.co...&nbsp;</a><div class="c-tools" id="tools_10603507660162583914_14" data-tools='{"title":"Python 基础教程 - 自强学堂","url":"http://www.baidu.com/link?url=TRDEe1IOlbkQ4HSqIndtx4a4-MEEGz9lBfDPrZu5zy8l6iyt5zHUbj8uqP4rT2bL"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b863b4f0397634b9f8b562487cf1dd9230c07143ab6ac275541598cd83e2c47f51400feb56b32610c62fcdd92d516cabbe33f5ffe3045010bf64005a268&p=c961c64ad4d010c308e2977e064e94&newp=807ed301ce9412a05abd9b7d0d1dcb231610db2151d7db126b82c825d7331b001c3bbfb423271b00d8c1766202ac4e5de1f13d72310923a3dda5c91d9fb4c57479&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=14"
                         target="_blank"
-                    class="m">百度快照</a></div></div></div></div>
+                    class="m">百度快照</a></div></div>
 											
 		
 						
@@ -3453,23 +3458,23 @@ bds.base64 = (function () {
 			'F1':'9D73F1C4',
 			'F2':'4CA6DD6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'F77F5FC5'
+			'T':'1582897843',
+						'y':'FBFFF7ED'
 												}"
-        href = "http://www.baidu.com/link?url=MOrXroiur3q8sysH8-06qDfPHSDmefFcc0NP21XrZhaKDwMKQ5mwiGjLdQMxJP53tl-Ymv4lqRRjAh2_TLKJK12AX0hmmKAPSSCZMqK5guW"
+        href = "http://www.baidu.com/link?url=NUFm02NiT7Lkmyb8H3MfzmySdo7UogdWmV5hxSugil2-SoGoqG6ysZ4Wd3KlOJNe"
 
 		            target="_blank"
         
-		><em>python</em>开发大全、系列文章、精品<em>教程</em> - 全栈工程师开发..._CSDN博客</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
-          href="http://www.baidu.com/link?url=MOrXroiur3q8sysH8-06qDfPHSDmefFcc0NP21XrZhaKDwMKQ5mwiGjLdQMxJP53tl-Ymv4lqRRjAh2_TLKJK12AX0hmmKAPSSCZMqK5guW"
+		><em>python教程</em>|中国少儿编程网</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=NUFm02NiT7Lkmyb8H3MfzmySdo7UogdWmV5hxSugil2-SoGoqG6ysZ4Wd3KlOJNe"
                 target="_blank"
-      ><img class="c-img c-img6" src="https://dss0.baidu.com/73t1bjeh1BF3odCf/it/u=1362163043,768221560&fm=85&s=F8A2B353DF436ACE4C4DECD6030050F2"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><span class=" newTimeFactor_before_abs m">2019年11月7日&nbsp;-&nbsp;</span><em>python</em>基础<em>教程python</em>基础系列<em>教程</em>——<em>Python</em>的安装与测试:<em>python</em>解释器、PyDev编辑器、pycharm编译器<em>python</em>基础系列<em>教程</em>——<em>Python</em>库的安装与卸载<em>python</em>基础系列<em>教程</em>——...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=MOrXroiur3q8sysH8-06qDfPHSDmefFcc0NP21XrZhaKDwMKQ5mwiGjLdQMxJP53tl-Ymv4lqRRjAh2_TLKJK12AX0hmmKAPSSCZMqK5guW" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
+      ><img class="c-img c-img6" src="https://dss0.baidu.com/73t1bjeh1BF3odCf/it/u=2339049245,319448039&fm=85&s=D33314C65AF7EDCA1EBE52110300D0C9"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><span class=" newTimeFactor_before_abs m">2020年2月19日&nbsp;-&nbsp;</span>这是一个面向少儿的<em>教程</em>,不过只要想学些编程,任何人都可以。本<em>教程</em>不要求你之前对编程有任何了解,不过最起码你要知道怎么使用计算机。只要能在电脑上做一些基本的...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=NUFm02NiT7Lkmyb8H3MfzmySdo7UogdWmV5hxSugil2-SoGoqG6ysZ4Wd3KlOJNe" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
 .nor-src-icon {vertical-align: middle;width: 14px;height: 14px;border: 1px solid #eee;border-radius: 100%;margin-right: 5px;margin-top: -3px;position: relative;}
 .nor-src-icon-with-v {margin-right: 10px;}
 .nor-src-icon-v {display: inline-block;width: 10px;height: 10px;border-radius: 100%;position: absolute;left: 8px;bottom: 0;background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);background-size: 10px 10px;}
 .nor-src-icon-v.vicon-1 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/red-v.png);}
 .nor-src-icon-v.vicon-2 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/blue-v.png);}
-.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://cambrian-images.cdn.bcebos.com/ea7e0c7af4673ed4cd13dc1c2b27c1eb_1562913917952.jpeg">CSDN技术社区</span></a><div class="c-tools" id="tools_10633137225718292213_15" data-tools='{"title":"python开发大全、系列文章、精品教程 - 全栈工程师开发..._CSDN博客","url":"http://www.baidu.com/link?url=MOrXroiur3q8sysH8-06qDfPHSDmefFcc0NP21XrZhaKDwMKQ5mwiGjLdQMxJP53tl-Ymv4lqRRjAh2_TLKJK12AX0hmmKAPSSCZMqK5guW"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b8738440197634b86914323c3933fcf331d5c1921b0e765754c51d9c57b610ba84d57efed6532715871e9ccd5de1d9be8c9766e95223e711a834713d20dea960673ce62db1cb3f245f0ba8125e3d8c5a2ae4323cb44740b&p=c0759a4fca8b12a05ab88e2f15&newp=9b70c64ad4d95fff57e7d42f1353d8224216ed673cd3c44324b9d71fd325001c1b69e7be2c241506d9c1776c04a9435cebf53678341766dada9fca458ae7c43231&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=15"
+.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://cambrian-images.cdn.bcebos.com/e197b65481e63a1b3256f066371597b6_1541727248367.jpeg">kidscode少儿编程</span></a><div class="c-tools" id="tools_11968970988947858397_15" data-tools='{"title":"python教程|中国少儿编程网","url":"http://www.baidu.com/link?url=NUFm02NiT7Lkmyb8H3MfzmySdo7UogdWmV5hxSugil2-SoGoqG6ysZ4Wd3KlOJNe"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed4fece763105392230e54f73a678191442282c45f93130a1d5a24a8fd7d7f4c19c780212757a00b17acaa6b2e200351a0ebbe9f3bacace22938f956&p=c961c64ad4d010c308e2927a5555&newp=807ed301ce9412a05abd9b78090a92695d0fc20e38d3d601298ffe0cc4241a1a1a3aecbf2229140fd7cf796402a84857ebfb36743d0034f1f689df08d2ecce7e&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=15"
                         target="_blank"
                     class="m">百度快照</a></div></div></div></div>
 											
@@ -3490,14 +3495,14 @@ bds.base64 = (function () {
 			'F1':'9D73F1C4',
 			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'3FAF5FFD'
+			'T':'1582897843',
+						'y':'5FEFFFBF'
 												}"
-        href = "http://www.baidu.com/link?url=TxHxaskpiQbGKsQQXzn4UcuS6pkInwFB17T-zZ5QDhZbsZins5FpLZpjytwz9fJnHpH3jk_9Mqy8C9MeQggrY_"
+        href = "http://www.baidu.com/link?url=bbn6lU76X3kGNse08YR5mMYcqmRudVEk9BXRnyKUh97FtpvIodFlJB5VEemEAGZTVyTdNl0gzWgqEvrWXUAvCa"
 
 		            target="_blank"
         
-		><em>Python</em> <em>教程</em></a></h3><div class="c-abstract">在我们的数据库章节,您将学习如何访问和使用 MySQL 和 MongoDB 数据库: <em>Python</em> MySQL <em>教程</em> <em>Python</em> MongoDB <em>教程Python</em> 实例 通过实例学习!本<em>教程</em>为您提供清晰的实...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=TxHxaskpiQbGKsQQXzn4UcuS6pkInwFB17T-zZ5QDhZbsZins5FpLZpjytwz9fJnHpH3jk_9Mqy8C9MeQggrY_" class="c-showurl" style="text-decoration:none;">https://www.w3school.com.cn/<b>py</b>...&nbsp;</a><div class="c-tools" id="tools_16352018246103110865_16" data-tools='{"title":"Python 教程","url":"http://www.baidu.com/link?url=TxHxaskpiQbGKsQQXzn4UcuS6pkInwFB17T-zZ5QDhZbsZins5FpLZpjytwz9fJnHpH3jk_9Mqy8C9MeQggrY_"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b92235c43801479d691442589ce1684642c101a39f4bb50734c19918e3a3d5cf35407b6a66138200357e4da8a9c0f80fbc4276dc3616e2d40914163c469d9dc3754d650914d98de&p=80759a46d5c010b50be2962c514e83&newp=9c6a860d85cc43bc40bd9b7d0e15bb231610db2151d7d5106b82c825d7331b001c3bbfb423271b02d6c776630aa44c5ae0f03777370923a3dda5c91d9fb4c574799b3f&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=16"
+		>图解<em>Python</em>(1)(基础篇)_共123课时-51CTO学院</a></h3><div class="c-abstract"><span class=" newTimeFactor_before_abs m">2020年2月9日&nbsp;-&nbsp;</span>通俗易懂的<em>Python</em>视频<em>教程</em>!! 《图解<em>Python</em>》专题:https://edu.51cto.com/topic/1559.html,包括所有课程,更划算!!! 说在前面的话 本套视频课程的优势和...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=bbn6lU76X3kGNse08YR5mMYcqmRudVEk9BXRnyKUh97FtpvIodFlJB5VEemEAGZTVyTdNl0gzWgqEvrWXUAvCa" class="c-showurl" style="text-decoration:none;">https://edu.51cto.com/course/c...&nbsp;</a><div class="c-tools" id="tools_14883584458887942138_16" data-tools='{"title":"图解Python(1)(基础篇)_共123课时-51CTO学院","url":"http://www.baidu.com/link?url=bbn6lU76X3kGNse08YR5mMYcqmRudVEk9BXRnyKUh97FtpvIodFlJB5VEemEAGZTVyTdNl0gzWgqEvrWXUAvCa"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce922a2016af3e5be9a1702f200357e6c697951b80fcd26978957669375cc71605d46df49d5125b7239050ebae0ee7cdaa74ccf0&p=8b2a970f8b9d5fe61dbd9b7d0e64&newp=882a9646848300dd0be29637590892695d0fc20e3ddddb01298ffe0cc4241a1a1a3aecbf22291500d6c07d6d02ac4f5deaf136743d0034f1f689df08d2ecce7e7dc86646&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=16"
                         target="_blank"
                     class="m">百度快照</a></div></div>
 											
@@ -3514,23 +3519,26 @@ bds.base64 = (function () {
 														
 																																									<div class="result c-container " id="17" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a
 	        data-click="{
-			'F':'778717EA',
+			'F':'778317EA',
 			'F1':'9D73F1C4',
-			'F2':'4CA6DD6B',
+			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'17F3AFE5'
+			'T':'1582897843',
+						'y':'FFFF6E7F'
 												}"
-        href = "http://www.baidu.com/link?url=7VHVSnsHEHqoZ8R10dcc8MPf2LzftTnwB6hw14wGJYaplwfrUMT_AArf0baH3nNRuc2qE8fN9G3KM8l_da5EA_"
+        href = "http://www.baidu.com/link?url=KJjtboQGbsjCr3Z-atjIEdpBDBpZ_m_4gpoKUwqY2o6WbnG6ymri53waxX06G2g8"
 
 		            target="_blank"
         
-		><em>Python</em>视频<em>教程</em>_<em>Python</em>入门<em>教程</em>_<em>Python</em>实战<em>教程</em>-51CTO学院</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
-          href="http://www.baidu.com/link?url=7VHVSnsHEHqoZ8R10dcc8MPf2LzftTnwB6hw14wGJYaplwfrUMT_AArf0baH3nNRuc2qE8fN9G3KM8l_da5EA_"
-                target="_blank"
-      ><img class="c-img c-img6" src="https://dss0.baidu.com/73t1bjeh1BF3odCf/it/u=333997535,1137021427&fm=85&s=F869AA5640004F5D08BB32D5030030B8"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract">51CTO学院<em>Python</em>课程栏目为您提供<em>Python教程</em>,<em>Python</em>视频<em>教程</em>,<em>Python</em>入门<em>教程</em>,<em>Python</em>实战<em>教程</em>,<em>Python</em>基础<em>教程</em>,<em>Python</em>从入门到精通等<em>Python教程</em>大全,一线技术大牛实战分享,...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=7VHVSnsHEHqoZ8R10dcc8MPf2LzftTnwB6hw14wGJYaplwfrUMT_AArf0baH3nNRuc2qE8fN9G3KM8l_da5EA_" class="c-showurl" style="text-decoration:none;">https://edu.51cto.com/courseli...&nbsp;</a><div class="c-tools" id="tools_14810425830092265646_17" data-tools='{"title":"Python视频教程_Python入门教程_Python实战教程-51CTO学院","url":"http://www.baidu.com/link?url=7VHVSnsHEHqoZ8R10dcc8MPf2LzftTnwB6hw14wGJYaplwfrUMT_AArf0baH3nNRuc2qE8fN9G3KM8l_da5EA_"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b80305e4380143bd4815322c3933fc239045c163ba4fb66754e5f928361620bb8492bb0b6692c23467df7cdc7ca019be1cf7438885623006a913063c469aedc3754&p=937cc54ad2c107f40ebe9b7c550c&newp=882a9147848433b302be9b7c1b4792695d0fc20e3bd4da01298ffe0cc4241a1a1a3aecbf22291601d1cf786c0aaa4f56eaf133723d0034f1f689df08d2ecce7e7dcf55282a&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=17"
+		><em>Python</em>经典<em>教程</em>_专题_脚本之家</a></h3><div class="c-abstract">跟老齐学<em>Python</em>之赋值,简单也不简单 <em>python</em>赋值操作方法分享 <em>python</em>局部赋值的规则 <em>Python</em>语句 <em>Python</em>中的条件判断语句基础学习<em>教程</em> 一波神奇的<em>Python</em>语句、函数与方法的...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=KJjtboQGbsjCr3Z-atjIEdpBDBpZ_m_4gpoKUwqY2o6WbnG6ymri53waxX06G2g8" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
+.nor-src-icon {vertical-align: middle;width: 14px;height: 14px;border: 1px solid #eee;border-radius: 100%;margin-right: 5px;margin-top: -3px;position: relative;}
+.nor-src-icon-with-v {margin-right: 10px;}
+.nor-src-icon-v {display: inline-block;width: 10px;height: 10px;border-radius: 100%;position: absolute;left: 8px;bottom: 0;background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);background-size: 10px 10px;}
+.nor-src-icon-v.vicon-1 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/red-v.png);}
+.nor-src-icon-v.vicon-2 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/blue-v.png);}
+.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://timg01.bdimg.com/timg?pacompress&amp;imgtype=0&amp;sec=1439619614&amp;di=22381dca34c76fa54451ccaa476ee9b4&amp;quality=90&amp;size=b870_10000&amp;src=http%3A%2F%2Fbos.nj.bpc.baidu.com%2Fv1%2Fmediaspot%2F518b3712ae43027b89d9ca332fb032f3.jpeg">脚本之家</span></a><div class="c-tools" id="tools_11762333543608893979_17" data-tools='{"title":"Python经典教程_专题_脚本之家","url":"http://www.baidu.com/link?url=KJjtboQGbsjCr3Z-atjIEdpBDBpZ_m_4gpoKUwqY2o6WbnG6ymri53waxX06G2g8"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce80392216af3e04baf7356537747ce0ddd5e9088aeac97b71952034720b8636489546&p=8b2a970f8b9d5fe61dbd9b7d0c11a5&newp=882a9644d19101ee2abe9b7c4442c9231610db2151d6d11f6b82c825d7331b001c3bbfb423271b01d7c079660bac4a5aebf03772310923a3dda5c91d9fb4c57479da677502&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=17"
                         target="_blank"
-                    class="m">百度快照</a></div></div></div></div>
+                    class="m">百度快照</a></div></div>
 											
 		
 						
@@ -3604,16 +3612,16 @@ bds.base64 = (function () {
     
 
 
-<div class="result-op c-container xpath-log"  srcid="1547"  id="18" tpl="bk_polysemy" mu="https://baike.baidu.com/item/Python基础教程/7430514" data-op="{'y':'9CC7DEFA'}" data-click="{'p1':'18','rsv_bdr':'0','fm':'albk',rsv_stl:''}">
+<div class="result-op c-container xpath-log"  srcid="1547"  id="18" tpl="bk_polysemy" mu="https://baike.baidu.com/item/Python基础教程/7430514" data-op="{'y':'BEFD7FDA'}" data-click="{'p1':'18','rsv_bdr':'0','fm':'albk',rsv_stl:''}">
             
         <h3 class="t c-gap-bottom-small">
-        <a href="http://www.baidu.com/link?url=-dhXYFk6xIxThEVFVv-EWc2tbpDBwpYpsu-45NEQ_6SBItGwgzFCpFbYiS7--m2YDGDlHc_kBO0G1GVYxu4VrfMxb6xTCHEzb05QFOpuCzGOE3lirHku8cvd1VWyDTTG06vV43plP1yeLAlkUgAHnK" target="_blank"><em>Python</em>基础<em>教程</em>_百度百科</a>
+        <a href="http://www.baidu.com/link?url=mjUvJ09gQkC8Kdk_L_gCTH1XBjGdcKDlKNnFZRU1qVy5sjcPo7J0S3AxyOMRpVjyPQhB_ul2x2LQNZyaTflngQknLcF7sEJ_NYJP8aBeHpdVrUeJuua31GR1ZfGiJoxST_L1YWMYvqkNAPDPEwj-Fa" target="_blank"><em>Python</em>基础<em>教程</em>_百度百科</a>
         </h3>
         
         
     <div class="c-row">
                         <div class="c-span6">
-            <a href="http://www.baidu.com/link?url=-dhXYFk6xIxThEVFVv-EWc2tbpDBwpYpsu-45NEQ_6SBItGwgzFCpFbYiS7--m2YDGDlHc_kBO0G1GVYxu4VrfMxb6xTCHEzb05QFOpuCzGOE3lirHku8cvd1VWyDTTG06vV43plP1yeLAlkUgAHnK" target="_blank" class="op-bk-polysemy-album op-se-listen-recommend" style="_height:141px">
+            <a href="http://www.baidu.com/link?url=mjUvJ09gQkC8Kdk_L_gCTH1XBjGdcKDlKNnFZRU1qVy5sjcPo7J0S3AxyOMRpVjyPQhB_ul2x2LQNZyaTflngQknLcF7sEJ_NYJP8aBeHpdVrUeJuua31GR1ZfGiJoxST_L1YWMYvqkNAPDPEwj-Fa" target="_blank" class="op-bk-polysemy-album op-se-listen-recommend" style="_height:141px">
                 <img class="c-img c-img6" src="https://dss1.bdstatic.com/6OF1bjeh1BF3odCf/it/u=345706224,240058798&fm=74&app=80&f=JPEG&size=f121,140?sec=1880279984&t=eb0749b61ae392a0211a62ccf01a1efe"  />
                             </a>
         </div>
@@ -3623,9 +3631,9 @@ bds.base64 = (function () {
                 </p>
                                            
                 <p>
-                                                                                                                            <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=41dsmM5jvhemaTj3qCpmsYUqRi9s68U3anMr8AkSRVwsqaFoiSiW9mmuuSZ3--grd5sTXbLkwUSWqAL63NmoXAVCeHOTfK9KxNzCnYBH7_EQntbVeS4t6B7cId5MHvm7xhLvqc4rIEmXdeCWUFuN2a" target="_blank" title="内容简介">内容简介</a>
-                                                                                                        <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=41dsmM5jvhemaTj3qCpmsYUqRi9s68U3anMr8AkSRVwsqaFoiSiW9mmuuSZ3--grd5sTXbLkwUSWqAL63NmoXAVCeHOTfK9KxNzCnYBH7_EQntbVeS4t6B7cId5MHvm7LfO0ZdRBh6lYg2J3Y-m8eq" target="_blank" title="作者简介">作者简介</a>
-                                                                                                        <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=41dsmM5jvhemaTj3qCpmsYUqRi9s68U3anMr8AkSRVwsqaFoiSiW9mmuuSZ3--grd5sTXbLkwUSWqAL63NmoXAVCeHOTfK9KxNzCnYBH7_EQntbVeS4t6B7cId5MHvm7WCuwLem0Chad6wCYpHDARq" target="_blank" title="图书目录">图书目录</a>
+                                                                                                                            <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=DrV-LLT6ZmSi4PMOYFueIsCFra3Ixjj48F3_NCRcehs8-pagGMoAE-N3hxfblAs7Ht1X2XOOaNUl9M89LFuGLIn_Mawjv3z6ZWf8mmARNpO354Gtjg_YaB7-9JHei2SFbqank9vg3Vw9c2tj2S63eq" target="_blank" title="内容简介">内容简介</a>
+                                                                                                        <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=DrV-LLT6ZmSi4PMOYFueIsCFra3Ixjj48F3_NCRcehs8-pagGMoAE-N3hxfblAs7Ht1X2XOOaNUl9M89LFuGLIn_Mawjv3z6ZWf8mmARNpO354Gtjg_YaB7-9JHei2SFRHwdoaPa6SJROlZ6qtFlMa" target="_blank" title="作者简介">作者简介</a>
+                                                                                                        <a class="c-gap-right-small op-se-listen-recommend" href="http://www.baidu.com/link?url=DrV-LLT6ZmSi4PMOYFueIsCFra3Ixjj48F3_NCRcehs8-pagGMoAE-N3hxfblAs7Ht1X2XOOaNUl9M89LFuGLIn_Mawjv3z6ZWf8mmARNpO354Gtjg_YaB7-9JHei2SFTqeyk-z-tw5JCzY9Kl-wwq" target="_blank" title="图书目录">图书目录</a>
                                                         </p>
                                                             <p class=" op-bk-polysemy-move"><span class="c-showurl">https://baike.baidu.com/ </span><span class="c-tools" id="tools_15811198829578955482_18" data-tools="{title:'Python基础教程_百度百科',url:'https://baike.baidu.com/item/Python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/7430514?fr=aladdin'}"><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></span></p> 
         </div>
@@ -3650,29 +3658,51 @@ bds.base64 = (function () {
 		
 				
 														
-																																									<div class="result c-container " id="19" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' }"  ><h3 class="t"><a
+																																									<div class="result c-container " id="19" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' ,'rsv_cd':'safe:1|t:1'}"  ><h3 class="t"><a
 	        data-click="{
 			'F':'778317EA',
 			'F1':'9D73F1C4',
 			'F2':'4CA6DE6B',
 			'F3':'54E5243F',
-			'T':'1582619064',
-						'y':'DFA947BF'
+			'T':'1582897843',
+						'y':'7FDBF358'
 												}"
-        href = "http://www.baidu.com/link?url=YzMuW3SJafDc3Alw_JftY1ZLinlf3U5Mb6dyp8hAKyUaA5WDb5k3X4jhbJ9GtJCG"
+        href = "http://www.baidu.com/link?url=PC0wa6_mAUlvlJoIhYQQOfRaeithE3AwArrMiLLbXSikDeUx0KIWW-31h4_2kyXI"
 
 		            target="_blank"
         
-		><em>Python</em>自学<em>教程</em>_<em>Python</em>视频<em>教程</em>从入门到精通_黑马程序员</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
-          href="http://www.baidu.com/link?url=YzMuW3SJafDc3Alw_JftY1ZLinlf3U5Mb6dyp8hAKyUaA5WDb5k3X4jhbJ9GtJCG"
+		><em>Python</em>400集大型视频<em>教程</em>-尚学堂</a></h3><div class="c-abstract">001.<em>Python</em>介绍_特性_版本问题_应用范围 002.<em>Python</em>下载_安装_配置_第一行<em>Python</em>程序 003.开发环境介绍_交互模式的使用_IDLE介绍和使用 004.IDLE开发环境的使用_建立...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=PC0wa6_mAUlvlJoIhYQQOfRaeithE3AwArrMiLLbXSikDeUx0KIWW-31h4_2kyXI" class="c-showurl" style="text-decoration:none;">https://www.bjsxt.com/down/84....&nbsp;</a><div class="c-tools" id="tools_8615468023748154219_19" data-tools='{"title":"Python400集大型视频教程-尚学堂","url":"http://www.baidu.com/link?url=PC0wa6_mAUlvlJoIhYQQOfRaeithE3AwArrMiLLbXSikDeUx0KIWW-31h4_2kyXI"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"><span class="c-trust-as baozhang-new c-icon c-icon-baozhang-new" data_key="7618812268276622505" hint-data='{"label":"北京尚学堂科技有限公司","url":"https://www.baidu.com/s?wd=%E5%8C%97%E4%BA%AC%E5%B0%9A%E5%AD%A6%E5%A0%82%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8@v&vmp_ec=a7dd17dcc8f2639d64fb9c5dfdj2=ed435c5dsJ394a3230diCn8bd83aXNff6y3e3a76X57aeb2cf68&vmp_ectm=1581497278&from=vs","hint":[], "text": "\u8be5\u4f01\u4e1a\u5df2\u901a\u8fc7\u5b9e\u540d\u8ba4\u8bc1\uff0c\u67e5\u770b <a href=\"https://www.baidu.com/s?wd=%E5%8C%97%E4%BA%AC%E5%B0%9A%E5%AD%A6%E5%A0%82%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8@v&vmp_ec=a7dd17dcc8f2639d64fb9c5dfdj2=ed435c5dsJ394a3230diCn8bd83aXNff6y3e3a76X57aeb2cf68&vmp_ectm=1581497278&from=vs\" target=\"_blank\">\u4f01\u4e1a\u6863\u6848<\/a>\u3002<\/br>\u767e\u5ea6\u63a8\u51fa <a href=\"http:\/\/baozhang.baidu.com\/guarantee\/?from=ps\" target=\"_blank\">\u7f51\u6c11\u6743\u76ca\u4fdd\u969c\u8ba1\u5212<\/a>\uff0c<a href=\"https:\/\/passport.baidu.com\" target=\"_blank\">\u767b\u5f55<\/a> \u641c\u7d22\u6709\u4fdd\u969c\u3002"}' hint-type="newBao" ></span></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1fa30236319ce80392216af3e0cb2b17c34200357e6c697951c80fece35258e233e671cf11b548c47&p=9f39c64ad48411a05febd225505e&newp=99759a42d09e19f012be9b7c4e4292695d0fc20e39d6c44324b9d71fd325001c1b69e7be2c261b00d9c07f6406ae425de1f03078341766dada9fca458ae7c47577d76d&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=19"
+                        target="_blank"
+                    class="m">百度快照</a></div></div>
+											
+		
+						
+	        
+        
+		
+
+								
+
+		
+				
+														
+																																									<div class="result c-container " id="20" srcid="1599" tpl="se_com_default"  data-click="{'rsv_bdr':'0' ,'rsv_cd':'safe:1|t:2'}"  ><h3 class="t"><a
+	        data-click="{
+			'F':'778317EA',
+			'F1':'9D73F1C4',
+			'F2':'4CA6DD6B',
+			'F3':'54E5243F',
+			'T':'1582897843',
+						'y':'AB5BDFA6'
+												}"
+        href = "http://www.baidu.com/link?url=ceRABLiniDecPehxiNJO_aMSoZKz-FnobeUCsFAJj3vWp7VmSX68WcSX4O64-_86"
+
+		            target="_blank"
+        
+		><em>Python</em>视频<em>教程</em>_免费<em>Python教程</em>在线学习-php中文网课程</a></h3><div class="c-row c-gap-top-small"><div class="general_image_pic c-span6"><a class="c-img6" style="height:75px"
+          href="http://www.baidu.com/link?url=ceRABLiniDecPehxiNJO_aMSoZKz-FnobeUCsFAJj3vWp7VmSX68WcSX4O64-_86"
                 target="_blank"
-      ><img class="c-img c-img6" src="https://dss0.baidu.com/73x1bjeh1BF3odCf/it/u=3809114875,1941943934&fm=85&s=9820DA1406184DC010BAA5C1030070BB"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract">人工智能+<em>Python</em>人工智能主流编程语言学习路线图 视频<em>教程</em>+难点技术解析+配套源码+学习工具+学习笔记动动小鼠标,资源免费全到手 ← 01step初级<em>教程</em> 适合人群:零基础...</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=YzMuW3SJafDc3Alw_JftY1ZLinlf3U5Mb6dyp8hAKyUaA5WDb5k3X4jhbJ9GtJCG" class="c-showurl" style="text-decoration:none;"><style>.nor-src-wrap {position: relative;}
-.nor-src-icon {vertical-align: middle;width: 14px;height: 14px;border: 1px solid #eee;border-radius: 100%;margin-right: 5px;margin-top: -3px;position: relative;}
-.nor-src-icon-with-v {margin-right: 10px;}
-.nor-src-icon-v {display: inline-block;width: 10px;height: 10px;border-radius: 100%;position: absolute;left: 8px;bottom: 0;background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);background-size: 10px 10px;}
-.nor-src-icon-v.vicon-1 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/red-v.png);}
-.nor-src-icon-v.vicon-2 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/blue-v.png);}
-.nor-src-icon-v.vicon-3 {background-image: url(https://b.bdstatic.com/searchbox/icms/searchbox/img/yellow-v.png);}</style><span class="nor-src-wrap"><img class="nor-src-icon" src="https://timg01.bdimg.com/timg?pacompress=&amp;imgtype=0&amp;sec=1439619614&amp;autorotate=1&amp;di=1aed698fd6a203f1dcfba94ce864d6fb&amp;quality=90&amp;size=b200_200&amp;src=http%3A%2F%2Fpic.rmb.bdstatic.com%2F722466b2a6af9ae0b2ccf6ecbda71521.jpeg">黑马程序员</span></a><div class="c-tools" id="tools_15026215367191476690_19" data-tools='{"title":"Python自学教程_Python视频教程从入门到精通_黑马程序员","url":"http://www.baidu.com/link?url=YzMuW3SJafDc3Alw_JftY1ZLinlf3U5Mb6dyp8hAKyUaA5WDb5k3X4jhbJ9GtJCG"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9d78d513d9810ae902b0c8690d67c0166f43f1122ba7d1020ea5870fd33a541b0120a1ac26510d199882207001d8121ab0a76d2d641420c0ca95d75782e8d035288930340746c01e4c&p=8b2a9715d9c043a41ffcd762534d94&newp=9061cd5685cc43ff57ee9675465c8f231610db2151d6d5126b82c825d7331b001c3bbfb423271b02d6c776630aa44c5ae0f03777370923a3dda5c91d9fb4c57479&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=c8a77a4c0002fc1e&p1=19"
+      ><img class="c-img c-img6" src="https://dss0.baidu.com/73x1bjeh1BF3odCf/it/u=161296048,3915435066&fm=85&s=9F87EE0586512863102AB55C030000F9"  style="height:75px;" /></a></div><div class="c-span18 c-span-last"><div class="c-abstract"><span class=" newTimeFactor_before_abs m">2019年7月25日&nbsp;-&nbsp;</span>以下<em>python</em>学习路线图(包含<em>python</em>视频<em>教程</em>、<em>python</em>工具资源等),帮助零基础学员在学习的时候少走弯路。</div><div class="f13"><a target="_blank" href="http://www.baidu.com/link?url=ceRABLiniDecPehxiNJO_aMSoZKz-FnobeUCsFAJj3vWp7VmSX68WcSX4O64-_86" class="c-showurl" style="text-decoration:none;">https://www.php.cn/course/list...&nbsp;</a><div class="c-tools" id="tools_8136838551741473364_20" data-tools='{"title":"Python视频教程_免费Python教程在线学习-php中文网课程","url":"http://www.baidu.com/link?url=ceRABLiniDecPehxiNJO_aMSoZKz-FnobeUCsFAJj3vWp7VmSX68WcSX4O64-_86"}'><a class="c-tip-icon"><i class="c-icon c-icon-triangle-down-g"></i></a></div><span class="c-icons-outer"><span class="c-icons-inner"><span class="c-trust-as baozhang-new c-icon c-icon-baozhang-new" data_key="16128441345700407322" hint-data='{"label":"合肥彼岸互联信息技术有限公司","url":"https://www.baidu.com/s?wd=%E5%90%88%E8%82%A5%E5%BD%BC%E5%B2%B8%E4%BA%92%E8%81%94%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8@v&vmp_ec=d60ac178693b873c744a5=swu6X66d67dccd1193342A75YJbH1ad5dy383fX9d63dc5c3c0&vmp_ectm=1581487033&from=vs","hint":[], "text": "\u8be5\u4f01\u4e1a\u5df2\u901a\u8fc7\u5b9e\u540d\u8ba4\u8bc1\uff0c\u67e5\u770b <a href=\"https://www.baidu.com/s?wd=%E5%90%88%E8%82%A5%E5%BD%BC%E5%B2%B8%E4%BA%92%E8%81%94%E4%BF%A1%E6%81%AF%E6%8A%80%E6%9C%AF%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8@v&vmp_ec=d60ac178693b873c744a5=swu6X66d67dccd1193342A75YJbH1ad5dy383fX9d63dc5c3c0&vmp_ectm=1581487033&from=vs\" target=\"_blank\">\u4f01\u4e1a\u6863\u6848<\/a>\u3002<\/br>\u767e\u5ea6\u63a8\u51fa <a href=\"http:\/\/baozhang.baidu.com\/guarantee\/?from=ps\" target=\"_blank\">\u7f51\u6c11\u6743\u76ca\u4fdd\u969c\u8ba1\u5212<\/a>\uff0c<a href=\"https:\/\/passport.baidu.com\" target=\"_blank\">\u767b\u5f55<\/a> \u641c\u7d22\u6709\u4fdd\u969c\u3002"}' hint-type="newBao" ></span></span></span>&nbsp;-&nbsp;<a data-click="{'rsv_snapshot':'1'}" href="http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b92235c4380147e8d92027fa3c2148e3506060727b4a679795142cec47e7001d8131ab5ae22376a4376b8d983ce1080e785285e9f5742676df75662d20edeba&p=987883059e934eac58efd02d0214bb&newp=c27e8e15d9c041ad4981c7710f0d90231610db2151d4d41f6b82c825d7331b001c3bbfb423271b00d8c1766202ac4e5de1f13d72310923a3dda5c91d9fb4c57479994b&user=baidu&fm=sc&query=python+%BD%CC%B3%CC&qid=ba09fe9300034bd8&p1=20"
                         target="_blank"
                     class="m">百度快照</a></div></div></div></div>
 											
@@ -3696,12 +3726,12 @@ bds.base64 = (function () {
         <div style="clear:both;height:0;"></div>
 	    
         
-    <div id="rs"><div class="tt">相关搜索</div><table cellpadding="0"><tr><th><a href="/s?wd=python%E7%AC%AC%E4%B8%89%E7%89%88%E6%95%99%E7%A8%8Bpdf&rsf=1000001&rsp=0&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python第三版教程pdf</a></th><td></td><th><a href="/s?wd=python%E5%88%9D%E5%AD%A6%E8%80%85%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B&rsf=1000004&rsp=1&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python初学者完整教程</a></th><td></td><th><a href="/s?wd=%E8%87%AA%E5%AD%A6python%E6%95%99%E7%A8%8B%E8%A7%86%E9%A2%91&rsf=1000004&rsp=2&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">自学python教程视频</a></th></tr><tr><th><a href="/s?wd=python%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8&rsf=1000004&rsp=3&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python编程入门</a></th><td></td><th><a href="/s?wd=python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B&rsf=8&rsp=4&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=1&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python基础教程</a></th><td></td><th><a href="/s?wd=python%E6%9C%80%E6%B5%85%E6%98%BE%E6%98%93%E6%87%82%E7%9A%84%E6%95%99%E7%A8%8B&rsf=1000004&rsp=5&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python最浅显易懂的教程</a></th></tr><tr><th><a href="/s?wd=python%E7%9C%8B%E8%B0%81%E7%9A%84%E8%A7%86%E9%A2%91%E6%AF%94%E8%BE%83%E5%A5%BD&rsf=1000004&rsp=6&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python看谁的视频比较好</a></th><td></td><th><a href="/s?wd=python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B&rsf=1000012&rsp=7&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python网站开发教程</a></th><td></td><th><a href="/s?wd=python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0&rsf=1000004&rsp=8&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rqlang=cn&rs_src=0&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE">python基础教程笔记</a></th></tr></table></div>
+    <div id="rs"><div class="tt">相关搜索</div><table cellpadding="0"><tr><th><a href="/s?wd=python%E7%AC%AC%E4%B8%89%E7%89%88%E6%95%99%E7%A8%8Bpdf&rsf=1000001&rsp=0&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python第三版教程pdf</a></th><td></td><th><a href="/s?wd=python%E5%88%9D%E5%AD%A6%E8%80%85%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B&rsf=1000004&rsp=1&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python初学者完整教程</a></th><td></td><th><a href="/s?wd=%E8%87%AA%E5%AD%A6python%E6%95%99%E7%A8%8B%E8%A7%86%E9%A2%91&rsf=1000004&rsp=2&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">自学python教程视频</a></th></tr><tr><th><a href="/s?wd=python%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8&rsf=1000004&rsp=3&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python编程入门</a></th><td></td><th><a href="/s?wd=python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B&rsf=8&rsp=4&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=1&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python基础教程</a></th><td></td><th><a href="/s?wd=python%E6%9C%80%E6%B5%85%E6%98%BE%E6%98%93%E6%87%82%E7%9A%84%E6%95%99%E7%A8%8B&rsf=1000004&rsp=5&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python最浅显易懂的教程</a></th></tr><tr><th><a href="/s?wd=python%E7%9C%8B%E8%B0%81%E7%9A%84%E8%A7%86%E9%A2%91%E6%AF%94%E8%BE%83%E5%A5%BD&rsf=1000004&rsp=6&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python看谁的视频比较好</a></th><td></td><th><a href="/s?wd=python%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B&rsf=1000012&rsp=7&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python网站开发教程</a></th><td></td><th><a href="/s?wd=python%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0&rsf=1000004&rsp=8&f=1&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rqlang=cn&rs_src=0&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg">python基础教程笔记</a></th></tr></table></div>
 
 <div id="page" >
 
 
-	    <a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=0&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rsv_page=-1" class="n">&lt;上一页</a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=0&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">1</span></a><strong><span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span><span class="pc">2</span></strong><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=20&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">3</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=30&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">4</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=40&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">5</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=50&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">6</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=60&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">7</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=70&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">8</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=80&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">9</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=90&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">10</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=20&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=c8a77a4c0002fc1e&rsv_t=9920x9%2FUnUfmZX3wjPEbq8feIgMEYNalVogNvwl53z4ZojD%2FgVv91Zo4oHE&rsv_page=1" class="n">下一页&gt;</a>
+	    <a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=0&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rsv_page=-1" class="n">&lt;上一页</a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=0&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">1</span></a><strong><span class="fk fk_cur"><i class="c-icon c-icon-bear-p"></i></span><span class="pc">2</span></strong><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=20&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">3</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=30&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">4</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=40&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">5</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=50&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">6</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=60&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">7</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=70&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">8</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=80&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">9</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=90&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg"><span class="fk fkd"><i class="c-icon c-icon-bear-pn"></i></span><span class="pc">10</span></a><a href="/s?wd=python%20%E6%95%99%E7%A8%8B&pn=20&oq=python%20%E6%95%99%E7%A8%8B&ie=utf-8&rsv_pq=ba09fe9300034bd8&rsv_t=4245EdDIs6JqU1Vj0Bc5aGAEQ0Fl4Qm2HRz078labgq04bhevcJoLOIFhHg&rsv_page=1" class="n">下一页&gt;</a>
 
 
 </div>
@@ -3746,15 +3776,15 @@ try{document.cookie="WWW_ST=;expires=Sat, 01 Jan 2000 00:00:00 GMT";}catch(e){}
 	<script type="text/javascript" src="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/jquery/jquery-1.10.2.min_65682a2.js"></script>
 	
 		
-		<script type="text/javascript">var Cookie={set:function(t,e,o,i,s,n){document.cookie=t+"="+(n?e:escape(e))+(s?"; expires="+s.toGMTString():"")+(i?"; path="+i:"; path=/")+(o?"; domain="+o:"")},get:function(t,e){var o=document.cookie.match(new RegExp("(^| )"+t+"=([^;]*)(;|$)"));return null!=o?unescape(o[2]):e},clear:function(t,e,o){this.get(t)&&(document.cookie=t+"="+(e?"; path="+e:"; path=/")+(o?"; domain="+o:"")+";expires=Fri, 02-Jan-1970 00:00:00 GMT")}};!function(){function save(t){var e=[];for(tmpName in options)options.hasOwnProperty(tmpName)&&"duRobotState"!==tmpName&&e.push('"'+tmpName+'":"'+options[tmpName]+'"');
-var o="{"+e.join(",")+"}";bds.comm.personalData?$.ajax({url:"//www.baidu.com/ups/submit/addtips/?product=ps&tips="+encodeURIComponent(o)+"&_r="+(new Date).getTime(),success:function(){writeCookie(),"function"==typeof t&&t()}}):(writeCookie(),"function"==typeof t&&setTimeout(t,0))}function set(t,e){options[t]=e}function get(t){return options[t]}function writeCookie(){if(options.hasOwnProperty("sugSet")){var t="0"==options.sugSet?"0":"3";clearCookie("sug"),Cookie.set("sug",t,document.domain,"/",expire30y)
-}if(options.hasOwnProperty("sugStoreSet")){var t=0==options.sugStoreSet?"0":"1";clearCookie("sugstore"),Cookie.set("sugstore",t,document.domain,"/",expire30y)}if(options.hasOwnProperty("isSwitch")){var e={0:"2",1:"0",2:"1"},t=e[options.isSwitch];clearCookie("ORIGIN"),Cookie.set("ORIGIN",t,document.domain,"/",expire30y)}if(options.hasOwnProperty("imeSwitch")){var t=options.imeSwitch;clearCookie("bdime"),Cookie.set("bdime",t,document.domain,"/",expire30y)}}function writeBAIDUID(){var t,e,o,i=Cookie.get("BAIDUID");
-/FG=(\d+)/.test(i)&&(e=RegExp.$1),/SL=(\d+)/.test(i)&&(o=RegExp.$1),/NR=(\d+)/.test(i)&&(t=RegExp.$1),options.hasOwnProperty("resultNum")&&(t=options.resultNum),options.hasOwnProperty("resultLang")&&(o=options.resultLang),Cookie.set("BAIDUID",i.replace(/:.*$/,"")+("undefined"!=typeof o?":SL="+o:"")+("undefined"!=typeof t?":NR="+t:"")+("undefined"!=typeof e?":FG="+e:""),".baidu.com","/",expire30y,!0)}function clearCookie(t){Cookie.clear(t,"/"),Cookie.clear(t,"/",document.domain),Cookie.clear(t,"/","."+document.domain),Cookie.clear(t,"/",".baidu.com")
-}function reset(t){options=defaultOptions,save(t)}var defaultOptions={sugSet:1,sugStoreSet:1,isSwitch:1,isJumpHttps:1,imeSwitch:0,resultNum:10,skinOpen:1,resultLang:0,duRobotState:"000"},options={},tmpName,expire30y=new Date;expire30y.setTime(expire30y.getTime()+94608e7);try{if(bds&&bds.comm&&bds.comm.personalData){if("string"==typeof bds.comm.personalData&&(bds.comm.personalData=eval("("+bds.comm.personalData+")")),!bds.comm.personalData)return;for(tmpName in bds.comm.personalData)defaultOptions.hasOwnProperty(tmpName)&&bds.comm.personalData.hasOwnProperty(tmpName)&&"SUCCESS"==bds.comm.personalData[tmpName].ErrMsg&&(options[tmpName]=bds.comm.personalData[tmpName].value)
+		<script type="text/javascript">var Cookie={set:function(e,t,o,i,s,n){document.cookie=e+"="+(n?t:escape(t))+(s?"; expires="+s.toGMTString():"")+(i?"; path="+i:"; path=/")+(o?"; domain="+o:"")},get:function(e,t){var o=document.cookie.match(new RegExp("(^| )"+e+"=([^;]*)(;|$)"));return null!=o?unescape(o[2]):t},clear:function(e,t,o){this.get(e)&&(document.cookie=e+"="+(t?"; path="+t:"; path=/")+(o?"; domain="+o:"")+";expires=Fri, 02-Jan-1970 00:00:00 GMT")}};!function(){function save(e){var t=[];for(tmpName in options)options.hasOwnProperty(tmpName)&&"duRobotState"!==tmpName&&t.push('"'+tmpName+'":"'+options[tmpName]+'"');
+var o="{"+t.join(",")+"}";bds.comm.personalData?$.ajax({url:"//www.baidu.com/ups/submit/addtips/?product=ps&tips="+encodeURIComponent(o)+"&_r="+(new Date).getTime(),success:function(){writeCookie(),"function"==typeof e&&e()}}):(writeCookie(),"function"==typeof e&&setTimeout(e,0))}function set(e,t){options[e]=t}function get(e){return options[e]}function writeCookie(){if(options.hasOwnProperty("sugSet")){var e="0"==options.sugSet?"0":"3";clearCookie("sug"),Cookie.set("sug",e,document.domain,"/",expire30y)
+}if(options.hasOwnProperty("sugStoreSet")){var e=0==options.sugStoreSet?"0":"1";clearCookie("sugstore"),Cookie.set("sugstore",e,document.domain,"/",expire30y)}if(options.hasOwnProperty("isSwitch")){var t={0:"2",1:"0",2:"1"},e=t[options.isSwitch];clearCookie("ORIGIN"),Cookie.set("ORIGIN",e,document.domain,"/",expire30y)}if(options.hasOwnProperty("imeSwitch")){var e=options.imeSwitch;clearCookie("bdime"),Cookie.set("bdime",e,document.domain,"/",expire30y)}}function writeBAIDUID(){var e,t,o,i=Cookie.get("BAIDUID");
+/FG=(\d+)/.test(i)&&(t=RegExp.$1),/SL=(\d+)/.test(i)&&(o=RegExp.$1),/NR=(\d+)/.test(i)&&(e=RegExp.$1),options.hasOwnProperty("resultNum")&&(e=options.resultNum),options.hasOwnProperty("resultLang")&&(o=options.resultLang),Cookie.set("BAIDUID",i.replace(/:.*$/,"")+("undefined"!=typeof o?":SL="+o:"")+("undefined"!=typeof e?":NR="+e:"")+("undefined"!=typeof t?":FG="+t:""),".baidu.com","/",expire30y,!0)}function clearCookie(e){Cookie.clear(e,"/"),Cookie.clear(e,"/",document.domain),Cookie.clear(e,"/","."+document.domain),Cookie.clear(e,"/",".baidu.com")
+}function reset(e){options=defaultOptions,save(e)}var defaultOptions={sugSet:1,sugStoreSet:1,isSwitch:1,isJumpHttps:1,imeSwitch:0,resultNum:10,skinOpen:1,resultLang:0,duRobotState:"000"},options={},tmpName,expire30y=new Date;expire30y.setTime(expire30y.getTime()+94608e7);try{if(bds&&bds.comm&&bds.comm.personalData){if("string"==typeof bds.comm.personalData&&(bds.comm.personalData=eval("("+bds.comm.personalData+")")),!bds.comm.personalData)return;for(tmpName in bds.comm.personalData)defaultOptions.hasOwnProperty(tmpName)&&bds.comm.personalData.hasOwnProperty(tmpName)&&"SUCCESS"==bds.comm.personalData[tmpName].ErrMsg&&(options[tmpName]=bds.comm.personalData[tmpName].value)
 }try{parseInt(options.resultNum)||delete options.resultNum,parseInt(options.resultLang)||"0"==options.resultLang||delete options.resultLang}catch(e){}writeCookie(),"sugSet"in options||(options.sugSet=3!=Cookie.get("sug",3)?0:1),"sugStoreSet"in options||(options.sugStoreSet=Cookie.get("sugstore",0));var BAIDUID=Cookie.get("BAIDUID");"resultNum"in options||(options.resultNum=/NR=(\d+)/.test(BAIDUID)&&RegExp.$1?parseInt(RegExp.$1):10),"resultLang"in options||(options.resultLang=/SL=(\d+)/.test(BAIDUID)&&RegExp.$1?parseInt(RegExp.$1):0),"isSwitch"in options||(options.isSwitch=2==Cookie.get("ORIGIN",0)?0:1==Cookie.get("ORIGIN",0)?2:1),"imeSwitch"in options||(options.imeSwitch=Cookie.get("bdime",0))
-}catch(e){}window.UPS={writeBAIDUID:writeBAIDUID,reset:reset,get:get,set:set,save:save}}(),function(){var t="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_4644b13.js";("Mac68K"==navigator.platform||"MacPPC"==navigator.platform||"Macintosh"==navigator.platform||"MacIntel"==navigator.platform)&&(t="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js"),setTimeout(function(){$.ajax({url:t,cache:!0,dataType:"script"})},0);var e=navigator&&navigator.userAgent?navigator.userAgent:"",o=document&&document.cookie?document.cookie:"",i=!!(e.match(/(msie [2-8])/i)||e.match(/windows.*safari/i)&&!e.match(/chrome/i)||e.match(/(linux.*firefox)/i)||e.match(/Chrome\/29/i)||e.match(/mac os x.*firefox/i)||o.match(/\bISSW=1/)||0==UPS.get("isSwitch"));
-bds&&bds.comm&&(bds.comm.supportis=!i,bds.comm.isui=!0),window.__restart_confirm_timeout=!0,window.__confirm_timeout=8e3,window.__disable_is_guide=!0,window.__disable_swap_to_empty=!0,window.__switch_add_mask=!0;var s="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/js/all_async_search_658106b.js",n="/script";document.write("<script src='"+s+"'><"+n+">"),bds.comm.newindex&&$(window).on("index_off",function(){$('<div class="c-tips-container" id="c-tips-container"></div>').insertAfter("#wrapper"),window.__sample_dynamic_tab&&$("#s_tab").remove()
-}),bds.comm&&bds.comm.ishome&&Cookie.get("H_PS_PSSID")&&(bds.comm.indexSid=Cookie.get("H_PS_PSSID"));var a=$(document).find("#s_tab").find("a");a&&a.length>0&&a.each(function(t,e){e.innerHTML&&e.innerHTML.match(/新闻/)&&(e.innerHTML="资讯",e.href="//www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&word=",e.setAttribute("sync",!0))})}();</script>
+}catch(e){}window.UPS={writeBAIDUID:writeBAIDUID,reset:reset,get:get,set:set,save:save}}(),function(){var e="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_4644b13.js";("Mac68K"==navigator.platform||"MacPPC"==navigator.platform||"Macintosh"==navigator.platform||"MacIntel"==navigator.platform)&&(e="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_mac_82990d4.js"),setTimeout(function(){$.ajax({url:e,cache:!0,dataType:"script"})},0);var t=navigator&&navigator.userAgent?navigator.userAgent:"",o=document&&document.cookie?document.cookie:"",i=!!(t.match(/(msie [2-8])/i)||t.match(/windows.*safari/i)&&!t.match(/chrome/i)||t.match(/(linux.*firefox)/i)||t.match(/Chrome\/29/i)||t.match(/mac os x.*firefox/i)||o.match(/\bISSW=1/)||0==UPS.get("isSwitch"));
+bds&&bds.comm&&(bds.comm.supportis=!i,bds.comm.isui=!0),window.__restart_confirm_timeout=!0,window.__confirm_timeout=8e3,window.__disable_is_guide=!0,window.__disable_swap_to_empty=!0,window.__switch_add_mask=!0;var s="https://dss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/js/all_async_search_c33e4c4.js",n="/script";document.write("<script src='"+s+"'><"+n+">"),bds.comm.newindex&&$(window).on("index_off",function(){$('<div class="c-tips-container" id="c-tips-container"></div>').insertAfter("#wrapper"),window.__sample_dynamic_tab&&$("#s_tab").remove()
+}),bds.comm&&bds.comm.ishome&&Cookie.get("H_PS_PSSID")&&(bds.comm.indexSid=Cookie.get("H_PS_PSSID"));var a=$(document).find("#s_tab").find("a");a&&a.length>0&&a.each(function(e,t){t.innerHTML&&t.innerHTML.match(/新闻/)&&(t.innerHTML="资讯",t.href="//www.baidu.com/s?rtt=1&bsst=1&cl=2&tn=news&word=",t.setAttribute("sync",!0))})}();</script>
 
 			
 
@@ -3807,9 +3837,9 @@ initPreload({
 
 
 	
-		<script type="text/javascript">_WWW_SRV_T =236.14;</script>
+		<script type="text/javascript">_WWW_SRV_T =205.36;</script>
 	
 	
 
 </html>
-<!--cxy_ex+1582619064+744194171+ee0d3db934f19d06db74758dca42be1b--><!--cxy_all+baidu+f74e47bd3af3de1d04269053f5223194+0000000000000000000000000000000000000000296576-->
+<!--cxy_ex+1582897843+744194171+4c7d3428f60b8b3c2bd92667c5ba43e0--><!--cxy_all+baidu+b1532e4ccadb92a5efd201842ad8c66d+0000000000000000000000000000000000000000299296-->
