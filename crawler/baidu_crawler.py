@@ -3,7 +3,7 @@ import requests
 from urllib.parse import quote
 from lxml import etree
 from conf.bd_keywords import LST_KEYWORDS
-from conf.Setting_conf import PN
+from conf import Setting_conf
 import time
 from common.url_utils import get_netloc, get_real_html
 
@@ -15,9 +15,9 @@ def run():
     result = {}
     for keyword in LST_KEYWORDS:
         result[keyword] = {}
-        for pn in PN:
+        for pn in range(Setting_conf.BD_CRAWLER_PG):
             result[keyword].update(crawler_baidu_by_keyword(keyword, pn))
-            time.sleep(5)
+            time.sleep(Setting_conf.BD_SLEEP_TIME)
     return result
 
 
@@ -78,11 +78,11 @@ def extract_links(html):
 
 
 if __name__ == '__main__':
-    # result = run()
-    # print(result)
+    result = run()
+    print(result)
     # print(len(result))
     # print(result.keys())
     # print(result.values())
     # with open("../baidu.txt", encoding='utf-8')as f:
     #     extract_links(f.read())
-        #print(f.read())
+    # print(f.read())
