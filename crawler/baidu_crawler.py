@@ -232,7 +232,8 @@ def crawler_baidu_by_all_keyword(keywords):
 
 def run(keywords):
     list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
-    return list_url_allkeyword
+    # 把 list_url_allkeyword 里的url写入到消息队列
+
 
 
 if __name__ == '__main__':
