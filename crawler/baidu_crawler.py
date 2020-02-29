@@ -29,19 +29,16 @@ def extract_links(html):
     :return:
     """
     tree = etree.HTML(html)
-    # print(etree.tostring(tree))
-    body = tree.xpath('body')
-    # print(body, type(body[0]))
-    div_nodes = tree.xpath("//div")
-    print(div_nodes)
-    #
-    # print(div0_1, type(div0_1))
-    # print(div0_1 == div0_2)
+
+    a_nodes_2=tree.xpath("//div[@id='content_left']//a[@data-click and @href]/@href")
+    print(a_nodes_2)
+
+    return a_nodes_2
 
 if __name__ == '__main__':
-    crawler_baidu_by_keyword('python 教程')
+    # crawler_baidu_by_keyword('python 教程')
     # lst = crawler_baidu_by_keyword('python 教程')
     # print(lst)
 
-    # with open("../baidu.txt",'rb')as f:
-    #     extract_links(f.read())
+    with open("../baidu.txt",'rb')as f:
+        extract_links(f.read())
