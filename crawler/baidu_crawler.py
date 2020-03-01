@@ -137,7 +137,6 @@ def urlist_baidu_to_realmain(url_list):
     # for url in url_list:
     #     url_real_list.append(url_baidu_to_realmain(url))
     # return url_real_list
-
     return [url_baidu_to_realmain(url) for url in url_list]
 
 
