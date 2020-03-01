@@ -80,8 +80,11 @@ def save_urlfile(path_folder, keyword, url_list):
     :param url_list:要保存的url列表
     :return:
     """
+    if FLAG_SAVE_URLFILE != 1:
+        return
     create_folder_htmlfile(path_folder)
 
+    #  os.path.join(path_folder, keyword)
     keyword_folder = path_folder + "/" + keyword
     create_folder_htmlfile(keyword_folder)
 
@@ -156,7 +159,7 @@ def extract_links(html):
 
 
 
-@retry(TIMES_REQUESTS_MAX,TIME_REQUEST_SLEEP)
+@retry(TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP)
 def params_request(session, url, params, headers):
     """
     获取session状态及html内容
@@ -215,18 +218,15 @@ def crawler_baidu_by_all_keyword(keywords):
     :param keywords:搜索关键词
     :return: list 返回搜索结果的连接
     """
-    list_url_onekeyword = []
+    # list_url_onekeyword = []  去掉即可
     list_url_allkeyword_temp = []
     for keyword in keywords:
         list_url_onekeyword = crawler_baidu_by_keyword(keyword)
-        if FLAG_SAVE_URLFILE == 1:
-            save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
+        save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
         list_url_allkeyword_temp.extend(list_url_onekeyword)
 
     list_url_allkeyword = list(set(list_url_allkeyword_temp))         # url地址去重
-
-    if FLAG_SAVE_URLFILE == 1:
-        save_urlfile(PATH_URLFILE, "url汇总", list_url_allkeyword)       # 保存所有关键字的url地址
+    save_urlfile(PATH_URLFILE, "url汇总", list_url_allkeyword)       # 保存所有关键字的url地址
 
     return list_url_allkeyword
 
