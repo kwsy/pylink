@@ -30,7 +30,7 @@ def extract_links(html):
     """
     tree = etree.HTML(html)
 
-    a_nodes_2=tree.xpath("//div[@id='content_left']//a[@data-click and @href]/@href")
+    a_nodes_2 = tree.xpath("//div[@class='result c-container ']/h3/a[@data-click and @href]/@href")
     print(a_nodes_2)
 
     return a_nodes_2
