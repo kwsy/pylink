@@ -199,7 +199,7 @@ def crawler_baidu_by_keyword(keyword):
         params = generate_params(keyword, num_page)   # 获取搜索关键字
         html = params_request(session, URL_BAIDU, params, headers)
 
-        if html != None:
+        if html is not None:
             url_list = extract_links(html)                # 获取单页有效链接列表
 
             list_url_onekeyword.extend(url_list)          # 更新单个关键字有效链接列表
