@@ -8,7 +8,8 @@ from requests import exceptions
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
 from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP ,TOTALNUM_SEARCH_PAGE
-
+from conf.redis_config import DICT_CONNECT_REDIS, NAME_QUEUE_REDIS
+from db.redis_client import store_urllist_to_redis
 
 def retry(retry_count=5, sleep_time=1):
     def wrapper(func):
@@ -233,8 +234,7 @@ def crawler_baidu_by_all_keyword(keywords):
 def run(keywords):
     list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
     # 把 list_url_allkeyword 里的url写入到消息队列
-
-
+    store_urllist_to_redis(DICT_CONNECT_REDIS, list_url_allkeyword, NAME_QUEUE_REDIS)
 
 if __name__ == '__main__':
     run(keywords)
