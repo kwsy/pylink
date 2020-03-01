@@ -49,6 +49,7 @@ def crawler_baidu_by_keyword(keyword):
     }
 
     all_link_lst = []
+    session = requests.session()  # 保持会话
     url = 'https://www.baidu.com/s'
     for i in range(crawler_config.BD_CRAWLER_PAGE):
         params = {
@@ -56,7 +57,6 @@ def crawler_baidu_by_keyword(keyword):
             'pn': 10*i
         }
 
-        session = requests.session()  # 保持会话
         res = session.get(url, params=params, headers=headers, allow_redirects=False)
         # session.get()的作用是去数据库查询数据并返回一个真实的对象，allow_redirects=False阻止302跳转
         time.sleep(crawler_config.SLEEP_TIME)
