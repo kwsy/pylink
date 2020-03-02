@@ -1,0 +1,2194 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/KWSY2008"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="report" content='{"pid":"blog"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"KWSY2008的专栏_酷python_CSDN博客-python,C++,web杂谈领域博主"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>KWSY2008的专栏_酷python_CSDN博客-python,C++,web杂谈领域博主</title>
+    <meta name="description" content="C/C++,Python,python,C++,web杂谈">
+    <script src='//g.csdnimg.cn/tingyun/1.8.3/blog.js' type='text/javascript'></script>
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/list-5b6f120f6e.min.css">
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/column_pc-a93d02cce6.min.css" />
+                    
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin-city/skin-city-8405f7807f.min.css">
+    
+<!--    自定义皮肤样式-->
+    
+    <script type="text/javascript">
+        var username = "KWSY2008";
+        var blog_address = "https://blog.csdn.net/kwsy2008";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/KWSY2008"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin-city";
+        // 收藏所需数据
+        var articleTitle = "KWSY2008的专栏";
+        var articleDesc = "C/C++,Python,python,C++,web杂谈";
+
+        var articleTitles = "KWSY2008的专栏_酷python_CSDN博客-python,C++,web杂谈领域博主";
+        
+        var nickName = "酷python";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/kwsy2008";
+        var articleDetailUrl = "";
+        var isShowThird = "1"
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--js引用-->
+            <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js,report/1.4.2/report.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-e040f0c7c8.css">
+<link rel="stylesheet" href="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.css">
+<script src="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/user-login/2.2.4/user-login.js"></script>
+<div class="skin-boxshadow"></div>
+<div id="userSkin">
+	<div class="user-skin-box">
+		<p class="user-skin-title">
+        <span>自定义博客皮肤<span class="vip-get">VIP专享<span></span>
+        <span class="close-bt bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="user-skin-item">
+			<div class="user-skin-left"><span>*</span>博客头图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadHeaderimg" style="display:none" value="">
+				<label for="uploadHeaderimg" class="upload-img">
+					<div class="icon-box">
+					<svg class="upload-icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-574.000000, -434.000000)">
+								<g transform="translate(406.000000, 409.000000)">
+									<g>
+										<image x="168" y="25" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGOfPtRkwAAA7ZJREFUaAXtWc9rE0EUdjctxYM/UITeLD2IoOBFvEgRSilSexARKgiBqv0RD8X+B/Ev0EM0aZu2iAgSPGiheJDiwYNYRUQ9tRf1qNBYqofEpPF7YV+YTHY3O5nZrEIWtjPvvXnvfd+bmd3J1toT0jU3NzeM0DdwlyuVytL09PSLMFJZYQQF+FuIe0eKPTs1NXVX0mmLxgl4gGegxkkYJdAEfCgkjBEICJ5J3MRySrOg0xohAPAJgLivCMQICW0CLYJnrtoktAhogjdComUChsBXSViWdX1ycnKJGam0tspgHusHHi+tPMa95bHcQr/u2FhVa6HPzs/PX6spFDrKBJxErhuWAKKa59BuyBig33BsRFC+rFZJKBEg8JRIzk4y9FXweDx+crOTjmymSQQmIIBv2DdBwDMpJgF5m3VCW52JdDp9VdD5dgMR8AOP6NtUVb/KywicsYPkK9sgW7ZtPwxKoikBCuQsm4bKOwAGVcAzYPi8R1+bhC8BAk/VoKpwYqGl6hF4AtLSZYKEJ4GwwTPjICQymcxlHi+3rgTaBZ7BNCOBPfbYi0QDgXaDD0gi5kWijgDesBfDXPMM1qttMhNMYkT0rxFIJpM2njYPYAxlw4pJ/frNSMD3nuhfI9Df378X07RfNDp97aeNS0xfFZNAQX/JA4Gxb3l5+SDrawTi8fhvOLxig9O2HTznJxIAOySTgLw5Pj7+k8fVCJACxjiaVdw76NNnkAGnGui2/0LuN7FY7CywrCH7Du7V3d3d8yKSLlFIJBJfII+Kuqj7ExMTH4FhyAtH3Qx4DfqX9R0CUc9OZwY6M6BZgc4S0iygtvt/PwPVN3E2mz1UKpWu4Ozxo1AorMzMzBR0SoM4RdkfxwGtmBQvl8vF8vn8JcQ6gvsJTg7f7VQqdbhcLr9GUjqm5np6ej4sLi7ukwGoyAj+WR4P3UtZpyLTcX9ra+spfHKEFb9bNvAr7ZTd3d19G8pjQrDjmI0xQVbuFotFKsZzwTGFaj0SZOVub2/vGICL57QDkGdpCZ2Uo6FaR2WdiuwswRH8PO0jP+eQqBKiYSzAnpCVhLMLf2wY62yQjWxuE8AZmBtO2GwjQDlJFG2HQBRVF3N2Yb2XRAX1sd4G8IklKesjlgdc8pdoE3912cQ02M3BJUakqm/0BHoWKQSN5ISd/qFgYbmsQzitEavtrsD9Dl8tztAMoF+5AAQrbUfRYkLg3cTnllHCXvcGW1hYGMS5aBYGrbNQi7iCuG0DfBr41lD9P+TwF9fJtg0FDOMWAAAAAElFTkSuQmCC"></image>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<svg style="display:none" class="success-upload-icon" width="24px" height="24px" viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-891.000000, -223.000000)" fill-rule="nonzero">
+								<g id="img" transform="translate(891.000000, 223.000000)">
+									<path d="M0.0193225078,2.00739502 C0.0450569347,1.46096655 0.248659711,0.937918033 0.599127539,0.517895859 C0.972546565,0.144689127 1.49311171,-0.0422744118 2.01865024,0.00806728125 L15.8440015,0.00806728125 L22.0119275,6.00605046 L22.0119275,22.0006723 C21.9960073,22.513472 21.7892436,23.0018621 21.4321225,23.3702118 C21.0435806,23.7343227 20.5432883,23.9562833 20.0125998,23.9999957 L2.01865024,23.9999957 C0.914452025,23.9999957 0.0193225078,23.1048705 0.0193225078,22.0006723 L0.0193225078,2.00739502 Z" id="路径" fill="#8EC8F6"></path>
+									<path d="M22.0119275,6.00605046 L17.903309,6.00605046 C17.3644479,6.01952622 16.8429751,5.81484752 16.4571475,5.43843032 C16.0713199,5.06201313 15.8538296,4.54575228 15.853998,4.00672275 L15.853998,0.00806728125 L22.0119275,6.00605046 Z" id="路径" fill-opacity="0.15" fill="#000000"></path>
+									<path d="M7.89667376,12.4038992 C7.44095779,12.4209003 6.99875293,12.2473195 6.67628892,11.9248555 C6.35382491,11.6023914 6.18024403,11.1601866 6.19724517,10.7044706 C6.18024403,10.2487547 6.35382491,9.8065498 6.67628892,9.48408579 C6.99875293,9.16162178 7.44095779,8.98804091 7.89667376,9.00504206 C8.35238972,8.98804092 8.79459457,9.16162179 9.11705858,9.4840858 C9.43952259,9.80654981 9.61310347,10.2487547 9.59610232,10.7044706 C9.58530287,11.6385293 8.83073239,12.3930997 7.89667376,12.4038992 Z M2.51848216,18.6318051 L5.20757796,15.092995 L5.34753089,15.0030252 C5.60646688,14.7265111 5.96837035,14.5696004 6.34719476,14.5696004 C6.72601917,14.5696004 7.08792263,14.7265111 7.34685862,15.0030252 L8.61643172,16.2725983 L12.2951947,11.6041681 L12.5850973,11.3242622 C13.2250744,10.8926249 14.0875879,11.0133768 14.584425,11.6041681 L19.5827443,18.5418353 L2.51848216,18.5418353 L2.51848216,18.6318051 Z" id="形状" fill="#FFFFFF"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p  class="user-skin-tip">格式为PNG、JPG，宽度*高度大于1920*100像素，不超过2MB，主视觉建议放在右侧，请参照线上博客头图</p>
+			    <p  class="user-skin-color">请上传大于1920*100像素的图片！</p>
+			</div>
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>博客底图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadBgimg" style="display:none" value="">
+				<label for="uploadBgimg" class="upload-img">
+					<div class="icon-box">
+					<svg class="upload-icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-574.000000, -434.000000)">
+								<g transform="translate(406.000000, 409.000000)">
+									<g>
+										<image x="168" y="25" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGOfPtRkwAAA7ZJREFUaAXtWc9rE0EUdjctxYM/UITeLD2IoOBFvEgRSilSexARKgiBqv0RD8X+B/Ev0EM0aZu2iAgSPGiheJDiwYNYRUQ9tRf1qNBYqofEpPF7YV+YTHY3O5nZrEIWtjPvvXnvfd+bmd3J1toT0jU3NzeM0DdwlyuVytL09PSLMFJZYQQF+FuIe0eKPTs1NXVX0mmLxgl4gGegxkkYJdAEfCgkjBEICJ5J3MRySrOg0xohAPAJgLivCMQICW0CLYJnrtoktAhogjdComUChsBXSViWdX1ycnKJGam0tspgHusHHi+tPMa95bHcQr/u2FhVa6HPzs/PX6spFDrKBJxErhuWAKKa59BuyBig33BsRFC+rFZJKBEg8JRIzk4y9FXweDx+crOTjmymSQQmIIBv2DdBwDMpJgF5m3VCW52JdDp9VdD5dgMR8AOP6NtUVb/KywicsYPkK9sgW7ZtPwxKoikBCuQsm4bKOwAGVcAzYPi8R1+bhC8BAk/VoKpwYqGl6hF4AtLSZYKEJ4GwwTPjICQymcxlHi+3rgTaBZ7BNCOBPfbYi0QDgXaDD0gi5kWijgDesBfDXPMM1qttMhNMYkT0rxFIJpM2njYPYAxlw4pJ/frNSMD3nuhfI9Df378X07RfNDp97aeNS0xfFZNAQX/JA4Gxb3l5+SDrawTi8fhvOLxig9O2HTznJxIAOySTgLw5Pj7+k8fVCJACxjiaVdw76NNnkAGnGui2/0LuN7FY7CywrCH7Du7V3d3d8yKSLlFIJBJfII+Kuqj7ExMTH4FhyAtH3Qx4DfqX9R0CUc9OZwY6M6BZgc4S0iygtvt/PwPVN3E2mz1UKpWu4Ozxo1AorMzMzBR0SoM4RdkfxwGtmBQvl8vF8vn8JcQ6gvsJTg7f7VQqdbhcLr9GUjqm5np6ej4sLi7ukwGoyAj+WR4P3UtZpyLTcX9ra+spfHKEFb9bNvAr7ZTd3d19G8pjQrDjmI0xQVbuFotFKsZzwTGFaj0SZOVub2/vGICL57QDkGdpCZ2Uo6FaR2WdiuwswRH8PO0jP+eQqBKiYSzAnpCVhLMLf2wY62yQjWxuE8AZmBtO2GwjQDlJFG2HQBRVF3N2Yb2XRAX1sd4G8IklKesjlgdc8pdoE3912cQ02M3BJUakqm/0BHoWKQSN5ISd/qFgYbmsQzitEavtrsD9Dl8tztAMoF+5AAQrbUfRYkLg3cTnllHCXvcGW1hYGMS5aBYGrbNQi7iCuG0DfBr41lD9P+TwF9fJtg0FDOMWAAAAAElFTkSuQmCC"></image>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<svg style="display:none" class="success-upload-icon" width="24px" height="24px" viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-891.000000, -223.000000)" fill-rule="nonzero">
+								<g id="img" transform="translate(891.000000, 223.000000)">
+									<path d="M0.0193225078,2.00739502 C0.0450569347,1.46096655 0.248659711,0.937918033 0.599127539,0.517895859 C0.972546565,0.144689127 1.49311171,-0.0422744118 2.01865024,0.00806728125 L15.8440015,0.00806728125 L22.0119275,6.00605046 L22.0119275,22.0006723 C21.9960073,22.513472 21.7892436,23.0018621 21.4321225,23.3702118 C21.0435806,23.7343227 20.5432883,23.9562833 20.0125998,23.9999957 L2.01865024,23.9999957 C0.914452025,23.9999957 0.0193225078,23.1048705 0.0193225078,22.0006723 L0.0193225078,2.00739502 Z" id="路径" fill="#8EC8F6"></path>
+									<path d="M22.0119275,6.00605046 L17.903309,6.00605046 C17.3644479,6.01952622 16.8429751,5.81484752 16.4571475,5.43843032 C16.0713199,5.06201313 15.8538296,4.54575228 15.853998,4.00672275 L15.853998,0.00806728125 L22.0119275,6.00605046 Z" id="路径" fill-opacity="0.15" fill="#000000"></path>
+									<path d="M7.89667376,12.4038992 C7.44095779,12.4209003 6.99875293,12.2473195 6.67628892,11.9248555 C6.35382491,11.6023914 6.18024403,11.1601866 6.19724517,10.7044706 C6.18024403,10.2487547 6.35382491,9.8065498 6.67628892,9.48408579 C6.99875293,9.16162178 7.44095779,8.98804091 7.89667376,9.00504206 C8.35238972,8.98804092 8.79459457,9.16162179 9.11705858,9.4840858 C9.43952259,9.80654981 9.61310347,10.2487547 9.59610232,10.7044706 C9.58530287,11.6385293 8.83073239,12.3930997 7.89667376,12.4038992 Z M2.51848216,18.6318051 L5.20757796,15.092995 L5.34753089,15.0030252 C5.60646688,14.7265111 5.96837035,14.5696004 6.34719476,14.5696004 C6.72601917,14.5696004 7.08792263,14.7265111 7.34685862,15.0030252 L8.61643172,16.2725983 L12.2951947,11.6041681 L12.5850973,11.3242622 C13.2250744,10.8926249 14.0875879,11.0133768 14.584425,11.6041681 L19.5827443,18.5418353 L2.51848216,18.5418353 L2.51848216,18.6318051 Z" id="形状" fill="#FFFFFF"></path>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，不超过1MB，可上下左右平铺至整个背景</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>栏目图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadColumnimg" style="display:none" value="">
+				<label for="uploadColumnimg" class="upload-img">
+					<div class="icon-box">
+					<svg class="upload-icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-574.000000, -434.000000)">
+								<g transform="translate(406.000000, 409.000000)">
+									<g>
+										<image x="168" y="25" width="24" height="24" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGOfPtRkwAAA7ZJREFUaAXtWc9rE0EUdjctxYM/UITeLD2IoOBFvEgRSilSexARKgiBqv0RD8X+B/Ev0EM0aZu2iAgSPGiheJDiwYNYRUQ9tRf1qNBYqofEpPF7YV+YTHY3O5nZrEIWtjPvvXnvfd+bmd3J1toT0jU3NzeM0DdwlyuVytL09PSLMFJZYQQF+FuIe0eKPTs1NXVX0mmLxgl4gGegxkkYJdAEfCgkjBEICJ5J3MRySrOg0xohAPAJgLivCMQICW0CLYJnrtoktAhogjdComUChsBXSViWdX1ycnKJGam0tspgHusHHi+tPMa95bHcQr/u2FhVa6HPzs/PX6spFDrKBJxErhuWAKKa59BuyBig33BsRFC+rFZJKBEg8JRIzk4y9FXweDx+crOTjmymSQQmIIBv2DdBwDMpJgF5m3VCW52JdDp9VdD5dgMR8AOP6NtUVb/KywicsYPkK9sgW7ZtPwxKoikBCuQsm4bKOwAGVcAzYPi8R1+bhC8BAk/VoKpwYqGl6hF4AtLSZYKEJ4GwwTPjICQymcxlHi+3rgTaBZ7BNCOBPfbYi0QDgXaDD0gi5kWijgDesBfDXPMM1qttMhNMYkT0rxFIJpM2njYPYAxlw4pJ/frNSMD3nuhfI9Df378X07RfNDp97aeNS0xfFZNAQX/JA4Gxb3l5+SDrawTi8fhvOLxig9O2HTznJxIAOySTgLw5Pj7+k8fVCJACxjiaVdw76NNnkAGnGui2/0LuN7FY7CywrCH7Du7V3d3d8yKSLlFIJBJfII+Kuqj7ExMTH4FhyAtH3Qx4DfqX9R0CUc9OZwY6M6BZgc4S0iygtvt/PwPVN3E2mz1UKpWu4Ozxo1AorMzMzBR0SoM4RdkfxwGtmBQvl8vF8vn8JcQ6gvsJTg7f7VQqdbhcLr9GUjqm5np6ej4sLi7ukwGoyAj+WR4P3UtZpyLTcX9ra+spfHKEFb9bNvAr7ZTd3d19G8pjQrDjmI0xQVbuFotFKsZzwTGFaj0SZOVub2/vGICL57QDkGdpCZ2Uo6FaR2WdiuwswRH8PO0jP+eQqBKiYSzAnpCVhLMLf2wY62yQjWxuE8AZmBtO2GwjQDlJFG2HQBRVF3N2Yb2XRAX1sd4G8IklKesjlgdc8pdoE3912cQ02M3BJUakqm/0BHoWKQSN5ISd/qFgYbmsQzitEavtrsD9Dl8tztAMoF+5AAQrbUfRYkLg3cTnllHCXvcGW1hYGMS5aBYGrbNQi7iCuG0DfBr41lD9P+TwF9fJtg0FDOMWAAAAAElFTkSuQmCC"></image>
+									</g>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<svg style="display:none" class="success-upload-icon" width="24px" height="24px" viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-891.000000, -223.000000)" fill-rule="nonzero">
+								<g id="img" transform="translate(891.000000, 223.000000)">
+									<path d="M0.0193225078,2.00739502 C0.0450569347,1.46096655 0.248659711,0.937918033 0.599127539,0.517895859 C0.972546565,0.144689127 1.49311171,-0.0422744118 2.01865024,0.00806728125 L15.8440015,0.00806728125 L22.0119275,6.00605046 L22.0119275,22.0006723 C21.9960073,22.513472 21.7892436,23.0018621 21.4321225,23.3702118 C21.0435806,23.7343227 20.5432883,23.9562833 20.0125998,23.9999957 L2.01865024,23.9999957 C0.914452025,23.9999957 0.0193225078,23.1048705 0.0193225078,22.0006723 L0.0193225078,2.00739502 Z" id="路径" fill="#8EC8F6"></path>
+									<path d="M22.0119275,6.00605046 L17.903309,6.00605046 C17.3644479,6.01952622 16.8429751,5.81484752 16.4571475,5.43843032 C16.0713199,5.06201313 15.8538296,4.54575228 15.853998,4.00672275 L15.853998,0.00806728125 L22.0119275,6.00605046 Z" id="路径" fill-opacity="0.15" fill="#000000"></path>
+									<path d="M7.89667376,12.4038992 C7.44095779,12.4209003 6.99875293,12.2473195 6.67628892,11.9248555 C6.35382491,11.6023914 6.18024403,11.1601866 6.19724517,10.7044706 C6.18024403,10.2487547 6.35382491,9.8065498 6.67628892,9.48408579 C6.99875293,9.16162178 7.44095779,8.98804091 7.89667376,9.00504206 C8.35238972,8.98804092 8.79459457,9.16162179 9.11705858,9.4840858 C9.43952259,9.80654981 9.61310347,10.2487547 9.59610232,10.7044706 C9.58530287,11.6385293 8.83073239,12.3930997 7.89667376,12.4038992 Z M2.51848216,18.6318051 L5.20757796,15.092995 L5.34753089,15.0030252 C5.60646688,14.7265111 5.96837035,14.5696004 6.34719476,14.5696004 C6.72601917,14.5696004 7.08792263,14.7265111 7.34685862,15.0030252 L8.61643172,16.2725983 L12.2951947,11.6041681 L12.5850973,11.3242622 C13.2250744,10.8926249 14.0875879,11.0133768 14.584425,11.6041681 L19.5827443,18.5418353 L2.51848216,18.5418353 L2.51848216,18.6318051 Z" id="形状" fill="#FFFFFF"></path>
+								</g>
+							</g>
+						</g>
+					</svg>					
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，图片宽度*高度为300*38像素，不超过0.5MB</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>主标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>Hover：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicHoverColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>副标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="subTopicColor" placeholder="#b8b8b8">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-bt">
+			<a href="javascript:;" class="user-skin-preview bt">预览</a>
+			<a href="javascript:;" class="user-skin-cancel bt bt-back">取消</a>
+			<a href="javascript:;" class="user-skin-refer bt">提交</a>
+		</div>
+	</div>
+</div>
+<div id="cropBox">
+	<div class="crop-box">
+		<p class="crop-box-title">
+        	<span>自定义博客皮肤</span>
+        	<span class="close-bt  bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="crop-img-before">
+			<img src="" alt="" id="cropImg">
+		</div>
+		<div class="crop-zoom">
+			<a href="javascript:;" class="bt-reduce">-</a><a href="javascript:;" class="bt-add">+</a>
+		</div>
+		<div class="crop-img-after">
+			<div  class="final-img"></div>
+		</div>
+		<div class="crop-bt">
+			<a href="javascript:;" class="bt-prev bt-back">上一步</a><a href="javascript:;" class="bt-next">保存</a>
+		</div>
+	</div>
+</div><header>
+	<div class="container d-flex clearfix" style="background-image: ">
+		<div class="title-box">
+			<h1 class="title-blog">
+				<a href="https://blog.csdn.net/kwsy2008">KWSY2008的专栏</a>
+			</h1>
+			<p class="description "></p>
+		</div>
+		<div class="opt-box d-flex justify-content-end">
+		    								<a class="btn btn-sm" data-report-click='{"mod":"popu_832","dest":"https://blog.csdn.net//pheapi/skin/useThemSkin?assign_skin_id=4"}' id="meUser"  href="https://blog.csdn.net//pheapi/skin/useThemSkin?assign_skin_id=4">
+				<svg t="1568082198881" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="16285" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M461.858 621.017c19.56 0 39.596-0.408 59.609 0.101 26.306 0.669 41.374 14.059 41.578 40.051 0.697 88.704 0.7 177.42 0.063 266.125-0.198 27.512-14.754 40.609-43.002 40.807-57.583 0.403-115.172 0.406-172.755 0.005-29.362-0.205-42.128-13.571-42.19-43.431a64506.26 64506.26 0 0 1-0.006-259.135c0.059-30.697 13.132-44.297 43.488-45.174 20.069-0.58 40.169-0.11 60.749-0.11 0.671-7.524 1.219-12.884 1.618-18.255 4.91-66.06 36.014-95.568 103.796-96.039 93.378-0.65 186.763-0.171 280.145-0.176 14.785-0.001 29.572 0.105 44.356-0.024 39.082-0.343 56.629-17.451 57.291-57.106 0.572-34.231 0.203-68.478 0.113-102.718-0.11-42.121-9.628-49.946-54.446-43.012 0 14.09 0.316 28.576-0.055 43.043-1.589 62.05-40.676 103.007-102.553 103.466-178.949 1.326-357.908 1.725-536.862 1.622-57.07-0.033-97.481-42.663-97.767-99.954-0.283-56.797-0.803-113.594-0.717-170.39 0.112-73.831 39.639-113.618 113.97-113.885 117.504-0.422 235.012 0.039 352.517-0.189 52.889-0.103 105.778-1.493 158.665-1.359 73.39 0.185 112.597 39.706 112.806 112.546 0.065 22.446 0.01 44.893 0.01 71.054 15.353 0 28.998-0.02 42.643 0.004 44.298 0.078 63.753 18.631 64.62 63.458 0.752 38.895 0.171 77.815 0.169 116.725 0 14.785 0.465 29.591-0.128 44.353-2.339 58.222-29.413 84.919-87.97 85.177-105.052 0.462-210.108 0.133-315.162 0.134-11.673 0-23.346-0.006-35.018 0.001-46.375 0.029-56.807 12.488-49.575 62.285z m8.412-225.007l0.001-0.767c90.295 0 180.59 0.082 270.885-0.04 36.817-0.049 51.174-14.225 51.243-50.293 0.107-56.032 0.071-112.064 0.016-168.096-0.044-44.634-11.843-56.422-56.867-56.37-172.033 0.199-344.066 0.486-516.098 0.799-6.99 0.013-14.008 0.32-20.962 1.005-30.512 3.005-45.622 17.806-45.731 47.939-0.218 59.909 0.184 119.836 1.534 179.729 0.789 35.008 13.719 46.047 49.741 46.073 88.745 0.063 177.492 0.021 266.238 0.021z m41.844 398.553c0-31.129-0.102-62.259 0.042-93.388 0.075-16.367-5.536-27.209-23.994-27.16-36.576 0.099-73.153 0.109-109.73 0.025-15.731-0.036-22.935 8.764-23.008 23.302-0.327 64.587-0.359 129.177-0.175 193.765 0.048 16.989 9.299 25.607 26.412 25.607 34.242 0.001 68.484-0.018 102.726 0.085 19.419 0.058 28.173-9.39 27.879-28.849-0.47-31.123-0.127-62.258-0.152-93.387z" p-id="16286"></path><path d="M394.752 174.722c50.63-0.016 101.261-0.038 151.891 0.017 5.162 0.006 11.698-1.409 15.184 1.137 6.266 4.576 14.027 11.234 14.866 17.825 0.69 5.417-6.606 13.794-12.48 17.522-5.185 3.291-13.295 2.588-20.116 2.598-100.11 0.134-200.22 0.093-300.33 0.087-3.451 0-6.929 0.188-10.35-0.156-12.766-1.282-22.831-6.268-22.032-21.039 0.748-13.819 10.604-17.946 22.844-17.956 53.509-0.044 107.016-0.019 160.523-0.035zM630.039 174.722c-11.639-0.016-23.278-0.038-34.917 0.017-1.187 0.006-2.689-1.409-3.491 1.137-1.44 4.576-3.225 11.234-3.417 17.825-0.159 5.417 1.519 13.794 2.869 17.522 1.192 3.291 3.056 2.588 4.624 2.598 23.013 0.134 46.026 0.093 69.039 0.087 0.793 0 1.593 0.188 2.379-0.156 2.935-1.282 5.248-6.268 5.065-21.039-0.172-13.819-2.438-17.946-5.251-17.956-12.3-0.044-24.6-0.019-36.9-0.035z" p-id="16287"></path></svg>
+				我也要用</a>
+                            		</div>
+        	</div>
+	</header>
+<script src="https://dup.baidustatic.com/js/ds.js"></script>
+<div class="container clearfix pt0" id="mainBox">
+    <main>
+      <div class="filter-box d-flex align-items-center">
+      <form action="" id=seeOriginal>
+    <label class="chk-box" for="chkOriginal">
+      <input onchange="this.checked ? document.getElementById('seeOriginal').submit() : location.href = 'https://blog.csdn.net/KWSY2008'" type="checkbox" name="t" value="1"  id="chkOriginal">只看原创</label></form>
+    <dl class="filter-sort-box d-flex align-items-center">
+    <dt>排序：</dt>
+    <dd><a href="javascript:void(0);" data-report-query="" class="btn-filter-sort active" target="_self">默认</a></dd>
+    <dd><a href="https://blog.csdn.net/KWSY2008" data-report-query="orderby=UpdateTime" class="btn-filter-sort " target="_self">按更新时间</a></dd>
+    <dd><a href="https://blog.csdn.net/KWSY2008" data-report-query="orderby=ViewCount" class="btn-filter-sort " target="_self">按访问量</a></dd>
+    <dd><a class="btn btn-sm rss" href="https://blog.csdn.net/kwsy2008/rss/list">
+		<svg class="icon" aria-hidden="true">
+			<use xlink:href="#csdnc-rss"></use>
+		</svg>RSS订阅</a>
+    </dd>
+  </dl>
+</div>
+
+
+
+<div class="article-list">
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="103812367">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/103812367" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        可能是史上最优质的python基础教程      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/103812367" target="_blank">
+        一份好的python基础教程应该满足以下要求：
+
+内容编排循序渐进，有主线，有理论，有经验分享
+	概念讲解专业且准确，深入浅出，配合示例代码，理解更直观
+	每个章节都配有练习题，巩固所学，以免遗忘
+	内容详实，可作为基础部分的工具书查询使用
+	针对0基础同学，重点讲解令他们疑惑不解的知识
+然而，我...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2020-01-02 22:27:52</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">40</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="103147625">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/103147625" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        以专业视角推荐python教程《python编程快速上手---让繁琐工作自动化》      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/103147625" target="_blank">
+        本篇文章从专业视角点评推荐《python编程快速上手---让繁琐工作自动化》
+
+1、适合哪些人学习
+
+如果你在工作中，经常与word文档，execl打交道，而且有大量重复性工作，那么这个教程非常适合你，在实践中应用python，正是这本书的特色。
+
+如果你的工作需要经常从web网上摘取信息，那么你...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2019-11-19 17:44:05</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">23</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="102939776">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/102939776" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        每个python初学者都会犯的变量命名错误      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/102939776" target="_blank">
+        关于python的命名规范，我后续会专门写一篇文章，本文只讨论初学者都会犯的一个变量命名错误，避免这个错误，就可以避免很多稀奇古怪的问题
+
+1、变量命名要避开python内置函数名称
+
+初学python，你还不习惯给变量起名字，刚刚接触了几个单词，于是给变量起名字的时候就用上了，不仅如此，你还以为...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2019-11-06 17:47:00</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">91</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="98209020">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/98209020" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        有关python变量的6个概念，一次说透      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/98209020" target="_blank">
+        1. 变量不能独立存在
+
+在C++等语言中，变量的声明和赋值是可以分开的
+
+
+int a;
+a = 343;
+
+而在python中却不行，在声明python变量的同时必须进行赋值操作
+
+
+a = 343
+
+如果你直接使用一个不存在的变量，就会发生错误,NameError: name &#039;b...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2019-08-02 16:28:48</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">76</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="98208454">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/98208454" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python程序异常崩溃时如何快速分析并解决问题      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/98208454" target="_blank">
+        程序异常崩溃时会提供非常详细的错误信息，掌握正确的分析方法，就可以快速定位问题并解决问题，下面这段代码会引发异常导致程序终止
+
+
+def func_tet():
+    func_sum(&#039;4&#039;, 3)
+
+
+def func_sum(a, b):
+    value = a +...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2019-08-02 15:56:26</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">711</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="61614994">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/61614994" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        我的个人网站      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/61614994" target="_blank">
+        在各种机缘巧合的推动下，我的个人网站终于建成了，陆陆续续，在CSDN上的文章会迁移到上面，今后也将以自己的个人网站为主写技术博客
+如果你喜欢我的文章，欢迎你访问我的个人网站   网址为 http://www.zhangdongshengtech.com      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2017-03-12 10:53:00</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1235</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="54024165">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/54024165" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 实用库      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/54024165" target="_blank">
+        最近学习时，遇到一些比较小但是很实用的第三方库。
+
+1、colorclass
+
+使用colorclass，可以使我们告别终端单调的色彩，让输出的内容更加多姿多彩,详细介绍请看pypi地址，效果如下：
+
+
+
+2、terminaltables
+
+
+
+我们在终端输出内容，对输出内容的格式其实往往没有要求...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2017-01-04 20:58:55</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1621</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="53188850">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/53188850" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 与sqlite3      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/53188850" target="_blank">
+        有一个解密chrome cookie的事情，google出了代码，却不能正常执行，原因在于sqlite3的版本太低，虽然我切换到了python3.5的环境，但sqlite3的版本也只有3.6。
+
+google了许久，终于找到方法：
+
+1、 进入页面http://www6.atomicorp.com...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-11-16 17:28:17</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1862</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="53005264">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/53005264" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        flask 中的before_request  与 after_request      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/53005264" target="_blank">
+        使用before_request 和 after_request的方法都非常简单，使用@app.before_request 或者@app.after_request 修饰期望在请求前或请求后执行的函数即可
+
+  示例：
+
+
+
+
+@app.before_request
+def before_req...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-11-02 10:40:29</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">11595</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">6</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52763111">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52763111" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        Protocol Buffers  与Python---强烈吐槽csdn的编辑器，怎么排版都有问题      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52763111" target="_blank">
+        protocol buf是伟大的google发布的一套开源编码规则，几乎涵盖了所有主流语言，它是基于二进制流的序列化传输，性能上要优于xml,json,thrift。
+        本篇将介绍它的安装与python环境下的使用，顺便啰嗦几句语法问题。
+安装protocol buf篇：
+    一...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-10-09 08:51:50</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1149</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52510846">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52510846" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 获取网卡名称及其IP地址      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52510846" target="_blank">
+        windows上想知道网卡和IP地址，可以使用ipconfig命令，在linux上可以使用ifconfig命令，得到输出后，可以解析输出内容，我要介绍的方法更为简单，只需要安装一个名为psutil的第三方库即可
+
+
+
+
+#coding=utf-8
+import psutil
+#获取网卡名称和其ip...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-09-12 09:42:51</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">14251</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">1</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52467606">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52467606" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 使用pyenv安装多个版本的python环境      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52467606" target="_blank">
+        我的阿里云服务器操作系统是centos 6.5 ，python环境是2.7，我想在服务器上安装一套3.5的环境，技术要面向未来嘛。
+
+    pyenv是一款python多版本管理器，可以安装各种版本的python并且方便的切换，安装步骤如下：
+
+
+
+    （1）
+
+
+
+
+yum install...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-09-08 08:57:25</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1206</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52441138">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52441138" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python fork子进程（二）      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52441138" target="_blank">
+        父进程在wait子进程时，可能会发生失败，一种情况是被系统信号打断，一种是wait的pid不存在。上一篇里，waitpid采用的是非阻塞的，因此不会发生被系统信号打断的情况，下面给出一个例子，演示如果处理被系统打断的情况
+       
+#coding=utf-8
+import os
+import...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-09-05 16:16:54</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">709</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52397242">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52397242" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python fork子进程(一)      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52397242" target="_blank">
+        fork是个好动西，它通过系统调用能够创建出一个与原来进程一模一样的进程，子进程可以执行和父进程一样的代码，通过逻辑控制，也可以让父进程和子进程执行完全不同的代码块。如此好用的东西，windows是没有的，所以，赶紧转到linux吧！
+    创建子进程的过程非常简单
+pid=os.fork() ...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-09-01 15:21:32</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1155</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">1</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52381390">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52381390" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python  测试mysql写入性能      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52381390" target="_blank">
+        测试环境：
+
+（1） 阿里云服务器centos 6.5
+
+（2） 2G内存
+
+（3） 普通硬盘
+
+（4） mysql 5.1.73  数据库存储引擎为InnoDB
+
+（5） python 2.7
+
+（6） 客户端模块  mysql.connector 
+
+
+
+    测试方法：
+
+（1） 普通写入...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-31 07:48:53</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">3171</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52354254">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52354254" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 小点心---requests 和 https      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52354254" target="_blank">
+        requests 是一个非常小巧全面的库，应用它可以很容易写出与服务器进行交互的程序，今天遇到了一个问题，与服务器交互时，url都是https开头的，都进行了ssl加密处理，这样一来，就不能像之前那样访问http开头的url那样进行处理了。
+查了一些资料，可以配置ssl进行验证的文件，方式如下
+...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-29 16:34:47</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">467</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52349836">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52349836" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 小点心---execvp      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52349836" target="_blank">
+        execvp会用即将运行的进程的内存替换掉调用进程的内存，更进一步讲，就是把当前进程的机器指令都清空，然后载入被execvp运行起来的进程的机器指令。
+
+
+
+
+#coding=utf-8
+import os
+import sys
+
+print &#039;before&#039;
+os.execv...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-29 08:02:03</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">2209</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52326204">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52326204" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python leveldb      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52326204" target="_blank">
+        leveldb 是google实现的一种非常高效的key-value数据库。key-value数据库中，redis是比较知名且好用的，但它是一个内存数据库，而leveldb只需要少量的内存，但速度依然很快，美中不足的是，没有网络服务封装，这样一来就只能单机使用，如果你实力足够强，也可以自己封装一个...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-26 16:24:28</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">5675</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">1</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52274957">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52274957" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        Python AES加密      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52274957" target="_blank">
+        AES，是美国联邦政府采用的一种加密技术，AES有几个模式，其中CBC模式是公认的安全性最好的模式，被TLS所采用。
+加密与解密双方需确定好key，key的长度可以是16位，24位，32位中的一个，分别对应了不同的算法。
+        如果key的长度是是16位的，那么被加密的明文长度必须是...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-22 11:09:40</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">2022</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52227892">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52227892" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 小点心---获取当前函数名称      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52227892" target="_blank">
+        python 具有强大的自省能力，在函数运行时，可以在函数内部获取到当前所在的函数名称，请看示例代码
+
+
+
+
+#coding=utf-8
+import sys
+import inspect
+
+def my_name():
+    print &#039;1&#039; ,sys._getframe...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-08-17 09:44:04</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">10129</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">1</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52042303">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52042303" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python  kazoo  监视zookeeper节点数据发生变化      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52042303" target="_blank">
+        程序可以监视一个zookeeper节点的数据，一旦数据发生变化，监视器会获得相应的消息，利用这种方法，可以对全局的配置进行管理，程序在启动时读取该配置，注册监视器，当数据发生变化时可以获得通知。
+      下面的这段代码模拟了该过程#coding=utf-8
+from kazoo.client...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-27 09:34:18</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">4782</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52041931">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52041931" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        使用logging模块发送邮件      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52041931" target="_blank">
+        logging模块不只是能记录log，还能发送邮件，使用起来非常简单方便
+    #coding=utf-8
+&#039;&#039;&#039;
+Created on 2016-3-21
+
+@author: Administrator
+&#039;&#039;&#039;
+import log...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-27 08:55:47</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1065</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52041811">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52041811" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 导出hive数据表的schema      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52041811" target="_blank">
+        为了避免运营提出无穷无尽的查询需求，我们决定将有查询价值的数据从mysql导入hive中，让他们使用HUE这个开源工具进行查询。想必他们对表结构不甚了解，还需要为之提供一个表结构说明，于是编写了一个脚本，从hive数据库中将每张表的字段即类型查询出来，代码如下：
+     #coding=utf-...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-27 08:29:35</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">2074</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52041768">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52041768" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 设置运行进程的CPU      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52041768" target="_blank">
+        Nginx服务器会把自己的每个worker进程绑定到一个CPU上，以期减少进程间切换所带来的开销，最大限度利用多核框架。在实现上，使用Linux的sched_setaffinity()这个函数来实现。第三方库affinity封装了该函数，使得我们可以将python的进程绑定到指定的CPU上。
+ ...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-27 08:19:47</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">3565</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52014247">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52014247" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 判断一个IP地址是否合法      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52014247" target="_blank">
+        最近在看tornado的源码，遇到了 is_valid_ip(ip) 这个函数，该函数用来判断一个IP地址是否合法，支持IPv4和IPv6,想到自己前阵子也遇到过这个问题，看着源码的解决方法要比自己的好多了，就摘抄下来，以留备用
+def is_valid_ip(ip):
+    &quot;&q...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-24 15:42:04</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">5525</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="52012321">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/52012321" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        论工作周报中完成率的科学性      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/52012321" target="_blank">
+        从这周起，工作周报采用新的模板了，其中有两项指标分别是计划完成率和实际完成率。这东西我不是第一次见了，看见这两个词，我一如既往的感到恶心，内心有一万匹草泥马奔腾而过，烟尘四起，大地都为之颤抖。我那颗愤世嫉俗的心又跳动了起来，亢奋的血液流遍我的全身，我仿佛又变成了那个无知无畏的热血青年，一脸愤青的表...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-24 10:04:08</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">672</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51909429">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51909429" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python  zookeeper 服务发现      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51909429" target="_blank">
+        如果你开发的是一个小系统，那么完全没有必要应用这种技术，因为，你面临的问题不是如何发现服务。对于那些大型的，需要强大处理能力的系统来说，有一个讨厌的问题，那就是如何有效的管理这些服务。
+      举一个简单的例子，你写了一个服务，它接收一个user_id，返回这个用户的姓名电话等信息，这看起来...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-14 15:33:13</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">4822</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51908976">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51908976" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 进程通信      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51908976" target="_blank">
+        最近看了本有关linux的书，提到了posix ipc 这种进程通信技术，想来，python一定有合适的库来做这件事情，百度一番，果不其然，有一个名叫poxis_ipc的库，随手写了几个小的示例，分享给大家，参考资料地址 http://semanchuk.com/philip/posix_ipc/...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-14 14:57:15</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">610</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51881551">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51881551" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 追踪except信息      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51881551" target="_blank">
+        看下面这个函数
+       def test():
+    sum = 3/0
+    
+if __name__ == &#039;__main__&#039;:
+    test()       除0肯定是不对的，会引发一个except，内容如下：
+       File &quot;E:...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-11 16:06:22</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">741</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51831562">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51831562" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        mongodb的aggregate 用法      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51831562" target="_blank">
+        先用一个python脚本构造一些数据，然后来演示如何使用
+        #coding=utf-8
+&#039;&#039;&#039;
+Created on 2015-12-28
+
+@author: kwsy
+&#039;&#039;&#039;
+import pymongo
+client ...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-05 14:51:37</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">4817</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51831369">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51831369" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 利用文件锁单例执行脚本      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51831369" target="_blank">
+        你可能会遇到这样的要求，一个脚本，只允许有一个实例。
+        在python中，为了实现这个需求，可以引入fcntl模块对文件加一个排他锁，这样一来，先启动的实例拥有了文件锁，而后启动的实例则因无法获取锁而退出
+ 
+        #coding=utf-8
+import fcntl...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-07-05 14:41:01</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">3147</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51441002">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51441002" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        flask 与https      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51441002" target="_blank">
+        https相比于http更加安全，那么用flask写出来的web程序如何支持https呢？可以非常肯定的讲，flask本身只是一个网络框架，因此，仅在flask上做手术是不能美容出一个可以支持https的web程序的。通常，flask在部署时，会用到nginx或者apache，这类服务器则是可以通...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-05-18 08:53:16</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">5781</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51440952">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51440952" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 使用mysqldb模块通过ssh隧道连接mysql      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51440952" target="_blank">
+        出于安全考虑，数据库服务器只允许堡垒机通过ssh访问，这对日常的使用带来了麻烦。昨天的工作中，就遇到了这样的问题，mysql数据库放在了服务器A上，只允许服务器B来访问，而我在机器C上，可以通过ssh连接服务器B。为了解决在机器C上连接mysql这个问题，用百度搜索解决方法，遗憾的是，找不到什么靠...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-05-18 08:37:14</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">8719</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">5</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="51149421">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/51149421" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        centos 安装spark      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/51149421" target="_blank">
+        紧跟时代的步伐，安装个spark玩玩，不然，2G的阿里云主机就浪费了
+        环境说明：
+1、 centos 6.5  64位
+        2、 spark 1.3.1
+        3、 scala-2.10.5
+        4、 python 2.7
+        5、 j...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-04-14 11:19:02</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">523</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50970215">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50970215" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        关于TCP的一些零散知识      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50970215" target="_blank">
+        一、 Socket能连接的最大端口号是多少？
+        答案是65536，也就是2的16次方。那么这个数值是怎么算出来的呢？看过下面的图，你就明白了
+         
+                                               图1
+         上图...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-04-11 16:07:02</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">393</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50996522">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50996522" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 2进制，8进制，10进制，16进制转换      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50996522" target="_blank">
+        python里的进制转换并不复杂，大家只需要记住，目标进制为2进制时，就用bin(),目标进制是8进制的时候用oct(),目标进制是10进制的时候用int(),目标进制是16进制的时候用hex()
+
+
+     #coding=utf-8
+&#039;&#039;&#039;
+Created...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-03-28 11:23:27</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">3560</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50989256">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50989256" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python判断文件的类型      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50989256" target="_blank">
+        文件都有后缀名，但后缀名是可以随意更改的，因此，单从后缀名来判断文件的类型是不准确不靠谱的
+      每种类型的文件，会在最开始的几个字节来标识该文件的类型，因此，如果知晓每一种文件的类型标识，识别起来也就容易了
+      #coding=utf-8
+import struct
+
+type...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-03-26 22:21:59</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">3442</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">2</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50976978">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50976978" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 如何重载模块，用一个简单的例子来解释      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50976978" target="_blank">
+        falsk 在调试时，如果我们对文件有所修改，服务器就会重新启动，而无需我们停下服务器再重新启动，这里面就暗藏了一个重载的机制。
+        下面用一个简单的例子，来解释python如何重载一个模块
+        新建一个名为reloadsetting.py 的文件，内容很简单：
+     ...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-03-25 09:44:57</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1545</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50965885">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50965885" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python小点心--判断操作系统类型      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50965885" target="_blank">
+        写代码的环境是windows，生产环境是linux，这导致一个非常蛋疼的问题，开发环境和生产环境下所用的数据库地址，端口，密码都是不一样的，所以每次将代码上传至linux上时都需要改写配置，有时还容易忘掉。
+
+
+        在没有更好的解决办法前，我决定通过判断操作的类型来执行不同的数据...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-03-23 19:30:44</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">1341</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="article-item-box csdn-tracking-statistics" data-articleid="50923597">
+        <h4 class="">
+        <a href="https://blog.csdn.net/KWSY2008/article/details/50923597" target="_blank">
+        <span class="article-type type-1 float-none">原创</span>        python 小点心 --datetime(日期)      </a>
+            </h4>
+    <p class="content">
+      <a href="https://blog.csdn.net/KWSY2008/article/details/50923597" target="_blank">
+        #coding=utf-8
+&#039;&#039;&#039;
+Created on 2016-3-18
+
+@author: Administrator
+&#039;&#039;&#039;
+import datetime
+from matplotlib.dates import seconds...      </a>
+    </p>
+    <div class="info-box d-flex align-content-center">
+      <p>
+        <span class="date">
+        2016-03-18 15:04:39</span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">阅读数 <span class="num">388</span> </span>
+      </p>
+      <p class="point"></p>
+      <p>
+        <span class="read-num">评论数 <span class="num">0</span> </span>
+      </p>
+    </div>
+        </div>
+  <div class="pagination-box" id="pageBox"></div>
+</div>
+    </main>
+    <aside class="blog_container_aside">
+	<!--主页引入-->
+
+    <div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/KWSY2008"  data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/KWSY2008"}'>
+                <img src="https://profile.csdnimg.cn/A/6/4/3_kwsy2008" class="avatar_pic" username='KWSY2008'>
+                                    <img src="https://g.csdnimg.cn/static/user-reg-year/1x/12.png" class="user-years">
+                            </a>
+                    </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div>
+                                <span class="name csdn-tracking-statistics tracking-click "   data-report-click='{"mod":"popu_379","dest":"https://blog.csdn.net/KWSY2008"}' username='KWSY2008'>
+                    <a href="https://blog.csdn.net/KWSY2008" class="" id="uid" title='酷python'>
+                    酷python                    </a>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                                                <span class="personal-home-page" style='right:-96px;'><a target="_blank" href="https://me.csdn.net/KWSY2008">TA的个人主页 ></a></span>
+                            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="155">
+                            <dt><a href="https://blog.csdn.net/kwsy2008" data-report-query="t=1">原创</a></dt>
+                <dd><a href="https://blog.csdn.net/kwsy2008" data-report-query="t=1"><span class="count">155</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="85">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">85</span></dd>
+        </dl>
+        <dl class="text-center" title="39">
+            <dt>获赞</dt>
+            <dd><span class="count">39</span></dd>
+        </dl>
+        <dl class="text-center" title="54">
+            <dt>评论</dt>
+            <dd><span class="count">54</span></dd>
+        </dl>
+        <dl class="text-center" title="443676">
+            <dt>访问</dt>
+            <dd><span class="count">44万+</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl class="aside-box-footerClassify">
+            <dt>等级:</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="6级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-6"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl title="11007">
+            <dt>周排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank" target="_blank">
+                    1万+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>积分:</dt>
+            <dd title="5693">
+                5693            </dd>
+        </dl>
+        <dl title="9261">
+            <dt>总排名:</dt>
+            <dd>
+                <a class="grade-box-rankA" href="https://blog.csdn.net/rank/writing_rank_total" target="_blank">
+                    9261                </a>
+            </dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer">
+                    <div class="badge-box d-flex">
+                <div class="profile-medal">勋章:</div>
+                <div class="badge d-flex">
+                                                                                                        <div class="icon-badge" title="持之以恒">
+                                    <div class="mouse-box">
+                                        <img src="https://csdnimg.cn/medal/chizhiyiheng@120.png" alt="">
+                                        <div class="icon-arrow"></div>
+                                    </div>
+                                    <div class="grade-detail-box">
+                                        <div class="pos-box">
+                                            <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                                <img src="https://csdnimg.cn/medal/chizhiyiheng@120.png" alt="">
+                                                <p>持之以恒</p>
+                                            </div>
+                                            <div class="right-box">
+                                                授予每个自然月内发布4篇或4篇以上原创或翻译IT博文的用户。不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                                                <div class="icon-badge" title="勤写标兵Lv1">
+                                    <div class="mouse-box">
+                                        <img src="https://csdnimg.cn/medal/qixiebiaobing1@120.png" alt="">
+                                        <div class="icon-arrow"></div>
+                                    </div>
+                                    <div class="grade-detail-box">
+                                        <div class="pos-box">
+                                            <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                                <img src="https://csdnimg.cn/medal/qixiebiaobing1@120.png" alt="">
+                                                <p>勤写标兵Lv1</p>
+                                            </div>
+                                            <div class="right-box">
+                                                授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周周三上午根据用户上周的博文发布情况由系统自动颁发。                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                                        </div>
+                <script>
+                    (function($) {
+                        setTimeout(function() {
+                            $('div.icon-badge.show-moment').removeClass('show-moment');
+                        }, 5000);
+                    })(window.jQuery)
+                </script>
+            </div>
+                
+    </div>
+        <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+                            <a class="personal-watch bt-button" id="btnAttent" data-report-click='{"mod":"popu_379"}'>关注</a>
+                    </div>
+        <div class='opt-letter-watch-box'>
+            <a class="bt-button btn-red-hollow personal-letter" href=https://im.csdn.net/im/main.html?userName=KWSY2008 target="_blank" rel="noopener">私信</a>
+        </div>
+    </div>
+    </div>
+<script>
+    function watchBtnChange(flag, username) {
+        $('span.blog-expert-button-follow').each(function(index) {
+            if (flag) {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html('<span class="hover-hide">已关注</span><span class="hover-show">取消</span>').removeClass('btn-red-follow').addClass('btn-gray-follow attented');
+                }
+            } else {
+                if ($(this).attr("data-name") == username) {
+                    $(this).html("关注").addClass('btn-red-follow').removeClass('btn-gray-follow attented');
+                }
+            }
+        })
+        if (username == $('p.csdn-tracking-statistics').attr("username")) {
+            if (flag) {
+                $('#btnAttent').addClass("attented").text("已关注").removeClass('btn-red-hollow').addClass('btn-gray-hollow');
+                changeFans(1)
+            } else {
+                $('#btnAttent').text("关注").addClass('btn-red-hollow').removeClass('btn-gray-hollow attented');
+                changeFans(-1)
+            }
+        }
+
+    }
+
+    function changeFans(num) {
+        if ($('#fan').text().indexOf('+') < 0) {
+            $('#fan').text(parseInt($('#fan').text()) + num);
+        } else {
+            $('#fanBox').attr('title', parseInt($('#fanBox').attr('title')) + num);
+        }
+    }
+    window.csdn = window.csdn ? window.csdn : {};
+    window.csdn.watchBtnChange = watchBtnChange;
+</script><div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-report-click='{"mod":"popu_4"}' data-report-view='{"mod":"popu_4"}' style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+        <div id="kp_box_56" data-pid="56"><script  data-ad-client="ca-pub-1076724771190722" async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左上视窗-20181120 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="7700527946"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=56&a=703&c=0&k=&d=1&t=3&u=38721d7acc1c49e89e621d6f49c09594"></div>    </div>
+</div>
+<div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/KWSY2008/article/details/103812367"}' href="https://blog.csdn.net/KWSY2008/article/details/103812367" target="_blank" >
+                                        可能是史上最优质的python基础教程                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/KWSY2008/article/details/103147625"}' href="https://blog.csdn.net/KWSY2008/article/details/103147625" target="_blank" >
+                                        以专业视角推荐python教程《python编程快速上手---让繁琐工作自动化》                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/KWSY2008/article/details/102939776"}' href="https://blog.csdn.net/KWSY2008/article/details/102939776" target="_blank" >
+                                        每个python初学者都会犯的变量命名错误                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/KWSY2008/article/details/98209020"}' href="https://blog.csdn.net/KWSY2008/article/details/98209020" target="_blank" >
+                                        有关python变量的6个概念，一次说透                </a>
+            </li>
+                        <li class="clearfix">
+                <a data-report-click='{"mod":"popu_382","dest":"https://blog.csdn.net/KWSY2008/article/details/98208454"}' href="https://blog.csdn.net/KWSY2008/article/details/98208454" target="_blank" >
+                                        python程序异常崩溃时如何快速分析并解决问题                </a>
+            </li>
+                    </ul>
+    </div>
+</div>
+    <div id="asideCategory" class="aside-box flexible-box"
+         style="">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2148673.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2148673.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2148673.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140145169.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">我为App做测试</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2924391.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2924391.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2924391.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151117521.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">C++</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">20篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2927143.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2927143.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2927143.html">
+                                                    <img src="https://img-blog.csdnimg.cn/2019091813595558.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">数据挖掘</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">3篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2927295.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2927295.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2927295.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140012416.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">那些还没有烂掉的idea</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2930963.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2930963.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2930963.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151043371.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">算法</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">2篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2964085.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_2964085.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_2964085.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190918140129601.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">STL</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">7篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_3090953.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_3090953.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_3090953.html">
+                                                    <img src="https://img-blog.csdnimg.cn/2019091813595558.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">MongoDB</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">6篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5747031.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5747031.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_5747031.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">web杂谈</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">8篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5799043.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5799043.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_5799043.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">python</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">75篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5809515.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5809515.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_5809515.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151101105.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">Node.js</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                                    <span class="count float-right">1篇</span>
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5896741.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5896741.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_5896741.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151124774.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">golang</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                            </a>
+                </li>
+                            <li class="">
+                                        <a class="clearfix" 
+                                                    data-report-click='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5951885.html"}'
+                            data-report-view='{"mod":"popu_537","strategy":"","dest":"https://blog.csdn.net/kwsy2008/category_5951885.html"}'
+                                               href="https://blog.csdn.net/kwsy2008/category_5951885.html">
+                                                    <img src="https://img-blog.csdnimg.cn/20190927151026427.png" alt="">
+                                                <!--####是否付费-->
+                        <span class="title oneline"><span class="text">linux</span>
+                                                    </span>
+                        <!--####是否付费-->
+                                            </a>
+                </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2020/01" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2020/01"}'>
+                    2020年1月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2019/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2019/11"}'>
+                    2019年11月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2019/08" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2019/08"}'>
+                    2019年8月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2017/03" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2017/03"}'>
+                    2017年3月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2017/01" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2017/01"}'>
+                    2017年1月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/11"}'>
+                    2016年11月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/10" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/10"}'>
+                    2016年10月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/09" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/09"}'>
+                    2016年9月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/08" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/08"}'>
+                    2016年8月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/07" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/07"}'>
+                    2016年7月                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/05" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/05"}'>
+                    2016年5月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/04" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/04"}'>
+                    2016年4月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/03" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/03"}'>
+                    2016年3月                    <span class="count float-right">17篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/02" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/02"}'>
+                    2016年2月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2016/01" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2016/01"}'>
+                    2016年1月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/12" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/12"}'>
+                    2015年12月                    <span class="count float-right">11篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/11"}'>
+                    2015年11月                    <span class="count float-right">8篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/10" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/10"}'>
+                    2015年10月                    <span class="count float-right">10篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/09" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/09"}'>
+                    2015年9月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/08" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/08"}'>
+                    2015年8月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/06" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/06"}'>
+                    2015年6月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/05" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/05"}'>
+                    2015年5月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/04" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/04"}'>
+                    2015年4月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2015/03" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2015/03"}'>
+                    2015年3月                    <span class="count float-right">19篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2014/04" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2014/04"}'>
+                    2014年4月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2014/03" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2014/03"}'>
+                    2014年3月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2013/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2013/11"}'>
+                    2013年11月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2013/09" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2013/09"}'>
+                    2013年9月                    <span class="count float-right">9篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2012/12" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2012/12"}'>
+                    2012年12月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2012/04" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2012/04"}'>
+                    2012年4月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2012/02" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2012/02"}'>
+                    2012年2月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2012/01" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2012/01"}'>
+                    2012年1月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2011/12" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2011/12"}'>
+                    2011年12月                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2011/11" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2011/11"}'>
+                    2011年11月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/kwsy2008/article/month/2011/10" data-report-click='{"mod":"popu_538","dest":"https://blog.csdn.net/kwsy2008/article/month/2011/10"}'>
+                    2011年10月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/KWSY2008/article/details/48290299"}' 
+                     href="https://blog.csdn.net/KWSY2008/article/details/48290299" >
+                                                Python操作Redis之key的查看与删除                    </a>
+					<p class="read">阅读数 <span>35181</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/KWSY2008/article/details/48291597"}' 
+                     href="https://blog.csdn.net/KWSY2008/article/details/48291597" >
+                                                Python操作Redis之设置key的过期时间                    </a>
+					<p class="read">阅读数 <span>15934</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/KWSY2008/article/details/49156821"}' 
+                     href="https://blog.csdn.net/KWSY2008/article/details/49156821" >
+                                                socket数据传输过程中如何准确的接收消息                    </a>
+					<p class="read">阅读数 <span>15008</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/KWSY2008/article/details/52510846"}' 
+                     href="https://blog.csdn.net/KWSY2008/article/details/52510846" >
+                                                python 获取网卡名称及其IP地址                    </a>
+					<p class="read">阅读数 <span>14247</span></p>
+				</li>
+							<li>
+
+                    <a
+                    data-report-click='{"mod":"popu_541","dest":"https://blog.csdn.net/KWSY2008/article/details/49530549"}' 
+                     href="https://blog.csdn.net/KWSY2008/article/details/49530549" >
+                                                C++函数返回值，你必须注意的问题                    </a>
+					<p class="read">阅读数 <span>13085</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/kwsy2008/article/details/51909429#comments"}'  target="_blank" href="https://blog.csdn.net/kwsy2008/article/details/51909429#comments">python  zookeeper...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/KWSY2008" class="user-name" target="_blank">KWSY2008：</a>[reply]weixin_44542436[/reply]
+看错误提示，是参数传递的问题，函数要求传bytes类型数据，而我的代码里传的字符串
+你检查一下你用的zk.create函数的参数说明                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/kwsy2008/article/details/51909429#comments"}'  target="_blank" href="https://blog.csdn.net/kwsy2008/article/details/51909429#comments">python  zookeeper...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/weixin_44542436" class="user-name" target="_blank">weixin_44542436：</a>File &quot;F:/python/PythonTest1/ServiceRig.py&quot;, line 17, in test_create
+    zk.create(&#039;/kwsy/service&#039;, &#039;123.56.190.151_{index}&#039;.format(index=index), ephemeral=True, sequence=True)
+  File &quot;F:\python\PythonTest1\venv\lib\site-packages\kazoo\client.py&quot;, line 883, in create
+    sequence=sequence, makepath=makepath).get()
+  File &quot;F:\python\PythonTest1\venv\lib\site-packages\kazoo\client.py&quot;, line 906, in create_async
+    raise TypeError(&quot;Invalid type for &#039;value&#039; (must be a byte string)&quot;)
+TypeError: Invalid type for &#039;value&#039; (must be a byte string)
+创建服务报这个错是什么原因呢楼主                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/kwsy2008/article/details/53005264#comments"}'  target="_blank" href="https://blog.csdn.net/kwsy2008/article/details/53005264#comments">flask 中的before_re...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/baidu_30809315" class="user-name" target="_blank">baidu_30809315：</a>[reply]KWSY2008[/reply]
+嗯嗯，好的，谢谢啦                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/kwsy2008/article/details/53005264#comments"}'  target="_blank" href="https://blog.csdn.net/kwsy2008/article/details/53005264#comments">flask 中的before_re...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/KWSY2008" class="user-name" target="_blank">KWSY2008：</a>[reply]baidu_30809315[/reply]
+不建议你在before request这里去除特殊字符，原因有以下2点
+1、 在before request操作危险，因为你要修改payload里的数据，这是用户提交的原始数据
+2、 你在before request 进行了清洗，很难保证其他环节不会引入新的特殊字符
+
+建议你在入库的时候清洗这些特殊字符，你入库的代码是最后一道关卡，这里处理了，不管数据来源是什么，都能有效避免数据库里的数据出现特殊字符                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" data-report-click='{"mod":"popu_542","dest":"https://blog.csdn.net/kwsy2008/article/details/53005264#comments"}'  target="_blank" href="https://blog.csdn.net/kwsy2008/article/details/53005264#comments">flask 中的before_re...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/baidu_30809315" class="user-name" target="_blank">baidu_30809315：</a>[reply]KWSY2008[/reply]
+其实我们现在主要是产线上有往db里存拉丁字符，其中拉丁字符里的不间断空白符使用utf-8是没有办法decode的，我们都不知道咋存进去的:),麻烦博主有时间的话帮忙提些建议，谢谢                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+	<div id="asideFooter">
+                    <div class="aside-box">
+                <div id="kp_box_57" data-pid="57"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 博客内页左下视窗-20181130 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-1076724771190722"
+     data-ad-slot="1894159733"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><img class="pre-img-lasy" data-src="https://kunyu.csdn.net/1.png?p=57&a=707&c=0&k=&d=1&t=3&u=007f4e508b9b448f8cdd414315b47e8f"></div>            </div>
+        		<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script src="https://g.csdnimg.cn/user-tooltip/1.9/user-tooltip.js"  type="text/javascript"></script>
+</div>
+<div class="mask"></div>
+<div class="promptBox clearfix">
+    <div class="title clearfix bottom-dis-16">
+        <span class="float-left">提示</span>
+        <a class="float-right Boxclose">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#csdnc-times"></use>
+            </svg>
+        </a>
+    </div>
+    <div class="text">确定要删除当前文章？</div>
+    <div class="pro-btn float-right">
+        <a class="clickNo">取消</a>
+        <a class="clickYes">删除</a>
+    </div>
+</div>
+<script>
+    var currentPage = 1;
+    var baseUrl = 'https://blog.csdn.net/KWSY2008/article/list' ;
+    var pageSize = 40 ;
+    var listTotal = 157 ;
+    var pageQueryStr = '';
+    function getAllUrl(page) {
+        return baseUrl + "/" + page + pageQueryStr;
+    }
+    </script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/??login-box/1.1.1/30/login-box.js,login-box/1.1.1/30/login-auto.js"></script>
+
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging-3d3b805766.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/iconfont/csdnc-c439e66521.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-da450fe83c.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/list-7c51275791.min.js"></script>
+
+
+<script>
+    
+</script>
+</body>
+</html>
