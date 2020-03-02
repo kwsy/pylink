@@ -227,5 +227,15 @@ def run(keywords):
     # 把 list_url_allkeyword 里的url写入到消息队列
 
 
+def test_extract_links(html="../baidu.txt"):
+    with open(html, encoding='utf-8') as f:
+        print(extract_links(f.read()))
+
+
+def test_crawler_baidu_by_keyword(keyword='python教程'):
+    lst = crawler_baidu_by_keyword(keyword)
+    print(lst)
+
+
 if __name__ == '__main__':
     run(keywords)
