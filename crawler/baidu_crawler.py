@@ -4,12 +4,10 @@ import requests
 from lxml import etree
 from functools import wraps
 from urllib.parse import quote
-from requests import exceptions
 from conf.bd_keywords import keywords
-from common.url_utils import get_netloc
-from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP ,TOTALNUM_SEARCH_PAGE
-from conf.redis_config import DICT_CONNECT_REDIS, NAME_QUEUE_REDIS
-from db.redis_client import store_urllist_to_redis
+from crawler.dispatch_worker import dispatch_url
+from conf.crawler_config import *
+
 
 def retry(retry_count=5, sleep_time=1):
     def wrapper(func):
@@ -124,8 +122,6 @@ def url_baidu_to_realmain(url):
     # realmain_url = get_netloc(real_url)
     # return realmain_url
 
-
-
 def urlist_baidu_to_realmain(url_list):
     """
     将百度链接列表转化为真实链接列表
@@ -138,7 +134,6 @@ def urlist_baidu_to_realmain(url_list):
     #     url_real_list.append(url_baidu_to_realmain(url))
     # return url_real_list
     return [url_baidu_to_realmain(url) for url in url_list]
-
 
 def extract_links(html):
     """
@@ -153,8 +148,6 @@ def extract_links(html):
     # 将网址列表（百度）生成真实列表
     real_url_list = urlist_baidu_to_realmain(url_list)
     return real_url_list
-
-
 
 @retry(TIMES_REQUESTS_MAX,TIME_REQUEST_SLEEP)
 def params_request(session, url, params, headers):
@@ -172,7 +165,6 @@ def params_request(session, url, params, headers):
     if response.status_code != 200:
         raise HttpCodeException
     return response.text
-
 
 def crawler_baidu_by_keyword(keyword):
     """
@@ -208,17 +200,17 @@ def crawler_baidu_by_keyword(keyword):
 
     return list_url_onekeyword                        # 返回单个关键字所有页码关键字url列表
 
-
 def crawler_baidu_by_all_keyword(keywords):
     """
     根据所有关键字爬取，返回有效url
     :param keywords:搜索关键词
     :return: list 返回搜索结果的连接
     """
-    list_url_onekeyword = []
     list_url_allkeyword_temp = []
     for keyword in keywords:
         list_url_onekeyword = crawler_baidu_by_keyword(keyword)
+        dispatch_url(list_url_onekeyword)                            # 将url分类发送至对应的消息队列,后面整理列表汇总还有必要吗？
+
         if FLAG_SAVE_URLFILE == 1:
             save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
         list_url_allkeyword_temp.extend(list_url_onekeyword)
@@ -230,11 +222,9 @@ def crawler_baidu_by_all_keyword(keywords):
 
     return list_url_allkeyword
 
-def run(keywords):
-    list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
-    # 把 list_url_allkeyword 里的url写入到消息队列
-    store_urllist_to_redis(DICT_CONNECT_REDIS, list_url_allkeyword, NAME_QUEUE_REDIS)
+def run():
+    crawler_baidu_by_all_keyword(keywords)
 
 if __name__ == '__main__':
-    run(keywords)
+    run()
 
