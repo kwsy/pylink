@@ -4,7 +4,7 @@ def judge_py_website(url):
     :param url:
     :return:
     """
-
+    tree = etree.HTML(html)
 
 if __name__ == '__main__':
     url = 'http://www.kidscode.cn/python'

@@ -9,28 +9,9 @@ from conf.bd_keywords import keywords
 from common.url_utils import get_netloc
 from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, \
     TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP, TOTALNUM_SEARCH_PAGE
+from common.decorator import retry
 
 
-def retry(retry_count=5, sleep_time=1):
-    def wrapper(func):
-        @wraps(func)
-        def inner(*args, **kwargs):
-            for i in range(retry_count):
-                try:
-                    res = func(*args, **kwargs)
-                    return res
-                except:
-                    time.sleep(sleep_time)
-                    continue
-            return None
-
-        return inner
-
-    return wrapper
-
-
-class HttpCodeException(Exception):
-    pass
 
 
 def extract_links_test(filename):

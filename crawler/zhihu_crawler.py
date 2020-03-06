@@ -1,14 +1,86 @@
-def get_zhuanlan_info(url):
+import requests
+from lxml import etree
+from common.url_utils import url_to_html
+import pandas as pd
+import re
+
+
+def get_zhuanlan_creator_html(html):
     """
-    获取一个专栏的关键信息, 比如专栏的名称, 关注人数
-    :param url:
+    从专栏获取个人知乎的专栏页面
+    :param html:专栏html
+    :return: 个人知乎专栏url
+    """
+    tree = etree.HTML(html)
+    owner_url = tree.xpath('//a[@class = "UserLink-link"]/@href')[0][2:]
+    owner_url = 'https://' + owner_url + '/columns'
+    return owner_url
+
+
+def jump_zhuanlan_owner(owner_url):
+    """
+    跳转专栏主对应专栏部分
+    :param owner_url: 个人知乎的专栏页
+    :return: 对应的html
+    """
+    owner_html = url_to_html(owner_url)
+    return owner_html
+
+
+
+def get_zhuanlan_info(html):
+    """
+    获取专栏的关键信息, 比如专栏的名称, 关注人数
+    :param html: 个人专栏页的html
     :return:
     """
-    pass
+    tree = etree.HTML(html)
+    zhuanlan_name = tree.xpath('//div[@class = "List-item"]//div[@class = "Popover"]/div[@id]/text()')  # 专栏名称，后期判断是否与python相关
+    lst_html = tree.xpath('//div[@class = "List-item"]//a[@class = "ContentItem-statusItem ColumnItem-link"]/@href')
+    lst_info = tree.xpath('//div[@class = "List-item"]//div[@class = "ContentItem-status"]')
+    zhuanlan_html = ['https:'+i for i in lst_html]  # 专栏html
+
+    zhuanlan_info = [research_info(lst_info[i].xpath('string(.)')) for i in range(len(lst_info))]  # 专栏信息 文章数/关注数
+
+
+    df = pd.DataFrame()
+    df['zhuanlan_name'] = pd.Series(zhuanlan_name)
+    df['follower'] = pd.Series([i[2] for i in zhuanlan_info])
+    df['article_num'] = pd.Series([i[1] for i in zhuanlan_info])
+    df['zhuanlan_html'] = pd.Series(zhuanlan_html)
+    print(df)
+
+    return df
+
+
+def research_info(sentence:str):
+    res = re.search(r'发表 ([0-9]{1,3}) 篇文章共 ([0-9]{1,3}) 篇文章([0-9]{1,3}) 人关注', sentence)
+    res.group()
+    return res.groups()
+
+
+def run():
+    """
+    执行程序逻辑：专栏url→html→获取专栏主url→获取专栏主的所有专栏信息
+    :return:
+    """
+    url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
+    html = url_to_html(url)
+    owner_url = get_zhuanlan_creator_html(html)
+    owner_html = jump_zhuanlan_owner(owner_url)
+    get_zhuanlan_info(owner_html)
 
 
 if __name__ == '__main__':
     url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
-    print(get_zhuanlan_info(url))
+    run()
+
+    # with open('../zhihu.txt', encoding='utf-8') as f:
+    #     owner_url = get_zhuanlan_creator_html(f.read())
+    # print(owner_url)
+    # owner_html = jump_zhuanlan_owner(owner_url)
+    # print(owner_html)
+    # with open('../zhihu2.txt', encoding='utf-8') as f:
+    #     get_zhuanlan_info(f.read())
 
 
