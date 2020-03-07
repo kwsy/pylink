@@ -67,7 +67,7 @@ def run():
     url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
     html = url_to_html(url)
     owner_url = get_zhuanlan_creator_html(html)
-    owner_html = jump_zhuanlan_owner(owner_url)
+    owner_html = url_to_html(owner_url)
     get_zhuanlan_info(owner_html)
 
 
