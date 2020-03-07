@@ -10,17 +10,19 @@ def crawler_baidu_by_keyword(keyword):
     :return: list 返回搜索结果的连接
     """
 
-    headers ={
-              'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-              'Accept - Encoding': 'gzip, deflate, compress',
-              'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
-              'Cache - Control': 'max-age = 0',
-              'Connection': 'keep-alive',
-              'referer': quote('http://www.baidu.com/s?wd=python&pn=10'),
-              'Host': 'www.baidu.com',
-              'User - Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
-             }
+    headers = {
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Encoding': 'gzip, deflate, compress',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Cache-Control': 'max-age=0',
+        'Connection': 'keep-alive',
+        'referer': quote('http://www.baidu.com/s?wd=python&pn=10'),
+        'Host': 'www.baidu.com',
 
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+
+
+    }
     url ='https://www.baidu.com/s'
     params = {
         'wd': keyword,
