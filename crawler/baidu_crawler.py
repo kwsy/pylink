@@ -1,4 +1,5 @@
 import requests
+import time
 from lxml import etree
 from urllib.parse import quote
 
@@ -9,7 +10,7 @@ def crawler_baidu_by_keyword(keyword):
     :param keyword:
     :return: list 返回搜索结果的连接
     """
-
+    lst = []
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, compress',
@@ -18,24 +19,24 @@ def crawler_baidu_by_keyword(keyword):
         'Connection': 'keep-alive',
         'referer': quote('http://www.baidu.com/s?wd=python&pn=10'),
         'Host': 'www.baidu.com',
-
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
-
-
     }
     url ='https://www.baidu.com/s'
-    params = {
-        'wd': keyword,
-        'pn':  0
-             }
     session = requests.session()
-    res = session.get(url, params=params, headers=headers,allow_redirects=False)
-    res.encoding = 'utf-8'
-    print(res.status_code)
-    print(res.text)
-    link_lst =extract_links(res.text)
 
-    return link_lst
+    for i in range(5):
+        params = {
+            'wd': keyword,
+            'pn':  i*10
+                 }
+        res = session.get(url, params=params, headers=headers,allow_redirects=False)
+        res.encoding = 'utf-8'
+        time.sleep(3)
+
+        link_lst = extract_links(res.text)
+        lst.extend(link_lst)
+
+    return lst
 
 def extract_links(html):
     """
@@ -60,5 +61,5 @@ if __name__ == '__main__':
      #     print(extract_links(f.read()))
 
      lst = crawler_baidu_by_keyword('python 教程')
-     print(lst)
+     print(len(lst))
 
