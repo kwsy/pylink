@@ -3,8 +3,6 @@ from lxml import etree
 from urllib.parse import quote
 
 
-
-
 def crawler_baidu_by_keyword(keyword):
     """
     根据关键词抓取百度搜索结果
@@ -50,6 +48,8 @@ def extract_links(html):
     for a in a_nodes:
         url_lst.append(a.attrib['href'])
     return url_lst
+
+
 
 
 
