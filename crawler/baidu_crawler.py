@@ -4,10 +4,9 @@ import requests
 from lxml import etree
 from functools import wraps
 from urllib.parse import quote
-from requests import exceptions
 from conf.bd_keywords import keywords
-from common.url_utils import get_netloc
-from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP ,TOTALNUM_SEARCH_PAGE
+from crawler.dispatch_worker import dispatch_url
+from conf.crawler_config import *
 
 
 def retry(retry_count=5, sleep_time=1):
@@ -215,10 +214,10 @@ def crawler_baidu_by_all_keyword(keywords):
     :param keywords:搜索关键词
     :return: list 返回搜索结果的连接
     """
-    list_url_onekeyword = []
     list_url_allkeyword_temp = []
     for keyword in keywords:
         list_url_onekeyword = crawler_baidu_by_keyword(keyword)
+        dispatch_url(list_url_onekeyword)
         if FLAG_SAVE_URLFILE == 1:
             save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
         list_url_allkeyword_temp.extend(list_url_onekeyword)
@@ -230,12 +229,10 @@ def crawler_baidu_by_all_keyword(keywords):
 
     return list_url_allkeyword
 
-def run(keywords):
-    list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
-    # 把 list_url_allkeyword 里的url写入到消息队列
-
+def run():
+    crawler_baidu_by_all_keyword(keywords)
 
 
 if __name__ == '__main__':
-    run(keywords)
+    run()
 
