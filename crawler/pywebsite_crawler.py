@@ -33,15 +33,19 @@ def get_describe_content_dict(html):
         describe_content_dict["description"] = content_description[0]
     else:
         print("无description信息")
+
     if len(content_keywords) != 0:
         describe_content_dict["keywords"] = content_keywords[0]
     else:
         print("无keywords信息")
+
     return describe_content_dict
 
 def judge_list_inlucde_keyword(describe_content_dict, keyword):
     pattern = re.compile(keyword, re.I)              # 匹配忽略大小写
     for content in describe_content_dict.values():
+        if content.find(keyword) != -1:
+            return True
         res = pattern.findall(content)
         if len(res) != 0:
             return True
