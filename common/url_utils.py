@@ -7,8 +7,6 @@ def get_netloc(url):
     :param url:
     :return:
     """
-    result = urlparse(url)
-    return result.scheme + "://" + result.netloc
 
 
 if __name__ == '__main__':
