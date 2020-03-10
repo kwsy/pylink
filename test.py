@@ -31,6 +31,7 @@ def get_baidu_data():
     res = session.get(url, params=params, headers=headers, allow_redirects=False)
     res.encoding = 'utf-8'
     print(res.status_code)
+    print(res.request.url)
 
 get_baidu_data()
 
