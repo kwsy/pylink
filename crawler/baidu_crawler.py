@@ -1,9 +1,11 @@
 import requests
 from lxml import etree
 from urllib.parse import quote
+import time
+from conf.bd_keywords import keyword_lst
 
 
-def crawler_baidu_by_keyword(keyword):
+def crawler_baidu_by_keyword(keyword, page_num=5):
     """
     根据关键词抓取百度搜索结果
     :param keyword:
@@ -21,18 +23,19 @@ def crawler_baidu_by_keyword(keyword):
     }
 
     url = 'https://www.baidu.com/s'
-    params = {
-                'wd': keyword,
-                'pn': 0
-            }
-
     session = requests.session()
-    res = session.get(url, params=params, headers=headers)
-    res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
-    link_lst = extract_links(res.text)
-    # real_link_lst = []
-    # for link in link_lst:
-    #     real_link_lst.append(get_real_link(link))
+    link_lst =[]
+    for i in range(page_num):
+        params = {
+                    'wd': keyword,
+                    'pn': 10*i
+                }
+
+        res = session.get(url, params=params, headers=headers)
+        time.sleep(3)
+        res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
+        link_lst += extract_links(res.text)  # 老师用ｅｘｔｅｎｄ
+
     real_link_lst = [get_real_link(link) for link in link_lst]
     return real_link_lst
 
@@ -57,8 +60,22 @@ def get_real_link(url):
     res = requests.get(url, allow_redirects=False)
     return res.headers['Location']
 
-def test_get_real_link(url):
-    real_url = get_real_link(url)
+
+def crawl_baidu_all_keyword(word_lst):
+    all_keyeowrd_link_lst = []
+    for word in word_lst:
+        all_keyeowrd_link_lst.extend(crawler_baidu_by_keyword(word))
+    return all_keyeowrd_link_lst
+
+
+def test_crawl_baidu_all_keyword():
+    lst = crawl_baidu_all_keyword(keyword_lst)
+    print(lst)
+    print(len(lst))
+
+
+def test_get_real_link():
+    real_url = get_real_link("http://www.baidu.com/link?url=unijmehnccFkijNZ4YUZKQ4dUrDXMEGUagkxI-9UhdIpitQ39jNW9BBvr3Bie-ScYQYOfksl6A4ahFApjlyuKK")
     print(real_url)
 
 
@@ -69,7 +86,9 @@ def test_extract_links():
 def test_crawler_baidu_by_keyword():
     lst = crawler_baidu_by_keyword('python 教程')
     print(lst)
+    print(len(lst))
 
 if __name__ == '__main__':
-    test_crawler_baidu_by_keyword()
-    # test_get_real_link("http://www.baidu.com/link?url=unijmehnccFkijNZ4YUZKQ4dUrDXMEGUagkxI-9UhdIpitQ39jNW9BBvr3Bie-ScYQYOfksl6A4ahFApjlyuKK")
+    # test_crawler_baidu_by_keyword()
+    # test_get_real_link()
+    test_crawl_baidu_all_keyword()
