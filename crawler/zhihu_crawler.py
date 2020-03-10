@@ -17,17 +17,6 @@ def get_zhuanlan_creator_html(html):
     return owner_url
 
 
-def jump_zhuanlan_owner(owner_url):
-    """
-    跳转专栏主对应专栏部分
-    :param owner_url: 个人知乎的专栏页
-    :return: 对应的html
-    """
-    owner_html = url_to_html(owner_url)
-    return owner_html
-
-
-
 def get_zhuanlan_info(html):
     """
     获取专栏的关键信息, 比如专栏的名称, 关注人数
@@ -41,19 +30,24 @@ def get_zhuanlan_info(html):
     zhuanlan_html = ['https:'+i for i in lst_html]  # 专栏html
 
     zhuanlan_info = [research_info(lst_info[i].xpath('string(.)')) for i in range(len(lst_info))]  # 专栏信息 文章数/关注数
+    lst_zhuanlan = []
+    zhuanlan_dict = {}
+    for i in range(len(zhuanlan_name)):
+        zhuanlan_dict['zhuanlan_name'] = zhuanlan_name[i]
+        zhuanlan_dict['follower'] = zhuanlan_info[i][2]
+        zhuanlan_dict['article_num'] = zhuanlan_info[i][1]
+        zhuanlan_dict['zhuanlan_html'] = zhuanlan_html[i]
+        lst_zhuanlan.append(zhuanlan_dict)
 
-
-    df = pd.DataFrame()
-    df['zhuanlan_name'] = pd.Series(zhuanlan_name)
-    df['follower'] = pd.Series([i[2] for i in zhuanlan_info])
-    df['article_num'] = pd.Series([i[1] for i in zhuanlan_info])
-    df['zhuanlan_html'] = pd.Series(zhuanlan_html)
-    print(df)
-
-    return df
+    return lst_zhuanlan
 
 
 def research_info(sentence:str):
+    """
+    专门解析专栏信息：例“发表xx篇文章 共xx篇文章xx人关注”，提取xx信息形成元组
+    :param sentence:
+    :return: (xx,xx,xx)
+    """
     res = re.search(r'发表 ([0-9]{1,3}) 篇文章共 ([0-9]{1,3}) 篇文章([0-9]{1,3}) 人关注', sentence)
     res.group()
     return res.groups()
@@ -64,10 +58,10 @@ def run():
     执行程序逻辑：专栏url→html→获取专栏主url→获取专栏主的所有专栏信息
     :return:
     """
-    url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
+    url = 'https://zhuanlan.zhihu.com/p/109450078'
     html = url_to_html(url)
     owner_url = get_zhuanlan_creator_html(html)
-    owner_html = jump_zhuanlan_owner(owner_url)
+    owner_html = url_to_html(owner_url)
     get_zhuanlan_info(owner_html)
 
 

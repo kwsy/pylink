@@ -6,11 +6,10 @@ from functools import wraps
 from urllib.parse import quote
 from requests import exceptions
 from conf.bd_keywords import keywords
-from common.url_utils import get_netloc
-from conf.crawler_config import FLAG_SAVE_HTMLFILE, PATH_HTMLFILE, FLAG_SAVE_URLFILE, PATH_URLFILE, URL_BAIDU, \
-    TIMES_REQUESTS_MAX, TIME_REQUEST_SLEEP, TOTALNUM_SEARCH_PAGE
+from common.url_utils import get_netloc, HttpCodeException
+from conf.crawler_config import *
 from common.decorator import retry
-
+from crawler import dispath_worker
 
 
 
@@ -188,19 +187,20 @@ def crawler_baidu_by_all_keyword(keywords):
     :param keywords:搜索关键词
     :return: list 返回搜索结果的连接
     """
-    list_url_allkeyword_temp = []
+    lst_url_allword = []
     for keyword in keywords:
-        list_url_onekeyword = crawler_baidu_by_keyword(keyword)
+        lst_url_oneword = crawler_baidu_by_keyword(keyword)
+        dispath_worker(lst_url_oneword)
         if FLAG_SAVE_URLFILE == 1:
-            save_urlfile(PATH_URLFILE, keyword, list_url_onekeyword)
-        list_url_allkeyword_temp.extend(list_url_onekeyword)
+            save_urlfile(PATH_URLFILE, keyword, lst_url_oneword)
+        lst_url_allword.extend(lst_url_oneword)
 
-    list_url_allkeyword = list(set(list_url_allkeyword_temp))  # url地址去重
+    lst_url_allword = list(set(lst_url_allword))  # url地址去重
 
     if FLAG_SAVE_URLFILE == 1:
-        save_urlfile(PATH_URLFILE, "url汇总", list_url_allkeyword)  # 保存所有关键字的url地址
+        save_urlfile(PATH_URLFILE, "url汇总", lst_url_allword)  # 保存所有关键字的url地址
 
-    return list_url_allkeyword
+    return lst_url_allword
 
 
 def run(keywords):
