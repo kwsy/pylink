@@ -3,9 +3,10 @@ from lxml import etree
 from urllib.parse import quote
 import time
 from conf.bd_keywords import keyword_lst
+from conf.bd_crawler_config import PAGE_NUMBER,CRAWLER_SLEEP_TIME
 
 
-def crawler_baidu_by_keyword(keyword, page_num=5):
+def crawler_baidu_by_keyword(keyword):
     """
     根据关键词抓取百度搜索结果
     :param keyword:
@@ -24,15 +25,15 @@ def crawler_baidu_by_keyword(keyword, page_num=5):
 
     url = 'https://www.baidu.com/s'
     session = requests.session()
-    link_lst =[]
-    for i in range(page_num):
+    link_lst = []
+    for i in range(PAGE_NUMBER):
         params = {
                     'wd': keyword,
                     'pn': 10*i
                 }
 
         res = session.get(url, params=params, headers=headers)
-        time.sleep(3)
+        time.sleep(CRAWLER_SLEEP_TIME)
         res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
         link_lst += extract_links(res.text)  # 老师用ｅｘｔｅｎｄ
 
