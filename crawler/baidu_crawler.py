@@ -30,7 +30,12 @@ def crawler_baidu_by_keyword(keyword):
     res = session.get(url, params=params, headers=headers)
     res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
     link_lst = extract_links(res.text)
-    return link_lst
+    # real_link_lst = []
+    # for link in link_lst:
+    #     real_link_lst.append(get_real_link(link))
+    real_link_lst = [get_real_link(link) for link in link_lst]
+    return real_link_lst
+
 
 
 def extract_links(html):
@@ -48,6 +53,15 @@ def extract_links(html):
     return url_lst
 
 
+def get_real_link(url):
+    res = requests.get(url, allow_redirects=False)
+    return res.headers['Location']
+
+def test_get_real_link(url):
+    real_url = get_real_link(url)
+    print(real_url)
+
+
 def test_extract_links():
     with open("../baidu.txt")as f:
         print(extract_links(f.read()))
@@ -58,3 +72,4 @@ def test_crawler_baidu_by_keyword():
 
 if __name__ == '__main__':
     test_crawler_baidu_by_keyword()
+    # test_get_real_link("http://www.baidu.com/link?url=unijmehnccFkijNZ4YUZKQ4dUrDXMEGUagkxI-9UhdIpitQ39jNW9BBvr3Bie-ScYQYOfksl6A4ahFApjlyuKK")
