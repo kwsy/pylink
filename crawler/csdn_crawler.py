@@ -2,6 +2,7 @@ from lxml import etree
 import requests
 
 
+
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Encoding': 'gzip, deflate, compress',
@@ -20,28 +21,33 @@ def get_blogger_info(url):
     :return:
     """
     session = requests.session()
-    res = requests.get(url,headers=headers)
+    res = session.get(url,headers=headers)
     etree_html = etree.HTML(res.text)
-    basic1_node = etree_html.xpath('//div[@id="asideProfile"/div[@class="data-info d-flex item-tiling"/dl/@title]')
+    basic1_node = etree_html.xpath('//div[@class="data-info d-flex item-tiling"]/dl')
 
     info1 = {
-        'original content': int(basic1_node[0]),
-        'fan': int(basic1_node[1]),
-        'like': int(basic1_node[2]),
-        'comment': int(basic1_node[3]),
-        'visit': int(basic1_node[4])
+        'original content': int(basic1_node[0].attrib['title']),
+        'fan': int(basic1_node[1].attrib['title']),
+        'like': int(basic1_node[2].attrib['title']),
+        'comment': int(basic1_node[3].attrib['title']),
+        'visit': int(basic1_node[4].attrib['title'])
     }
 
-    basic2_node = etree_html.xpath('//div[@id="asideProfile"/div[@class="data-info d-flex item-tiling"/dl/@title]')
+    basic2_node = etree_html.xpath('//dl[@class="aside-box-footerClassify"]/dd/a')[0]
+    basic3_node = etree_html.xpath('//div[@class="grade-box clearfix"]/dl')[1]
+    basic4_node = etree_html.xpath('//div[@class="grade-box clearfix"]/dl[3]/dd')[0]
+    basic5_node = etree_html.xpath('//div[@class="grade-box clearfix"]/dl')[3]
 
+    info2 = {
+      'grade': basic2_node.attrib['title'].split(',')[0],
+      'weekly rank': int(basic3_node.attrib['title']),
+      'integral':int(basic4_node.attrib['title']),
+      'general rank': int(basic5_node.attrib['title'])
+    }
 
-    # csdn_info_dict = {}
-    # etree_html = etree.HTML(url)
-    # res = etree_html.xpath('')
-
-
+    return dict(info1,**info2)
 
 
 if __name__ == '__main__':
     url = 'https://blog.csdn.net/KWSY2008'
-    print(get_blogger_info)
+    print(get_blogger_info(url))
