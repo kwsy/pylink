@@ -12,6 +12,12 @@ from common.decorator import retry
 from crawler import dispath_worker
 
 
+a = 1
+b = 2
+c = d
+
+def test():
+    return a+b
 
 def extract_links_test(filename):
     """
@@ -204,8 +210,7 @@ def crawler_baidu_by_all_keyword(keywords):
 
 
 def run(keywords):
-    list_url_allkeyword = crawler_baidu_by_all_keyword(keywords)
-    # 把 list_url_allkeyword 里的url写入到消息队列
+    crawler_baidu_by_all_keyword(keywords)
 
 
 def test_extract_links(html="../baidu.txt"):

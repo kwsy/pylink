@@ -7,23 +7,17 @@ queue_path = {'zhuanlan.zhihu.com': QueueConfig.zhihu_queue, 'blog.csdn.net': Qu
 
 def dispath_url(url_lst: list):
     """
-    识别队列中不同的url
-    :param url_lst:单个url为str或者list（后期考虑是否限定
+    识别队列中不同的url,始终是单个传入
+    :param url_lst:单个url为str或者list
     :return:
     """
-    if isinstance(url_lst, list):
+    if isinstance(url_lst, list):   # 传入多个url时，格式为list
         for url in url_lst:
             netloc_url = urlparse(url).netloc
-            # if netloc_url == 'zhuanlan.zhihu.com':
-            #     redis_client.lpush_queue(QueueConfig.zhihu_queue, url)
-            # elif netloc_url == 'blog.csdn.net':
-            #     redis_client.lpush_queue(QueueConfig.csdn_queue, url)
-            # else:
-            #     redis_client.lpush_queue(QueueConfig.pywebsite_queue, url)
             queue_name = queue_path.get(netloc_url, QueueConfig.pywebsite_queue)    # 通过字典获取对应QueueName
             redis_client.lpush_queue(queue_name, url)
 
-    elif isinstance(url_lst, str):
+    elif isinstance(url_lst, str):  # 传入单个url时，格式为str
         netloc_url = urlparse(url_lst).netloc
         queue_name = queue_path.get(netloc_url, QueueConfig.pywebsite_queue)  # 通过字典获取对应QueueName
         redis_client.lpush_queue(queue_name, url_lst)
@@ -44,12 +38,13 @@ def test_get_url():
         print(url_lst)
     return url_lst
 
+
 def test_dispath_url():
     """
     测试dispath_url函数
     :return:
     """
-    url = ['https://zhuanlan.zhihu.com/question/267972964?sort=created']
+    url = 'https://zhuanlan.zhihu.com/question/267972964?sort=created'
     dispath_url(url)
     print(redis_client.connect_redis.rpop(QueueConfig.zhihu_queue))
 
