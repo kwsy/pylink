@@ -9,6 +9,7 @@ excel_file/
 log/
 # C extensions
 *.so
+conf/redis_conf.py
 
 # Distribution / packaging
 .Python

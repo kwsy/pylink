@@ -3,7 +3,8 @@ from lxml import etree
 from urllib.parse import quote
 import time
 from conf.bd_keywords import keyword_lst
-from conf.bd_crawler_config import PAGE_NUMBER,CRAWLER_SLEEP_TIME
+from conf.bd_crawler_config import PAGE_NUMBER, CRAWLER_SLEEP_TIME
+from crawler.dispatch_worker import dispatch_url
 
 
 def crawler_baidu_by_keyword(keyword):
@@ -66,7 +67,17 @@ def crawl_baidu_all_keyword(word_lst):
     all_keyeowrd_link_lst = []
     for word in word_lst:
         all_keyeowrd_link_lst.extend(crawler_baidu_by_keyword(word))
+
     return all_keyeowrd_link_lst
+
+
+def run():
+    lst = crawl_baidu_all_keyword(keyword_lst)
+    print(lst)
+    # with open("../data/百度urllist.txt", 'w') as f:
+    #     for url in lst:
+    #         f.write(url)
+    #         f.write('\n')
 
 
 def test_crawl_baidu_all_keyword():
@@ -84,12 +95,15 @@ def test_extract_links():
     with open("../baidu.txt")as f:
         print(extract_links(f.read()))
 
+
 def test_crawler_baidu_by_keyword():
     lst = crawler_baidu_by_keyword('python 教程')
     print(lst)
     print(len(lst))
 
+
 if __name__ == '__main__':
     # test_crawler_baidu_by_keyword()
     # test_get_real_link()
-    test_crawl_baidu_all_keyword()
+    # test_crawl_baidu_all_keyword()
+    run()
