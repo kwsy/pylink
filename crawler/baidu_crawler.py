@@ -2,6 +2,8 @@ import requests
 import time
 from lxml import etree
 from urllib.parse import quote
+from  conf import bd_keywords     #调用conf模块里的bd_keywords.py，用bd_keywords.bd_keywords来获取列表
+
 
 
 def crawler_baidu_by_keyword(keyword):
@@ -56,7 +58,14 @@ def extract_links(html):
 if __name__ == '__main__':
      # with open("../baidu.txt",'rb')as f:
      #     print(extract_links(f.read()))
+     d={}
+     for i in range(len(bd_keywords.bd_keywords)):
 
-     lst = crawler_baidu_by_keyword('python 教程')
-     print(len(lst))
+         lst = crawler_baidu_by_keyword(bd_keywords.bd_keywords[i])
+         d[bd_keywords.bd_keywords[i]] =lst
+
+     with open('..\keyword.txt', 'w') as kwd_file:
+         for k, v in d.items():
+             kwd_file.write(str(k) + ' ' + str(d[k]) + '\n')
+
 
