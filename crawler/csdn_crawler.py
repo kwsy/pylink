@@ -1,6 +1,7 @@
 import requests
 from lxml import etree
 from common.url_utils import url_to_html
+from urllib.parse import urlparse
 
 
 def get_blogger_info(html):
@@ -11,16 +12,14 @@ def get_blogger_info(html):
     :param html: csdn.net为主信息
     :return:
     """
-
     tree = etree.HTML(html)
     rank = tree.xpath('//div[@class="grade-box clearfix"]/dl[@title]/@title')
     information_num = tree.xpath('//div[@class = "data-info d-flex item-tiling"]/dl[@class = "text-center"]/@title')
-    blog_level = \
-    tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][0]  # 博客等级
-
-    lst_info = rank + information_num + [blog_level]  # info形成列表
+    blog_level = tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][0]  # 博客等级
+    blogger_url = tree.xpath('//div[@id = "asideProfile"]//div[@class = "profile-intro-name-boxFooter"]/span/a/@href')  # 博主个人网页 me.csdn.net/XXX
+    lst_info = rank + information_num + [blog_level] + blogger_url  # info形成列表
     lst_name = ['week_rank', 'sum_rank', 'original', 'fans_num', 'like_num', 'comment_num',
-                'visit_num', 'blog_level']  # 定义info的名字
+                'visit_num', 'blog_level', 'href']  # 定义info的名字
 
     csdn_dict = {}
     for index, item in enumerate(lst_name):
@@ -28,13 +27,32 @@ def get_blogger_info(html):
     return csdn_dict
 
 
-def run():
+def get_blogger_url(url):
     """
-    执行程序:csdn url→html→提取信息→该作者信息字典返回
+    通常爬取到网站的csdn文章，需要实现跳转到对应博主主页
+    例：‘https://blog.csdn.net/KWSY2008/article/details/103812367’
+    变为‘https://blog.csdn.net/KWSY2008’
+    :param url:
     :return:
     """
-    url = 'https://blog.csdn.net/KWSY2008'
-    html = url_to_html(url)
+    url_part = urlparse(url)
+    path_lst = url_part.path.split('/')
+    if len(path_lst) > 1:
+        path_info = path_lst[1]
+        owner_url = url_part.scheme + '://' + url_part.netloc + '/' + path_info
+    else:
+        owner_url = url
+    return owner_url
+
+
+def run():
+    """
+    执行程序:csdn url→获取作者的url→html→提取信息→该作者信息字典返回→存储至monogo
+    :return:
+    """
+    url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
+    owner_url = get_blogger_url(url)
+    html = url_to_html(owner_url)
     csdn_dict = get_blogger_info(html)
     return csdn_dict
 
@@ -45,3 +63,4 @@ if __name__ == '__main__':
     # print(get_blogger_info)
     with open('../csdn.txt', encoding='utf-8') as f:
         print(get_blogger_info(f.read()))
+    get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")

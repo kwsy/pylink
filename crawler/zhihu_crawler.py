@@ -48,7 +48,7 @@ def research_info(sentence:str):
     :param sentence:
     :return: (xx,xx,xx)
     """
-    res = re.search(r'发表 ([0-9]{1,3}) 篇文章共 ([0-9]{1,3}) 篇文章([0-9]{1,3}) 人关注', sentence)
+    res = re.search(r'发表 ([0-9]+) 篇文章共 ([0-9]+) 篇文章([0-9]+) 人关注', sentence)
     res.group()
     return res.groups()
 
