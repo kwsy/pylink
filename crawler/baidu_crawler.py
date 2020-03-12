@@ -24,14 +24,14 @@ def crawler_baidu_by_keyword(keyword):
     url ='https://www.baidu.com/s'
     session = requests.session()
 
-    for i in range(5):
+    for i in range(5):      #通过for 循环实现连续5页的网页链接抓取
         params = {
-            'wd': keyword,
-            'pn':  i*10
+            'wd': keyword,  #url链接参数wd查询关键字 (word) 一般以也会是一串字符
+            'pn':  i*10     #url链接参数pn显示结果页数默认为0 其他每页递增rn
                  }
         res = session.get(url, params=params, headers=headers,allow_redirects=False)
-        res.encoding = 'utf-8'
-        time.sleep(3)
+        res.encoding = 'utf-8'  #用url编码方式进行解码你才能看到真实的内容
+        time.sleep(3)           #函数推迟调用线程的运行，可通过参数secs指秒数，表示进程挂起的时间
 
         link_lst = extract_links(res.text)
         lst.extend(link_lst)
@@ -51,9 +51,6 @@ def extract_links(html):
     for a in a_nodes:
         url_lst.append(a.attrib['href'])
     return url_lst
-
-
-
 
 
 if __name__ == '__main__':
