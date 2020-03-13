@@ -2,7 +2,11 @@ import requests
 from lxml import etree
 from common.url_utils import url_to_html
 from urllib.parse import urlparse
-
+from db.redis_client import rpop_queue,lpush_queue
+from conf.redis_conf import QueueConfig
+from db.mongo_client import mongo_client_insert
+from conf.mongo_conf import MongoCollection
+import time
 
 def get_blogger_info(html):
     """
@@ -50,17 +54,33 @@ def run():
     执行程序:csdn url→获取作者的url→html→提取信息→该作者信息字典返回→存储至monogo
     :return:
     """
-    url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
-    owner_url = get_blogger_url(url)
-    html = url_to_html(owner_url)
-    csdn_dict = get_blogger_info(html)
-    return csdn_dict
+    #url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
+    #lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
+    while True:
+        url = rpop_queue(QueueConfig.csdn_queue)    # 增加去重操作
+        if not url:
+            time.sleep(1)
+            continue
+        else:
+            print(url)
+            try:
+                owner_url = get_blogger_url(url)
+                html = url_to_html(owner_url)
+                csdn_dict = get_blogger_info(html)
+                if csdn_dict:
+                    mongo_client_insert(MongoCollection.csdn_mongo, csdn_dict)  # 去重操作
+            except Exception as e:
+                print(e)
+                pass
+
 
 
 if __name__ == '__main__':
     # url = 'https://blog.csdn.net/KWSY2008'
     # html = url_to_html(url)
     # print(get_blogger_info)
-    with open('../csdn.txt', encoding='utf-8') as f:
-        print(get_blogger_info(f.read()))
-    get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
+    # with open('../csdn.txt', encoding='utf-8') as f:
+    #     print(get_blogger_info(f.read()))
+    # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
+
+    run()

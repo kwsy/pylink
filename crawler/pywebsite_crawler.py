@@ -101,16 +101,19 @@ def save_miss_lst(lst_miss_match):
 
 def run():
     """
-    执行程序：url→html→解析html→判断关键信息→返回True or False→返回False部分加入到miss_lst后期人工判断
+    执行程序：url转html→解析html→判断关键信息→根据分值判断True→返回False部分加入到miss_lst后期人工判断
     :return:
     """
     # url = 'https://www.runoob.com/python3/python3-tutorial.html'
     # url = 'https://www.itcodemonkey.com'
     # url = 'http://www.kidscode.cn/python'
     url = 'https://www.bilibili.com/'
-    print(judge_py_website(url))
-    save_miss_lst(lst_miss_match)
+    if judge_py_website(url):
+
+    else:
+        save_miss_lst(lst_miss_match)
 
 
 if __name__ == '__main__':
     run()
+
