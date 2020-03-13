@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
 conf/redis_conf.py
+conf/mongo_conf.py
 __pycache__/
 */__pycache__/
 *.py[cod]
