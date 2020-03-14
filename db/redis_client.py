@@ -17,5 +17,11 @@ def push_queue(queue_name, content):
     r.lpush(queue_name, content)
 
 
+def pop_queue(queue_name):
+    res = r.rpop(queue_name)
+    return res.decode()
+
+
+
 if __name__ == '__main__':
     test()

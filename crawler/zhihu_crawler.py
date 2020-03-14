@@ -63,5 +63,5 @@ def get_zhuanlan_info_columns(session, url):
 
 
 if __name__ == '__main__':
-    url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
+    url = 'https://zhuanlan.zhihu.com/p/109450078'
     print(get_zhuanlan_info(url))
