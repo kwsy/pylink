@@ -1,6 +1,7 @@
 import re
 import time
 import requests
+from common.url_utils import get_netloc
 from lxml import etree
 from conf import redis_conf
 from conf import mongo_conf
@@ -114,9 +115,13 @@ def get_keyword_totalnum(keyword,html,num_satisfy):
         return False
 
 def judge_py_website(url):
-
-    list_urlbacklist = ['www.bjsxt.com',]
+    # 黑名单 放到conf目录下配置
+    list_urlbacklist = ('www.bjsxt.com',)
     num_satisfy = 10
+
+    # netloc = get_netloc(url)
+    # if netloc in list_urlbacklist:
+    #     return False
 
     if Jduge_in_urlbacklist(url, list_urlbacklist) == True:
         print("url:{}为黑名单".format(url))

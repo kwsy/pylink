@@ -7,6 +7,7 @@ from conf import redis_conf
 from conf import mongo_conf
 from db import redis_client
 from db import mongo_client
+from db.mongo_client import zhihu_mongo
 
 def get_url_destination(session, url):
     html = get_html_from_url(session, url)
@@ -15,6 +16,7 @@ def get_url_destination(session, url):
 
     url_destination = "https:" + url_destination + "/columns"
     return url_destination
+
 def get_zhuanlan_info(url):
     """
     获取一个专栏的关键信息, 比如专栏的名称, 关注人数
@@ -86,6 +88,8 @@ def zhihu_run():
 
         list_allzhuanlan_info = get_zhuanlan_info(url)
         print(list_allzhuanlan_info)
+        zhihu_mongo.insert_many(list_allzhuanlan_info)
+
         mongo_client.collection_insert_many_zhihu(list_allzhuanlan_info)
 
 if __name__ == '__main__':
