@@ -18,8 +18,9 @@ def push_queue(queue_name, content):
 
 
 def pop_queue(queue_name):
-    res = r.rpop(queue_name)
-    return res.decode()
+    url_byte = r.rpop(queue_name)
+    url = url_byte.decode(encoding='utf-8')
+    return url
 
 
 
