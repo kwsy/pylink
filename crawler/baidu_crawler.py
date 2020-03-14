@@ -27,18 +27,17 @@ def crawler_baidu_by_keyword(keyword):
     session = requests.session()
 
     for i in range(5):      #通过for 循环实现连续5页的网页链接抓取
-         params = {
+        params = {
              'wd': keyword,  #url链接参数wd查询关键字 (word) 一般以也会是一串字符
              'pn':  i*10     #url链接参数pn显示结果页数默认为0 其他每页递增rn
-                 }
+                }
 
+        res = session.get(url, params=params, headers=headers,allow_redirects=False)
+        res.encoding = 'utf-8'  #用url编码方式进行解码你才能看到真实的内容
+        time.sleep(3)           #函数推迟调用线程的运行，可通过参数secs指秒数，表示进程挂起的时间
 
-    res = session.get(url, params=params, headers=headers,allow_redirects=False)
-    res.encoding = 'utf-8'  #用url编码方式进行解码你才能看到真实的内容
-    time.sleep(3)           #函数推迟调用线程的运行，可通过参数secs指秒数，表示进程挂起的时间
-
-    link_lst = extract_links(res.text)
-    lst.extend(link_lst)#extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。
+        link_lst = extract_links(res.text)
+        lst.extend(link_lst)#extend() 函数用于在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）。
 
     return lst
 
@@ -48,7 +47,7 @@ def extract_links(html):
     :param html:
     :return:
     """
-    url_lst=[]
+    url_lst = []
     tree = etree.HTML(html)
     a_nodes=tree.xpath("//div[@class='result c-container ']/h3/a[@data-click]")
 
@@ -56,16 +55,22 @@ def extract_links(html):
         url_lst.append(a.attrib['href'])
     return url_lst
 
-def find_all_keywords_url(l):
+
+def find_all_keywords_url(keywords_lst):
     """
         从bd_keywords.py中读取列表的关键词，然后将每个关键词爬取到的网页保存到keyword.txt
         :param :关键词列表 l
         :return:检索结果写入keyword.txt文件
         """
     d = {}
-    for i in range(len(l)):
-        lst = crawler_baidu_by_keyword(l[i])
-        d[l[i]] = lst
+
+    for keyword in keywords_lst:
+        lst = crawler_baidu_by_keyword(keyword)
+        d[keyword] = lst
+
+    for i in range(len(keywords_lst)):
+        lst = crawler_baidu_by_keyword(keywords_lst[i])
+        d[keywords_lst[i]] = lst
 
     with open('..\keyword.txt', 'w') as kwd_file:
         for k, v in d.items():
@@ -104,12 +109,6 @@ def next_page(keyword):
     li_nodes_1 = tree.xpath("//div[@id='page']/a[10]")[0]
     print(li_nodes_1.text)
     return li_nodes_1.text
-
-
-
-
-
-
 
 
 if __name__ == '__main__':
