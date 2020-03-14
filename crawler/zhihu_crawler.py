@@ -27,6 +27,7 @@ def get_zhuanlan_info(url):
 
 
 def get_zhuanlan_info2(url):
+    lst = []
     session = requests.session()
     res = session.get(url, headers=headers)
     etree_html= etree.HTML(res.text)
@@ -34,24 +35,23 @@ def get_zhuanlan_info2(url):
     columns_name_node = etree_html.xpath('//div[@class="ContentItem-head"]')
     for i in columns_name_node:
         name = i.xpath('.//h2/a/div/div')[0]
-        print(name.text)
         # 问题1，为什么print会有2个值，return只有1个值
-
+        name = name.text
         specific_info = i.xpath('.//div[@class="ContentItem-status"]')[0]
         specific_info_text = specific_info.xpath('string(.)')
         specific_info_count = specific_info_text.split(' ')
 
-
         info = {
+            'name': name,
             'publish': int(specific_info_count[1]),
             'total article': int(specific_info_count[3]),
             'followers': int(''.join(re.findall('\d',specific_info_count[4])))
             # findall 提取字符串里的数字部分，join串联各个数字成为一个整体的数字
         }
 
-        print(info)
+        lst.append(info)
         # 问题2：同问题1，为什么print会有2个值，return只有1个值
-
+    return lst
 
 
 if __name__ == '__main__':
