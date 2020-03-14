@@ -9,15 +9,9 @@ from conf.bd_keywords import keywords
 from common.url_utils import get_netloc, HttpCodeException
 from conf.crawler_config import *
 from common.decorator import retry
-from crawler import dispath_worker
+from crawler.dispath_worker import dispath_url
 
-
-a = 1
-b = 2
-c = d
-
-def test():
-    return a+b
+CONTENT_NUM = 0     # 抓取数量
 
 def extract_links_test(filename):
     """
@@ -196,7 +190,10 @@ def crawler_baidu_by_all_keyword(keywords):
     lst_url_allword = []
     for keyword in keywords:
         lst_url_oneword = crawler_baidu_by_keyword(keyword)
-        dispath_worker(lst_url_oneword)
+        dispath_url(lst_url_oneword)
+        global CONTENT_NUM
+        CONTENT_NUM += len(lst_url_oneword)
+        print(CONTENT_NUM)
         if FLAG_SAVE_URLFILE == 1:
             save_urlfile(PATH_URLFILE, keyword, lst_url_oneword)
         lst_url_allword.extend(lst_url_oneword)
@@ -209,7 +206,7 @@ def crawler_baidu_by_all_keyword(keywords):
     return lst_url_allword
 
 
-def run(keywords):
+def run():
     crawler_baidu_by_all_keyword(keywords)
 
 

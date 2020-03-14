@@ -3,10 +3,10 @@
 """
 
 # 数据保存文件配置
-FLAG_SAVE_HTMLFILE = 1                   # 是否存储html数据至指定文件夹
+FLAG_SAVE_HTMLFILE = 0                   # 是否存储html数据至指定文件夹
 PATH_HTMLFILE = "../data/htmlfile"       # html数据存储路径
 
-FLAG_SAVE_URLFILE = 1                    # 是否存储url数据至指定文件夹
+FLAG_SAVE_URLFILE = 0                    # 是否存储url数据至指定文件夹
 PATH_URLFILE = "../data/urlfile"         # url数据存储路径
 
 # 搜索引擎配置

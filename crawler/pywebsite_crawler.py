@@ -1,6 +1,11 @@
 from common.url_utils import url_to_html
 from lxml import etree
 import os
+from db.redis_client import rpop_queue, lpush_queue
+from conf.redis_conf import QueueConfig
+from db.mongo_client import *
+from conf.mongo_conf import MongoCollection
+import time
 
 
 lst_miss_match = []  # 未匹配成功网站
@@ -14,15 +19,15 @@ def judge_py_website(url):
     :return:
     """
     html = url_to_html(url)
-
-    if judge_by_py_keyword(html):
-        return True
-    elif judge_by_py_meau(html):
-        return True
+    score = judge_by_py_keyword(html)[1] + judge_by_py_meau(html)[1]
+    if judge_by_py_keyword(html)[0]:
+        return True, score
+    elif judge_by_py_meau(html)[0]:
+        return True, score
     else:
         global lst_miss_match
         lst_miss_match.append(url)
-        return False
+        return False, 0
 
 
 def judge_by_py_keyword(html):
@@ -37,9 +42,9 @@ def judge_by_py_keyword(html):
     for key in tree_path:
         score += _judge_by_py_keyword_ex(tree, tree_path[key])
     if score >= 5:
-        return True
+        return True, score
     else:
-        return False
+        return False, 0
 
 
 def _judge_by_py_keyword_ex(tree, xpath_name):
@@ -79,11 +84,11 @@ def judge_by_py_meau(html):
                     if node_text.find(key) != -1:
                         score += judge_dict_score[key]
         except Exception as e:
-            print(e)
+            print("judge_by_py_meau error", e)
     if score >= 5:
-        return True
+        return True, score
     else:
-        return False
+        return False, 0
 
 
 def save_miss_lst(lst_miss_match):
@@ -101,17 +106,37 @@ def save_miss_lst(lst_miss_match):
 
 def run():
     """
-    执行程序：url转html→解析html→判断关键信息→根据分值判断True→返回False部分加入到miss_lst后期人工判断
+    执行程序：url转html→解析html→判断关键信息→根据分值判断True→返回False部分加入到miss_lst后期人工判断→非字典型无法加入mongo
     :return:
     """
     # url = 'https://www.runoob.com/python3/python3-tutorial.html'
     # url = 'https://www.itcodemonkey.com'
     # url = 'http://www.kidscode.cn/python'
-    url = 'https://www.bilibili.com/'
-    if judge_py_website(url):
+    lpush_queue(QueueConfig.pywebsite_queue, 'http://www.kidscode.cn/python')
+    mongo_drop_collect(MongoCollection.pywebsite_mongo)     # 清空表，正式时需删掉
+    while True:
+        try:
+            url = rpop_queue(QueueConfig.pywebsite_queue)    # 增加去重操作
+            print(url)
+            if not url:
+                time.sleep(1)
+                continue
+            else:
+                print(judge_py_website(url))
+                if judge_py_website(url)[0]:
+                    pywebsite_dict = {"score": str(judge_py_website(url)[1]), "url": url}
+                    mongo_client_insert(MongoCollection.pywebsite_mongo, pywebsite_dict)
 
-    else:
-        save_miss_lst(lst_miss_match)
+                else:
+                    save_miss_lst(lst_miss_match)
+        except Exception as e:
+            print('pywebsite_queue消息队列已空，无数据处理', e)
+            time.sleep(1)
+    # url = 'https://www.bilibili.com/'
+    # if judge_py_website(url):
+    #
+    # else:
+    #     save_miss_lst(lst_miss_match)
 
 
 if __name__ == '__main__':

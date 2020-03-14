@@ -1,8 +1,12 @@
 import requests
 from lxml import etree
 from common.url_utils import url_to_html
-import pandas as pd
 import re
+from db.redis_client import rpop_queue, lpush_queue
+from conf.redis_conf import QueueConfig
+from db.mongo_client import *
+from conf.mongo_conf import MongoCollection
+import time
 
 
 def get_zhuanlan_creator_html(html):
@@ -37,8 +41,7 @@ def get_zhuanlan_info(html):
         zhuanlan_dict['follower'] = zhuanlan_info[i][2]
         zhuanlan_dict['article_num'] = zhuanlan_info[i][1]
         zhuanlan_dict['zhuanlan_html'] = zhuanlan_html[i]
-        lst_zhuanlan.append(zhuanlan_dict)
-
+        lst_zhuanlan.append(zhuanlan_dict.copy())
     return lst_zhuanlan
 
 
@@ -58,11 +61,27 @@ def run():
     执行程序逻辑：专栏url→html→获取专栏主url→获取专栏主的所有专栏信息
     :return:
     """
-    url = 'https://zhuanlan.zhihu.com/p/109450078'
-    html = url_to_html(url)
-    owner_url = get_zhuanlan_creator_html(html)
-    owner_html = url_to_html(owner_url)
-    get_zhuanlan_info(owner_html)
+    #url = 'https://zhuanlan.zhihu.com/p/109450078'
+    lpush_queue(QueueConfig.zhihu_queue, 'https://zhuanlan.zhihu.com/p/109450078')
+    mongo_drop_collect(MongoCollection.zhihu_mongo)  # 清空表，正式时需删掉
+    while True:
+        try:
+            url = rpop_queue(QueueConfig.zhihu_queue)    # 增加去重操作
+            print(url)
+            if not url:
+                time.sleep(1)
+                continue
+            else:
+                html = url_to_html(url)
+                owner_url = get_zhuanlan_creator_html(html)
+                owner_html = url_to_html(owner_url)
+                zhuanlan_dict = get_zhuanlan_info(owner_html)
+                print(zhuanlan_dict)
+                for dict_one in zhuanlan_dict:
+                    mongo_client_insert(MongoCollection.zhihu_mongo, dict_one)
+        except Exception as e:
+            print('pywebsite_queue消息队列已空，无数据处理', e)
+            time.sleep(1)
 
 
 if __name__ == '__main__':

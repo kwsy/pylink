@@ -20,6 +20,17 @@ def mongo_client_insert(collection, content):
     mongo_db_hjf = mongo_client['hjf_crawler_db']
     collection_hjf = mongo_db_hjf[collection]
     collection_hjf.insert(content)
+    for x in collection_hjf.find():     # 后期删掉
+        print(x)
+
+def mongo_drop_collect(collection):
+    """
+    清空特定表
+    :return:
+    """
+    mongo_db_hjf = mongo_client['hjf_crawler_db']
+    collection_hjf = mongo_db_hjf[collection]
+    collection_hjf.drop()
 
 
 def test():
@@ -33,5 +44,11 @@ def test():
     test_collection.insert([{'name': 'hjf', 'user_info': 'python'}, {'name': 'hjf2', 'user_info': 'python2'}])
     test = test_collection.find_one()
     print(test)
+    print(test_collection.distinct("user_info"))
+
     for x in test_collection.find():
         print(x, type(x))
+    test_collection.drop()
+
+if __name__ == "__main__":
+    test()

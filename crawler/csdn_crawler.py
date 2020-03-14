@@ -2,11 +2,14 @@ import requests
 from lxml import etree
 from common.url_utils import url_to_html
 from urllib.parse import urlparse
-from db.redis_client import rpop_queue,lpush_queue
+from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
-from db.mongo_client import mongo_client_insert
+from db.mongo_client import *
 from conf.mongo_conf import MongoCollection
 import time
+
+CONTENT_NUM_CSDN = 0    # csdn导入mongo个数初始值
+
 
 def get_blogger_info(html):
     """
@@ -55,23 +58,28 @@ def run():
     :return:
     """
     #url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
-    #lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
+    lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
+    mongo_drop_collect(MongoCollection.csdn_mongo)  # 清空表，正式时需删掉
+
     while True:
-        url = rpop_queue(QueueConfig.csdn_queue)    # 增加去重操作
-        if not url:
-            time.sleep(1)
-            continue
-        else:
-            print(url)
-            try:
+        try:
+            url = rpop_queue(QueueConfig.csdn_queue)    # 增加去重操作
+            if not url:
+                time.sleep(1)
+                continue
+            else:
+                print(url)
                 owner_url = get_blogger_url(url)
                 html = url_to_html(owner_url)
                 csdn_dict = get_blogger_info(html)
+                global CONTENT_NUM_CSDN
+                CONTENT_NUM_CSDN += 1   # 成功导入个数
                 if csdn_dict:
                     mongo_client_insert(MongoCollection.csdn_mongo, csdn_dict)  # 去重操作
-            except Exception as e:
-                print(e)
-                pass
+
+        except Exception as e:
+            print("csdn_queue消息队列已空，暂无数据处理", e)
+            time.sleep(1)
 
 
 
@@ -82,5 +90,4 @@ if __name__ == '__main__':
     # with open('../csdn.txt', encoding='utf-8') as f:
     #     print(get_blogger_info(f.read()))
     # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
-
     run()
