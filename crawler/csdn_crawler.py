@@ -23,6 +23,7 @@ def get_blogger_info(url):
     session = requests.session()
     res = session.get(url,headers=headers)
     etree_html = etree.HTML(res.text)
+
     basic1_node = etree_html.xpath('//div[@class="data-info d-flex item-tiling"]/dl')
 
     info1 = {
