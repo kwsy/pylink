@@ -52,15 +52,25 @@ def get_blogger_url(url):
     return owner_url
 
 
+
+def test():
+    lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
+    mongo_drop_collect(MongoCollection.csdn_mongo)  # 清空表，正式时需删掉
+    run()
+
+
+def get_csdn_blogger_info(url):
+    owner_url = get_blogger_url(url)
+    html = url_to_html(owner_url)
+    csdn_dict = get_blogger_info(html)
+    return csdn_dict
+
 def run():
     """
     执行程序:csdn url→获取作者的url→html→提取信息→该作者信息字典返回→存储至monogo
     :return:
     """
     #url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
-    lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
-    mongo_drop_collect(MongoCollection.csdn_mongo)  # 清空表，正式时需删掉
-
     while True:
         try:
             url = rpop_queue(QueueConfig.csdn_queue)    # 增加去重操作
@@ -69,9 +79,7 @@ def run():
                 continue
             else:
                 print(url)
-                owner_url = get_blogger_url(url)
-                html = url_to_html(owner_url)
-                csdn_dict = get_blogger_info(html)
+                csdn_dict = get_csdn_blogger_info(url)
                 global CONTENT_NUM_CSDN
                 CONTENT_NUM_CSDN += 1   # 成功导入个数
                 if csdn_dict:
@@ -90,4 +98,4 @@ if __name__ == '__main__':
     # with open('../csdn.txt', encoding='utf-8') as f:
     #     print(get_blogger_info(f.read()))
     # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
-    run()
+    test()

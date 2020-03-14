@@ -25,7 +25,7 @@ def judge_py_website(url):
     elif judge_by_py_meau(html)[0]:
         return True, score
     else:
-        global lst_miss_match
+        global lst_miss_match     # 不需要global
         lst_miss_match.append(url)
         return False, 0
 

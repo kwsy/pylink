@@ -2,7 +2,10 @@ from urllib.parse import urlparse
 from db import redis_client
 from conf.redis_conf import QueueConfig
 
-queue_path = {'zhuanlan.zhihu.com': QueueConfig.zhihu_queue, 'blog.csdn.net': QueueConfig.csdn_queue}   # 消息队列字典映射
+queue_path = {
+    'zhuanlan.zhihu.com': QueueConfig.zhihu_queue,
+    'blog.csdn.net': QueueConfig.csdn_queue
+}   # 消息队列字典映射
 
 
 def dispath_url(url_lst: list):
@@ -11,18 +14,14 @@ def dispath_url(url_lst: list):
     :param url_lst:单个url为str或者list
     :return:
     """
-    if isinstance(url_lst, list):   # 传入多个url时，格式为list
-        for url in url_lst:
-            netloc_url = urlparse(url).netloc
-            queue_name = queue_path.get(netloc_url, QueueConfig.pywebsite_queue)    # 通过字典获取对应QueueName
-            redis_client.lpush_queue(queue_name, url)
+    # if isinstance(url_lst, str):
+    #     url_lst = [url_lst]
 
-    elif isinstance(url_lst, str):  # 传入单个url时，格式为str
-        netloc_url = urlparse(url_lst).netloc
-        queue_name = queue_path.get(netloc_url, QueueConfig.pywebsite_queue)  # 通过字典获取对应QueueName
-        redis_client.lpush_queue(queue_name, url_lst)
-    else:
-        pass
+    for url in url_lst:
+        netloc_url = urlparse(url).netloc
+        queue_name = queue_path.get(netloc_url, QueueConfig.py_website)    # 通过字典获取对应QueueName
+        redis_client.lpush_queue(queue_name, url)
+
     return
 
 

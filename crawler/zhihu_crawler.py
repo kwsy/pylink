@@ -75,10 +75,14 @@ def run():
                 html = url_to_html(url)
                 owner_url = get_zhuanlan_creator_html(html)
                 owner_html = url_to_html(owner_url)
-                zhuanlan_dict = get_zhuanlan_info(owner_html)
-                print(zhuanlan_dict)
-                for dict_one in zhuanlan_dict:
-                    mongo_client_insert(MongoCollection.zhihu_mongo, dict_one)
+                zhuanlan_list = get_zhuanlan_info(owner_html)
+                print(zhuanlan_list)
+
+                #
+                info = {'owner_url': owner_url, 'zhuanlan_lst': zhuanlan_list}
+                # for dict_one in zhuanlan_dict:
+                mongo_client_insert(MongoCollection.zhihu_mongo, info)
+
         except Exception as e:
             print('pywebsite_queue消息队列已空，无数据处理', e)
             time.sleep(1)
