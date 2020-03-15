@@ -1,6 +1,10 @@
 import requests
 import time
 from lxml import etree
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import ZHIHU_COLLECTION
 
 headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -21,8 +25,10 @@ def get_zhuanlan_info(url):
     session = requests.session()
     href = get_zhuanlan_columns_url(session, url)
     time.sleep(2)
-    return get_zhuanlan_info_columns(session, href)
 
+    data = get_zhuanlan_info_columns(session, href)
+    info = {'blog_url': href, 'zhuanlan': data}
+    return info
 
 def get_zhuanlan_columns_url(session, url):
     res = session.get(url, headers=headers)
@@ -61,7 +67,15 @@ def get_zhuanlan_info_columns(session, url):
 
     return zhuanlan_lst
 
+def run():
+    run_crawler_worker(QueueConfig.zhihu_queue, ZHIHU_COLLECTION, get_zhuanlan_info)
+
+def test():
+    redis_client.push_queue(QueueConfig.zhihu_queue, 'https://zhuanlan.zhihu.com/p/109450078')
+    run_crawler_worker(QueueConfig.zhihu_queue, ZHIHU_COLLECTION, get_zhuanlan_info)
+
 
 if __name__ == '__main__':
-    url = 'https://zhuanlan.zhihu.com/p/109450078'
-    print(get_zhuanlan_info(url))
+    # url = 'https://zhuanlan.zhihu.com/p/109450078'
+    # print(get_zhuanlan_info(url))
+    test()

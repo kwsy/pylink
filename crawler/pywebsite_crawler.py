@@ -1,5 +1,9 @@
 import requests
 from lxml import etree
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import PY_WEB_SITE
 
 
 def judge_py_website(url):
@@ -27,6 +31,13 @@ def judge_py_website(url):
         return True
 
     return False
+
+
+def py_website_info(url):
+    if judge_py_website(url):
+        return {'site_url': url}
+    else:
+        return {}
 
 
 def judge_py_site_by_keywords_description(html):
@@ -69,9 +80,20 @@ def judge_py_site_by_menu(html):
 
     return False
 
-if __name__ == '__main__':
-    url = 'http://www.kidscode.cn/python'
-    print(judge_py_website(url))
 
-    url = 'https://www.itcodemonkey.com/'
-    print(judge_py_website(url))
+def run():
+    run_crawler_worker(QueueConfig.py_website, PY_WEB_SITE, py_website_info)
+
+
+def test():
+    redis_client.push_queue(QueueConfig.py_website, 'http://www.kidscode.cn/python')
+    run_crawler_worker(QueueConfig.py_website, PY_WEB_SITE, py_website_info)
+
+
+if __name__ == '__main__':
+    test()
+    # url = 'http://www.kidscode.cn/python'
+    # print(judge_py_website(url))
+    #
+    # url = 'https://www.itcodemonkey.com/'
+    # print(judge_py_website(url))

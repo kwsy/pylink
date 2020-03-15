@@ -1,5 +1,9 @@
 import requests
 from lxml import etree
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import CSDN_COLLECTION
 
 
 def get_blogger_info(url):
@@ -121,6 +125,17 @@ def extract_grade_info(personal_box):
 
     return data
 
+
+def run():
+    run_crawler_worker(QueueConfig.csdn_queue, CSDN_COLLECTION, get_blogger_info)
+
+
+def test():
+    redis_client.push_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008')
+    run_crawler_worker(QueueConfig.csdn_queue, CSDN_COLLECTION, get_blogger_info)
+
+
 if __name__ == '__main__':
-    url = 'https://blog.csdn.net/KWSY2008'
-    print(get_blogger_info(url))
+    test()
+    # url = 'https://blog.csdn.net/KWSY2008'
+    # print(get_blogger_info(url))
