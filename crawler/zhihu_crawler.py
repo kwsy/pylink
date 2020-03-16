@@ -27,15 +27,12 @@ def get_zhuanlan_info(url):
 
 
 def get_zhuanlan_info2(url):
-<<<<<<< HEAD
     """
     获取关键信息，如专栏名，发表文章，共发布文章，关注人数等
     :param url:
     :return:
     """
-=======
     lst = []
->>>>>>> cd42004a3e094d4244b89c92520dd91ea7128c90
     session = requests.session()
     res = session.get(url, headers=headers)
     etree_html= etree.HTML(res.text)
@@ -44,22 +41,14 @@ def get_zhuanlan_info2(url):
     lst = []
     for i in columns_name_node:
         name = i.xpath('.//h2/a/div/div')[0]
-<<<<<<< HEAD
 
-=======
-        # 问题1，为什么print会有2个值，return只有1个值
-        name = name.text
->>>>>>> cd42004a3e094d4244b89c92520dd91ea7128c90
         specific_info = i.xpath('.//div[@class="ContentItem-status"]')[0]
         specific_info_text = specific_info.xpath('string(.)')
         specific_info_count = specific_info_text.split(' ')
 
         info = {
-<<<<<<< HEAD
             'column name': name.text,
-=======
             'name': name,
->>>>>>> cd42004a3e094d4244b89c92520dd91ea7128c90
             'publish': int(specific_info_count[1]),
             'total article': int(specific_info_count[3]),
             'followers': int(''.join(re.findall('\d+',specific_info_count[4])))
@@ -67,15 +56,9 @@ def get_zhuanlan_info2(url):
         }
 
         lst.append(info)
-<<<<<<< HEAD
 
     return lst
 
-
-=======
-        # 问题2：同问题1，为什么print会有2个值，return只有1个值
-    return lst
->>>>>>> cd42004a3e094d4244b89c92520dd91ea7128c90
 
 
 if __name__ == '__main__':
