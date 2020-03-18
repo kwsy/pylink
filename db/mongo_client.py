@@ -8,6 +8,7 @@ import pymongo
 from conf.mongo_conf import mongo_conf_hjf
 
 mongo_client = pymongo.MongoClient(**mongo_conf_hjf)
+db = 'hjf_crawler_db'
 
 
 def mongo_client_insert(collection, content):
@@ -17,7 +18,7 @@ def mongo_client_insert(collection, content):
     :param content: 插入数据
     :return:
     """
-    mongo_db_hjf = mongo_client['hjf_crawler_db']
+    mongo_db_hjf = mongo_client[db]
     collection_hjf = mongo_db_hjf[collection]
     collection_hjf.insert(content)
     for x in collection_hjf.find():     # 后期删掉
@@ -28,7 +29,7 @@ def mongo_drop_collect(collection):
     清空特定表
     :return:
     """
-    mongo_db_hjf = mongo_client['hjf_crawler_db']
+    mongo_db_hjf = mongo_client[db]
     collection_hjf = mongo_db_hjf[collection]
     collection_hjf.drop()
 

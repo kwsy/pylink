@@ -7,8 +7,9 @@ from conf.redis_conf import QueueConfig
 from db.mongo_client import *
 from conf.mongo_conf import MongoCollection
 import time
+from crawler import run_crawler_worker
 
-CONTENT_NUM_CSDN = 0    # csdn导入mongo个数初始值
+CONTENT_NUM_CSDN = 0  # csdn导入mongo个数初始值
 
 
 def get_blogger_info(html):
@@ -22,8 +23,10 @@ def get_blogger_info(html):
     tree = etree.HTML(html)
     rank = tree.xpath('//div[@class="grade-box clearfix"]/dl[@title]/@title')
     information_num = tree.xpath('//div[@class = "data-info d-flex item-tiling"]/dl[@class = "text-center"]/@title')
-    blog_level = tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][0]  # 博客等级
-    blogger_url = tree.xpath('//div[@id = "asideProfile"]//div[@class = "profile-intro-name-boxFooter"]/span/a/@href')  # 博主个人网页 me.csdn.net/XXX
+    blog_level = \
+    tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][0]  # 博客等级
+    blogger_url = tree.xpath(
+        '//div[@id = "asideProfile"]//div[@class = "profile-intro-name-boxFooter"]/span/a/@href')  # 博主个人网页 me.csdn.net/XXX
     lst_info = rank + information_num + [blog_level] + blogger_url  # info形成列表
     lst_name = ['week_rank', 'sum_rank', 'original', 'fans_num', 'like_num', 'comment_num',
                 'visit_num', 'blog_level', 'href']  # 定义info的名字
@@ -52,35 +55,35 @@ def get_blogger_url(url):
     return owner_url
 
 
+def _run_ex(url):
+    """
+    执行封包：获取博主url→转化为html→解析html返回字典信息
+    :param url:
+    :return:
+    """
+    owner_url = get_blogger_url(url)
+    html = url_to_html(owner_url)
+    csdn_dict = get_blogger_info(html)
+    return csdn_dict
+
+
+def test():
+    """
+    测试语句
+    :return:
+    """
+    # url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
+    lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
+    mongo_drop_collect(MongoCollection.csdn_mongo)  # 清空表，正式时需删掉
+    run()
+
+
 def run():
     """
     执行程序:csdn url→获取作者的url→html→提取信息→该作者信息字典返回→存储至monogo
     :return:
     """
-    #url = 'https://blog.csdn.net/KWSY2008/article/details/103812367'    # url得用lpush_queue
-    lpush_queue(QueueConfig.csdn_queue, 'https://blog.csdn.net/KWSY2008/article/details/103812367')
-    mongo_drop_collect(MongoCollection.csdn_mongo)  # 清空表，正式时需删掉
-
-    while True:
-        try:
-            url = rpop_queue(QueueConfig.csdn_queue)    # 增加去重操作
-            if not url:
-                time.sleep(1)
-                continue
-            else:
-                print(url)
-                owner_url = get_blogger_url(url)
-                html = url_to_html(owner_url)
-                csdn_dict = get_blogger_info(html)
-                global CONTENT_NUM_CSDN
-                CONTENT_NUM_CSDN += 1   # 成功导入个数
-                if csdn_dict:
-                    mongo_client_insert(MongoCollection.csdn_mongo, csdn_dict)  # 去重操作
-
-        except Exception as e:
-            print("csdn_queue消息队列已空，暂无数据处理", e)
-            time.sleep(1)
-
+    run_crawler_worker(QueueConfig.csdn_queue, MongoCollection.csdn_mongo, _run_ex)
 
 
 if __name__ == '__main__':
@@ -90,4 +93,4 @@ if __name__ == '__main__':
     # with open('../csdn.txt', encoding='utf-8') as f:
     #     print(get_blogger_info(f.read()))
     # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
-    run()
+    test()

@@ -3,9 +3,10 @@ from lxml import etree
 import os
 from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
-from db.mongo_client import *
+from db.mongo_client import mongo_client_insert,mongo_drop_collect
 from conf.mongo_conf import MongoCollection
 import time
+from crawler import run_crawler_worker
 
 
 lst_miss_match = []  # 未匹配成功网站
@@ -21,13 +22,12 @@ def judge_py_website(url):
     html = url_to_html(url)
     score = judge_by_py_keyword(html)[1] + judge_by_py_meau(html)[1]
     if judge_by_py_keyword(html)[0]:
-        return True, score
+        return {"score": str(score), "href": url}
     elif judge_by_py_meau(html)[0]:
-        return True, score
+        return {"score": str(score), "href": url}
     else:
-        global lst_miss_match
         lst_miss_match.append(url)
-        return False, 0
+        save_miss_lst(lst_miss_match)
 
 
 def judge_by_py_keyword(html):
@@ -104,41 +104,27 @@ def save_miss_lst(lst_miss_match):
             f.write(single_url + "\n")
 
 
-def run():
+def test():
     """
-    执行程序：url转html→解析html→判断关键信息→根据分值判断True→返回False部分加入到miss_lst后期人工判断→非字典型无法加入mongo
+    测试专用
     :return:
     """
     # url = 'https://www.runoob.com/python3/python3-tutorial.html'
     # url = 'https://www.itcodemonkey.com'
     # url = 'http://www.kidscode.cn/python'
     lpush_queue(QueueConfig.pywebsite_queue, 'http://www.kidscode.cn/python')
-    mongo_drop_collect(MongoCollection.pywebsite_mongo)     # 清空表，正式时需删掉
-    while True:
-        try:
-            url = rpop_queue(QueueConfig.pywebsite_queue)    # 增加去重操作
-            print(url)
-            if not url:
-                time.sleep(1)
-                continue
-            else:
-                print(judge_py_website(url))
-                if judge_py_website(url)[0]:
-                    pywebsite_dict = {"score": str(judge_py_website(url)[1]), "url": url}
-                    mongo_client_insert(MongoCollection.pywebsite_mongo, pywebsite_dict)
+    mongo_drop_collect(MongoCollection.pywebsite_mongo)  # 清空表，正式时需删掉
+    run()
 
-                else:
-                    save_miss_lst(lst_miss_match)
-        except Exception as e:
-            print('pywebsite_queue消息队列已空，无数据处理', e)
-            time.sleep(1)
-    # url = 'https://www.bilibili.com/'
-    # if judge_py_website(url):
-    #
-    # else:
-    #     save_miss_lst(lst_miss_match)
+
+def run():
+    """
+    执行程序：url转html→解析html→判断关键信息→根据分值判断True→返回False部分加入到miss_lst后期人工判断→非字典型无法加入mongo
+    :return:
+    """
+    run_crawler_worker(QueueConfig.pywebsite_queue, MongoCollection.pywebsite_mongo, judge_py_website)
 
 
 if __name__ == '__main__':
-    run()
+    test()
 

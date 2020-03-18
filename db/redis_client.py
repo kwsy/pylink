@@ -25,8 +25,9 @@ def rpop_queue(queue_name):
     :return:
     """
     url_byte = connect_redis.rpop(queue_name)
-    url = url_byte.decode(encoding='utf-8')
-    return url
+    if url_byte:
+        url = url_byte.decode(encoding='utf-8')
+        return url
 
 
 def test():

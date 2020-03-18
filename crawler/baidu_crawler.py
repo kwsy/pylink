@@ -2,16 +2,13 @@ import os
 import time
 import requests
 from lxml import etree
-from functools import wraps
 from urllib.parse import quote
-from requests import exceptions
 from conf.bd_keywords import keywords
 from common.url_utils import get_netloc, HttpCodeException
 from conf.crawler_config import *
 from common.decorator import retry
 from crawler.dispath_worker import dispath_url
 
-CONTENT_NUM = 0     # 抓取数量
 
 def extract_links_test(filename):
     """
