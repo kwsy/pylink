@@ -94,3 +94,4 @@ if __name__ == '__main__':
     #     print(get_blogger_info(f.read()))
     # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
     test()
+    print(_run_ex('https://blog.csdn.net/KWSY2008/article/details/103812367'))

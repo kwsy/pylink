@@ -3,7 +3,7 @@ from lxml import etree
 import os
 from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
-from db.mongo_client import mongo_client_insert,mongo_drop_collect
+from db.mongo_client import mongo_client_insert, mongo_drop_collect
 from conf.mongo_conf import MongoCollection
 import time
 from crawler import run_crawler_worker
@@ -126,5 +126,6 @@ def run():
 
 
 if __name__ == '__main__':
-    test()
+    print(judge_py_website('http://www.kidscode.cn/python'))
+    #test()
 

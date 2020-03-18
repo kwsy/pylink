@@ -35,7 +35,6 @@ def get_zhuanlan_info(html):
     zhuanlan_html = ['https:' + i for i in lst_html]  # 专栏html
 
     zhuanlan_info = [research_info(lst_info[i].xpath('string(.)')) for i in range(len(lst_info))]  # 专栏信息 文章数/关注数
-    blogger_name = tree.xpath('//h1[@class = "ProfileHeader-title"]/span/text()')[0]
     lst_zhuanlan = []
     zhuanlan_dict = {}
     for i in range(len(zhuanlan_name)):
@@ -44,8 +43,8 @@ def get_zhuanlan_info(html):
         zhuanlan_dict['article_num'] = zhuanlan_info[i][1]
         zhuanlan_dict['zhuanlan_html'] = zhuanlan_html[i]
         lst_zhuanlan.append(zhuanlan_dict.copy())
-    zhuanlan_ex_dict = {'blogger_name': blogger_name, 'info': lst_zhuanlan}
-    return zhuanlan_ex_dict
+
+    return lst_zhuanlan
 
 
 def research_info(sentence: str):
@@ -68,7 +67,8 @@ def _run_ex(url):
     owner_url = get_zhuanlan_creator_html(html)
     owner_html = url_to_html(owner_url)
     lst_zhuanlan = get_zhuanlan_info(owner_html)
-    return lst_zhuanlan
+    zhuanlan_ex_dict = {"href": owner_url, "info": lst_zhuanlan}
+    return zhuanlan_ex_dict
 
 def test():
     """
@@ -81,7 +81,7 @@ def test():
     run()
 
 
-def run(queue_name=QueueConfig.zhihu_queue, mongo_name=MongoCollection.zhihu_mongo):
+def run():
     """
     执行程序逻辑：专栏url→html→获取专栏主url→获取专栏主的所有专栏信息
     :return:
@@ -91,7 +91,7 @@ def run(queue_name=QueueConfig.zhihu_queue, mongo_name=MongoCollection.zhihu_mon
 
 if __name__ == '__main__':
     url = 'https://zhuanlan.zhihu.com/c_1099248962871169024'
-    test()
+    _run_ex(url)
 
     # with open('../zhihu.txt', encoding='utf-8') as f:
     #     owner_url = get_zhuanlan_creator_html(f.read())
