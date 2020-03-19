@@ -1,6 +1,30 @@
 import requests
+import time
 from lxml import etree
 from urllib.parse import quote
+from conf import crawler_config
+from conf.bd_keywords import keyword_lst
+
+def run():
+    '''
+    爬虫启动脚本
+    :return:网址链接
+    '''
+    url_lst = crawler_all_keywords(keyword_lst)
+    print(url_lst)
+
+def crawler_all_keywords(keyword_list):
+    '''
+    爬取所有关键词的网址链接
+    :param keyword_list: 所有关键词的列表
+    :return: 没一个关键词对应的网址链接列表
+    '''
+    all_url_lst=[]
+    for kd in keyword_list:
+        lst=crawler_baidu_by_keyword(kd)
+        all_url_lst.extend(lst)
+
+    return all_url_lst
 
 
 def crawler_baidu_by_keyword(keyword):
@@ -17,20 +41,25 @@ def crawler_baidu_by_keyword(keyword):
         'Connection': 'keep-alive',
         'referer': quote('http://www.baidu.com/s?wd=python&pn=10'),
         'Host': 'www.baidu.com',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
-    }
+        'User-Agent':  'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'}
 
+    all_link_lst=[]
     url = 'https://www.baidu.com/s'
-    params = {
+    for i in range(crawler_config.BD_MAX_CRAWLER_PAGE):
+        params = {
                 'wd': keyword,
-                'pn': 0
+                'pn': 10*i
             }
 
-    session = requests.session()
-    res = session.get(url, params=params, headers=headers)
-    res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
-    link_lst = extract_links(res.text)
-    return link_lst
+        session = requests.session()
+        res = session.get(url, params=params, headers=headers)
+        time.sleep(crawler_config.SLEEP_TIME)
+        res.encoding = 'utf-8'  # 对网页内容进行编码,否则中文无法正常显示
+        link_lst = extract_links(res.text)
+        all_link_lst.extend(link_lst) #在列表末尾追加可迭代对象（元组，字符串，列表，字典）
+
+
+    return all_link_lst
 
 
 def extract_links(html):
@@ -42,19 +71,35 @@ def extract_links(html):
     url_lst = []
     tree = etree.HTML(html)
     a_lst = tree.xpath("//div[@class='result c-container ']/h3/a[@data-click]")
+
     for a in a_lst:
         url_lst.append(a.attrib['href'])
-
+    url_lst=[get_real_link(url) for url in url_lst]
     return url_lst
 
 
 def test_extract_links():
-    with open("../baidu.txt")as f:
+    with open("../baidu.txt",'rb')as f:
         print(extract_links(f.read()))
+
 
 def test_crawler_baidu_by_keyword():
     lst = crawler_baidu_by_keyword('python 教程')
     print(lst)
 
+def get_real_link(url):
+    '''
+    获得真实的链接地址
+    :param url:
+    :return:
+    '''
+    res = requests.get(url,allow_redirects =False)
+    return res.headers['Location']
+
+
+
 if __name__ == '__main__':
-    test_crawler_baidu_by_keyword()
+    test_extract_links()
+    # url = 'http://www.baidu.com/link?url=LzQCUqcFg9l7-w4pu86rYjgudDCyhQ2RR-nW65NLhXOLq_MFHc7XaSeoct2KVQKdipQ48ZuXYIPNvlVtXjznRq'
+    # get_real_link(url)
+    run()
