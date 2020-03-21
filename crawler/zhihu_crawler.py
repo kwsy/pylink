@@ -64,7 +64,14 @@ def get_zhuanlan_info2(url):
     return lst
 
 
-def run():
+def run(url):
+    res = get_zhuanlan_info(url)
+    if not MongoConfig.zhihu_collection.find(res):
+        redis_client.push_queue(QueueConfig.zhihu_queue, url)
+        run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
+    else:
+        if
+
     run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
 
 
