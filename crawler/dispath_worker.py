@@ -1,6 +1,10 @@
 from urllib.parse import urlparse
 from db import redis_client
 from conf.redis_conf import QueueConfig
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
 
 queue_path = {'zhuanlan.zhihu.com': QueueConfig.zhihu_queue, 'blog.csdn.net': QueueConfig.csdn_queue}   # 消息队列字典映射
 

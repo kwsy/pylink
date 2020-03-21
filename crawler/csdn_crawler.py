@@ -6,17 +6,18 @@ from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
 from db.mongo_client import *
 from conf.mongo_conf import MongoCollection
-import time
 from crawler import run_crawler_worker
+import logging
 
-CONTENT_NUM_CSDN = 0  # csdn导入mongo个数初始值
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def get_blogger_info(html):
     """
     获取csdn博客主的信息,比如博客等级, 总排名, 其他任何你想抓取的信息你有能力,都可以抓取
     {week_rank':周排名, 'sum_rank':总排名, 'original':原创, 'fans_num':粉丝,
-     'like_num':获赞, 'comment_num':评论,'visit_num':访客, 'blog_level':博客等级}
+     'like_num':获赞, 'comment_num':评论,'visit_num':访客, 'blog_level':博客等级, 'href':博主个人url，'insert_time': 插入时间}
     :param html: csdn.net为主信息
     :return:
     """
@@ -24,13 +25,14 @@ def get_blogger_info(html):
     rank = tree.xpath('//div[@class="grade-box clearfix"]/dl[@title]/@title')
     information_num = tree.xpath('//div[@class = "data-info d-flex item-tiling"]/dl[@class = "text-center"]/@title')
     blog_level = \
-    tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][0]  # 博客等级
+        tree.xpath('//div[@class="grade-box clearfix"]/dl[@class = "aside-box-footerClassify"]/dd/a/@title')[0][
+            0]  # 博客等级
     blogger_url = tree.xpath(
         '//div[@id = "asideProfile"]//div[@class = "profile-intro-name-boxFooter"]/span/a/@href')  # 博主个人网页 me.csdn.net/XXX
-    lst_info = rank + information_num + [blog_level] + blogger_url  # info形成列表
+    localtime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+    lst_info = rank + information_num + [blog_level] + blogger_url + [localtime]  # info形成列表
     lst_name = ['week_rank', 'sum_rank', 'original', 'fans_num', 'like_num', 'comment_num',
-                'visit_num', 'blog_level', 'href']  # 定义info的名字
-
+                'visit_num', 'blog_level', 'href', 'insert_time']  # 定义info的名字
     csdn_dict = {}
     for index, item in enumerate(lst_name):
         csdn_dict[item] = lst_info[index]
@@ -94,4 +96,3 @@ if __name__ == '__main__':
     #     print(get_blogger_info(f.read()))
     # get_blogger_url("https://blog.csdn.net/KWSY2008/article/details/103812367")
     test()
-    print(_run_ex('https://blog.csdn.net/KWSY2008/article/details/103812367'))

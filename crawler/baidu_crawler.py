@@ -8,6 +8,10 @@ from common.url_utils import get_netloc, HttpCodeException
 from conf.crawler_config import *
 from common.decorator import retry
 from crawler.dispath_worker import dispath_url
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 
 def extract_links_test(filename):
@@ -32,10 +36,10 @@ def create_folder_htmlfile(path):
     :return:
     """
     if os.path.exists(path):
-        print("{0}文件夹已存在，直接写入".format(path))
+        logger.info("{0}文件夹已存在，直接写入".format(path))
     else:
         os.mkdir(path)
-        print("{0}文件夹不存在，新建成功".format(path))
+        logger.info("{0}文件夹不存在，新建成功".format(path))
 
 
 def save_htmlfile(path_folder, keyword, num, html):
@@ -164,7 +168,7 @@ def crawler_baidu_by_keyword(keyword):
     session = requests.session()
     for num_page in range(TOTALNUM_SEARCH_PAGE):  # 根据查询页数进行查询
         time.sleep(TIME_REQUEST_SLEEP)
-        print("{0}关键词第{1}页".format(keyword, (num_page + 1)))
+        logger.info("{0}关键词第{1}页".format(keyword, (num_page + 1)))
         params = generate_params(keyword, num_page)  # 获取搜索关键字
         html = params_request(session, URL_BAIDU, params, headers)
 
@@ -188,9 +192,6 @@ def crawler_baidu_by_all_keyword(keywords):
     for keyword in keywords:
         lst_url_oneword = crawler_baidu_by_keyword(keyword)
         dispath_url(lst_url_oneword)
-        global CONTENT_NUM
-        CONTENT_NUM += len(lst_url_oneword)
-        print(CONTENT_NUM)
         if FLAG_SAVE_URLFILE == 1:
             save_urlfile(PATH_URLFILE, keyword, lst_url_oneword)
         lst_url_allword.extend(lst_url_oneword)
@@ -218,4 +219,4 @@ def test_crawler_baidu_by_keyword(keyword='python教程'):
 
 
 if __name__ == '__main__':
-    run(keywords)
+    run()
