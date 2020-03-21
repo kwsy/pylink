@@ -64,4 +64,4 @@ def test():
 if __name__ == '__main__':
     # url = 'https://blog.csdn.net/KWSY2008'
     # print(get_blogger_info(url))
-    run()
+    test()

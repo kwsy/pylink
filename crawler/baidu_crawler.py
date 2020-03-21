@@ -7,6 +7,8 @@ from urllib.parse import quote
 from conf.bd_keywords import keywords
 from crawler.dispatch_worker import dispatch_url
 from conf.crawler_config import *
+from apscheduler.schedulers.blocking import BlockingScheduler
+
 
 
 def retry(retry_count=5, sleep_time=1):
@@ -232,7 +234,15 @@ def crawler_baidu_by_all_keyword(keywords):
 def run():
     crawler_baidu_by_all_keyword(keywords)
 
+def timing_job():
+    crawler_baidu_by_all_keyword(keywords)
+
+scheduler = BlockingScheduler()
+scheduler.add_job(timing_job(), 'cron', hour=10)
+scheduler.start()
+
+
 
 if __name__ == '__main__':
-    run()
+    timing_job()
 
