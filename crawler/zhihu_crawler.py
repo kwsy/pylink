@@ -1,5 +1,6 @@
 import requests
 import time
+from datetime import datetime
 from lxml import etree
 from db import redis_client
 from conf.redis_conf import QueueConfig
@@ -27,7 +28,7 @@ def get_zhuanlan_info(url):
     time.sleep(2)
 
     data = get_zhuanlan_info_columns(session, href)
-    info = {'blog_url': href, 'zhuanlan': data}
+    info = {'url': href, 'zhuanlan': data, 'insert_time': datetime.now()}
     return info
 
 def get_zhuanlan_columns_url(session, url):

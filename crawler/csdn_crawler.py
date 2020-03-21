@@ -1,9 +1,11 @@
 import requests
 from lxml import etree
+from datetime import datetime
 from db import redis_client
 from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
 from conf.mongo_conf import CSDN_COLLECTION
+from db import mongo_clinet
 
 
 def get_blogger_info(url):
@@ -29,7 +31,8 @@ def get_blogger_info(url):
 
     html = res.text
     info = extract_info(html)
-    info['href'] = url
+    info['url'] = url
+    info['insert_time'] = datetime.now()
     return info
 
 

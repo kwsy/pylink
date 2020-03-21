@@ -6,4 +6,10 @@ db = client[mongo_conf.DB_NAME]        # 数据库的名字
 
 
 def insert(collection_name, info):
-    db[collection_name].insert(info)
+    url = info['url']
+    db[collection_name].update({'url': url}, info, upsert=True)
+
+
+def get_data_by_url(collection, url):
+    return db[collection].find_one({'url': url})
+

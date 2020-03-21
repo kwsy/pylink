@@ -4,7 +4,6 @@ from conf import redis_conf
 
 r = redis.Redis(**redis_conf.redis_setting)
 
-
 def test():
     r.set('foo', 'redis')
     print(r.get('foo'))
@@ -25,6 +24,5 @@ def pop_queue(queue_name):
     return url
 
 
-
 if __name__ == '__main__':
-    test()
+    print(pop_queue(redis_conf.QueueConfig.py_website))
