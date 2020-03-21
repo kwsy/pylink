@@ -34,6 +34,13 @@ def test():
 def push_queue(queue_name, content):
     r.lpush(queue_name, content)
 
+def pop_queue(queue_name):
+    url_byte = r.rpop(queue_name)
+    if not url_byte:
+        return None
+    url = url_byte.decode(encoding='utf-8')
+    return url
+
 
 if __name__ == '__main__':
     test()

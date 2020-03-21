@@ -1,5 +1,9 @@
 from lxml import etree
 import requests
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import MongoConfig
 
 
 
@@ -48,7 +52,16 @@ def get_blogger_info(url):
 
     return dict(info1,**info2)
 
+def run():
+   run_crawler_worker(QueueConfig.csdn_queue, MongoConfig.csdn_collection, get_blogger_info)
+
+
+def test():
+    redis_client.push_queue(QueueConfig.csdn_queue,'https://blog.csdn.net/KWSY2008')
+    run_crawler_worker(QueueConfig.csdn_queue, MongoConfig.csdn_collection, get_blogger_info)
+
 
 if __name__ == '__main__':
-    url = 'https://blog.csdn.net/KWSY2008'
-    print(get_blogger_info(url))
+    # url = 'https://blog.csdn.net/KWSY2008'
+    # print(get_blogger_info(url))
+    run()

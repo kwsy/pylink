@@ -1,5 +1,9 @@
 from lxml import etree
 import requests
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import MongoConfig
 
 
 
@@ -71,10 +75,20 @@ def judge_by_menu(tree):
     return False
 
 
+def run():
+    run_crawler_worker(QueueConfig.py_website_queue, MongoConfig.csdn_collection, judge_py_website)
+
+
+def test():
+    redis_client.push_queue(QueueConfig.py_website_queue, 'http://www.kidscode.cn/python')
+    run_crawler_worker(QueueConfig.py_website_queue, MongoConfig.py_website_collection, judge_py_website)
+
 
 if __name__ == '__main__':
-    url = 'http://www.kidscode.cn/python'
-    print(judge_py_website(url))
+    # url = 'http://www.kidscode.cn/python'
+    # print(judge_py_website(url))
+    #
+    # url = 'https://www.itcodemonkey.com/'
+    # print(judge_py_website(url))
 
-    url = 'https://www.itcodemonkey.com/'
-    print(judge_py_website(url))
+    run()

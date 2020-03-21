@@ -1,6 +1,10 @@
 from lxml import etree
 import requests
 import re
+from db import redis_client
+from conf.redis_conf import QueueConfig
+from crawler import run_crawler_worker
+from conf.mongo_conf import MongoConfig
 
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -60,10 +64,21 @@ def get_zhuanlan_info2(url):
     return lst
 
 
+def run():
+    run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
+
+
+def test():
+    redis_client.push_queue(QueueConfig.zhihu_queue, 'https://zhuanlan.zhihu.com/p/109450078')
+    run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
+
+
 
 if __name__ == '__main__':
-    url = 'https://zhuanlan.zhihu.com/p/109450078'
-    print(get_zhuanlan_info(url))
+    # url = 'https://zhuanlan.zhihu.com/p/109450078'
+    # print(get_zhuanlan_info(url))
+
+    run()
 
 
 
