@@ -64,7 +64,7 @@ def get_zhuanlan_info2(url):
     return lst
 
 
-def run(url):
+def run():
     res = get_zhuanlan_info(url)
     if not MongoConfig.zhihu_collection.find(res):
         redis_client.push_queue(QueueConfig.zhihu_queue, url)
