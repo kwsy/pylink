@@ -39,6 +39,11 @@ def mongo_find_collect(collection, href):
     return mongo_db_hjf[collection].find_one({"href": href})
 
 
+def mongo_remove_one(collection, href):
+    """
+    删除href对应信息
+    """
+    return mongo_db_hjf[collection].remove({"href": href})
 
 
 def test():
@@ -52,6 +57,7 @@ def test():
     test_collection.update({"href": "www.baidu.com"}, {"$setOnInsert": {'name': 'hjf2', 'user_info': 'python2', 'href': "www.baidu.com", 'insert_time': '2020-03-21'}}, upsert=True)
     test_collection.update({"href": "www.baidu.com"}, {"$setOnInsert": {'name': 'hjf5', 'user_info': 'python1', 'href': 'www.baidu.com', 'insert_time': '2020-03-23'}}, upsert=True)
     print(test_collection.find_one({"href": "www.baidu.com"})['href'])
+    #test_collection.remove({"href": "www.baidu.com"})
     # print('test', test)
     # print(test_collection.distinct("user_info"))
 

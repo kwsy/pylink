@@ -7,15 +7,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-def is_need_crawler(url, mongo_name):
-    if mongo_name == MongoCollection.pywebsite_mongo:
-        return True
-    data = mongo_find_collect(mongo_name, url)
-    if data is None:
-        return True
-    insert_time = data['insert']
-    now = datetime.now()
-    if d
+
 
 
 def run_crawler_worker(queue_name, mongo_name, function):
@@ -42,3 +34,19 @@ def run_crawler_worker(queue_name, mongo_name, function):
         except Exception as e:
             logger.info("{}消息队列".format(queue_name), e)
             time.sleep(3)
+
+
+def is_need_crawler(url, mongo_name):
+    if mongo_name == MongoCollection.pywebsite_mongo:
+        return True
+    data = mongo_find_collect(mongo_name, url)
+    if data is None:
+        return True
+    insert_time = data['insert']
+
+    now = datetime.now()
+    diff_value = (insert_time-now).days
+
+    if diff_value > 7:
+        return True
+    return False

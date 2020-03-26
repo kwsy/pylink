@@ -5,7 +5,7 @@ from common.url_utils import url_to_html
 from conf.mongo_conf1 import MongoCollection
 from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
-from db.mongo_client import mongo_drop_collect
+from db.mongo_client import mongo_drop_collect, mongo_find_collect, mongo_remove_one
 from db.redis_client import lpush_queue
 from datetime import datetime
 import logging
@@ -28,6 +28,8 @@ def judge_py_website(url):
     html = url_to_html(url)
     score = judge_by_py_keyword(html)[1] + judge_by_py_meau(html)[1]
     localtime = datetime.now()
+    if score == 0:
+        _remove_py_website_zero(url)    # 有点影响效率
     if judge_by_py_keyword(html)[0]:
         return {"score": score, "href": url, "insert_time": localtime}
     elif judge_by_py_meau(html)[0]:
@@ -35,6 +37,13 @@ def judge_py_website(url):
     else:
         lst_miss_match.append(url)
         save_miss_lst(lst_miss_match)
+
+
+def _remove_py_website_zero(url):
+    """该函数判断分数为0，移除mongo"""
+    data = mongo_find_collect(MongoCollection.pywebsite_mongo, url)
+    if data is not None:
+            mongo_remove_one(MongoCollection.pywebsite_mongo, url)
 
 
 def judge_by_py_keyword(html):
@@ -119,7 +128,7 @@ def test():
     # url = 'https://www.runoob.com/python3/python3-tutorial.html'
     # url = 'https://www.itcodemonkey.com'
     # url = 'http://www.kidscode.cn/python'
-    lpush_queue(QueueConfig.pywebsite_queue, 'http://www.kidscode.cn/python')
+    lpush_queue(QueueConfig.pywebsite_queue, 'https://www.runoob.com/python3/python3-tutorial.html')
     mongo_drop_collect(MongoCollection.pywebsite_mongo)  # 清空表，正式时需删掉
     run()
 
@@ -133,6 +142,6 @@ def run():
 
 
 if __name__ == '__main__':
-    print(judge_py_website('http://www.kidscode.cn/python'))
-    #test()
+    #print(judge_py_website('http://www.kidscode.cn/python'))
+    test()
 
