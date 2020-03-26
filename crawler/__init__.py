@@ -1,11 +1,18 @@
-from db.mongo_client import mongo_client_insert, mongo_client_update, judge_insert_time
+from db.mongo_client import mongo_client_insert, mongo_client_update, mongo_find_collect
 from db.redis_client import rpop_queue
+from conf.mongo_conf1 import MongoCollection
 import time
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 localtime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+
+def is_need_crawler(url, mongo_name):
+    if mongo_name == MongoCollection.pywebsite_mongo:
+        return True
+    if not mongo_find_collect(mongo_name, url):
+        return True
 
 
 def run_crawler_worker(queue_name, mongo_name, function):
@@ -20,13 +27,15 @@ def run_crawler_worker(queue_name, mongo_name, function):
                 time.sleep(3)
                 continue
             print(url)
+            if not is_need_crawler(url, mongo_name):
+                continue
             content = function(url)
             print(content)
             if not content:
                 time.sleep(3)
                 continue
-            judge_insert_time(content["href"], mongo_name, content, localtime)  # 去重操作
+            mongo_client_update(content["href"], mongo_name, content)  # 去重操作
 
         except Exception as e:
-            logger.info("{}消息队列已空，暂无数据处理".format(queue_name), e)
+            logger.info("{}消息队列".format(queue_name), e)
             time.sleep(3)

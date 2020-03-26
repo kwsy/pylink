@@ -5,9 +5,10 @@ from urllib.parse import urlparse
 from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
 from db.mongo_client import *
-from conf.mongo_conf import MongoCollection
+from conf.mongo_conf1 import MongoCollection
 from crawler import run_crawler_worker
 import logging
+from datetime import datetime
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -29,7 +30,7 @@ def get_blogger_info(html):
             0]  # 博客等级
     blogger_url = tree.xpath(
         '//div[@id = "asideProfile"]//div[@class = "profile-intro-name-boxFooter"]/span/a/@href')  # 博主个人网页 me.csdn.net/XXX
-    localtime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+    localtime = datetime.now()
     lst_info = rank + information_num + [blog_level] + blogger_url + [localtime]  # info形成列表
     lst_name = ['week_rank', 'sum_rank', 'original', 'fans_num', 'like_num', 'comment_num',
                 'visit_num', 'blog_level', 'href', 'insert_time']  # 定义info的名字

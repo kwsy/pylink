@@ -5,8 +5,8 @@ import re
 from db.redis_client import rpop_queue, lpush_queue
 from conf.redis_conf import QueueConfig
 from db.mongo_client import *
-from conf.mongo_conf import MongoCollection
-import time
+from conf.mongo_conf1 import MongoCollection
+from datetime import datetime
 from crawler import run_crawler_worker
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -21,7 +21,8 @@ def get_zhuanlan_creator_html(html):
     """
     tree = etree.HTML(html)
     owner_url = tree.xpath('//a[@class = "UserLink-link"]/@href')[0][2:]
-    owner_url = 'https://' + owner_url + '/columns'
+    if not owner_url.startswith('https'):
+        owner_url = 'https://' + owner_url + '/columns'
     return owner_url
 
 
@@ -72,9 +73,10 @@ def _run_ex(url):
     owner_url = get_zhuanlan_creator_html(html)
     owner_html = url_to_html(owner_url)
     lst_zhuanlan = get_zhuanlan_info(owner_html)
-    localtime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+    localtime = datetime.now()
     zhuanlan_ex_dict = {"href": owner_url, "info": lst_zhuanlan, "insert_time": localtime}
     return zhuanlan_ex_dict
+
 
 def test():
     """

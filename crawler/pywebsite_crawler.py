@@ -2,12 +2,12 @@ import os
 
 from lxml import etree
 from common.url_utils import url_to_html
-from conf.mongo_conf import MongoCollection
+from conf.mongo_conf1 import MongoCollection
 from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
 from db.mongo_client import mongo_drop_collect
 from db.redis_client import lpush_queue
-import time
+from datetime import datetime
 import logging
 import sys
 sys.path.append("../")
@@ -27,11 +27,11 @@ def judge_py_website(url):
     """
     html = url_to_html(url)
     score = judge_by_py_keyword(html)[1] + judge_by_py_meau(html)[1]
-    localtime = time.strftime("%Y-%m-%d", time.localtime(time.time()))
+    localtime = datetime.now()
     if judge_by_py_keyword(html)[0]:
-        return {"score": str(score), "href": url, "insert_time": localtime}
+        return {"score": score, "href": url, "insert_time": localtime}
     elif judge_by_py_meau(html)[0]:
-        return {"score": str(score), "href": url, "insert_time": localtime}
+        return {"score": score, "href": url, "insert_time": localtime}
     else:
         lst_miss_match.append(url)
         save_miss_lst(lst_miss_match)
