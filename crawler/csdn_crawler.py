@@ -4,6 +4,7 @@ from db import redis_client
 from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
 from conf.mongo_conf import MongoConfig
+from datetime import datetime
 
 
 
@@ -50,7 +51,10 @@ def get_blogger_info(url):
       'general rank': int(basic5_node.attrib['title'])
     }
 
-    return dict(info1,**info2)
+    info =  dict(info1,**info2)
+    info['url'] = url
+    info['insert_time'] = datetime.now()
+    return info
 
 def run():
    run_crawler_worker(QueueConfig.csdn_queue, MongoConfig.csdn_collection, get_blogger_info)
@@ -62,6 +66,6 @@ def test():
 
 
 if __name__ == '__main__':
-    # url = 'https://blog.csdn.net/KWSY2008'
-    # print(get_blogger_info(url))
-    test()
+    url = 'https://blog.csdn.net/KWSY2008'
+    print(get_blogger_info(url))
+    # test()

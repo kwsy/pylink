@@ -34,9 +34,9 @@ def judge_py_website(url):
 
 def get_py_website_info(url):
     if judge_py_website(url):
-        return {'url':url, 'state':True}
+        return {'url': url, 'state': True}
     else:
-        return {'url':url, 'state':False}
+        return {'url': url, 'state': False}
 
 
 def judge_by_keywords_description(url):

@@ -5,6 +5,7 @@ from db import redis_client
 from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
 from conf.mongo_conf import MongoConfig
+from datetime import datetime
 
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -36,7 +37,6 @@ def get_zhuanlan_info2(url):
     :param url:
     :return:
     """
-    lst = []
     session = requests.session()
     res = session.get(url, headers=headers)
     etree_html= etree.HTML(res.text)
@@ -52,11 +52,12 @@ def get_zhuanlan_info2(url):
 
         info = {
             'column name': name.text,
-            'name': name,
             'publish': int(specific_info_count[1]),
             'total article': int(specific_info_count[3]),
-            'followers': int(''.join(re.findall('\d+',specific_info_count[4])))
+            'followers': int(''.join(re.findall('\d+',specific_info_count[4]))),
             # findall 提取字符串里的数字部分，join串联各个数字成为一个整体的数字
+            'url': url,
+            'insert_time': datetime.now()
         }
 
         lst.append(info)
@@ -65,13 +66,6 @@ def get_zhuanlan_info2(url):
 
 
 def run():
-    res = get_zhuanlan_info(url)
-    if not MongoConfig.zhihu_collection.find(res):
-        redis_client.push_queue(QueueConfig.zhihu_queue, url)
-        run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
-    else:
-        if
-
     run_crawler_worker(QueueConfig.zhihu_queue, MongoConfig.zhihu_collection, get_zhuanlan_info)
 
 
@@ -82,10 +76,10 @@ def test():
 
 
 if __name__ == '__main__':
-    # url = 'https://zhuanlan.zhihu.com/p/109450078'
-    # print(get_zhuanlan_info(url))
+    url = 'https://zhuanlan.zhihu.com/p/109450078'
+    print(get_zhuanlan_info(url))
 
-    run()
+    # run()
 
 
 
