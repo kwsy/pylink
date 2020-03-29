@@ -13,8 +13,8 @@ def get_zhuanlan_info(url):
         'Accept-Language': 'zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7',
         'Cache-Control': 'max-age=0',
         'Connection': 'keep-alive',
-        # 'referer': quote('https://zhuanlan.zhihu.com/c_1099248962871169024'),
-        #  'Host': 'https://www.zhihu.com/',
+        'origin':'https://zhuanlan.zhihu.com',
+        'referer':'https://zhuanlan.zhihu.com/c_1099248962871169024',
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'}
 
     r=requests.get(url,headers=headers)
