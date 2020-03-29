@@ -26,6 +26,7 @@ def get_zhuanlan_info(url):
     num =tree.xpath('body/div[@id="root"]/div/main/div/header/div/span/button')[0]
     d['专栏标题']=title.text
     d['专栏关注人数']=num.text
+
     return d
 
 
