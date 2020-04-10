@@ -4,26 +4,24 @@ from lxml import etree
 from urllib.parse import quote
 from conf import crawler_config
 from conf.bd_keywords import keyword_lst
-from db.redis_client import r
+from db.redis_client import r_dict
+from crawler import dispatch_worker
+
 def run():
-    '''
-    爬虫启动脚本
-    :return:网址链接
-    '''
-    url_lst = crawler_all_keywords(keyword_lst) #
-    #把url_lst列表中的内容写入到wlxfen_url_queue队列中，队列怎么创建呢？
-    for i in range(len(url_lst)):
-        r.lpush('wlxfen_url_queue', url_lst[i])
+
+    crawler_all_keywords(keyword_lst) #抓取到所有的关键词
+
 
 def crawler_all_keywords(keyword_list):
     '''
     爬取所有关键词的网址链接
     :param keyword_list: 所有关键词的列表
-    :return: 没一个关键词对应的网址链接列表
+    :return: 每一个关键词对应的网址链接列表
     '''
     all_url_lst=[]
     for kd in keyword_list:
         lst=crawler_baidu_by_keyword(kd)
+        dispatch_worker.dispatch_url(lst)#每得到一个搜索网址，就进行分类，逐一写入消息队列
         all_url_lst.extend(lst)
 
     return all_url_lst
@@ -88,7 +86,14 @@ def test_extract_links():
 
 
 def test_crawler_baidu_by_keyword():
-    lst = crawler_baidu_by_keyword('python 教程')
+    lst=[]
+    for i in range(len(keyword_lst)):
+
+         lst = crawler_baidu_by_keyword(keyword_lst[i])
+
+    with open('baidu_result.txt', 'w') as f:
+        for line in lst:
+            f.write(line + "\n")
     print(lst)
 
 def get_real_link(url):
@@ -106,4 +111,5 @@ if __name__ == '__main__':
     # test_extract_links()
     # url = 'http://www.baidu.com/link?url=LzQCUqcFg9l7-w4pu86rYjgudDCyhQ2RR-nW65NLhXOLq_MFHc7XaSeoct2KVQKdipQ48ZuXYIPNvlVtXjznRq'
     # get_real_link(url)
-    run()
+    # test_crawler_baidu_by_keyword()
+    # run()

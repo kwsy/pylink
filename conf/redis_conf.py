@@ -25,3 +25,9 @@ class RedisConfig:
     port = 6379
     password = '198671724zds!'
     db=1
+
+class QueueConfig:
+    csdn_queue='csdn_blog_queue' #创建三个消息队列
+    zhihu_queue = 'zhihu_zhuanlan_queue'
+    py_website ='py_website_queue'
+
