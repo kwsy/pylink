@@ -67,10 +67,10 @@ def job4_task():
 
 
 if __name__ == '__main__':
-    schedule.every().day.at('10:00').do(job1_task)
-    schedule.every().day.at('10:10').do(job2_task)
-    schedule.every().day.at('10:10').do(job3_task)
-    schedule.every().day.at('10:10').do(job4_task)
+    schedule.every().day.at('11:25').do(job1_task)
+    schedule.every().day.at('11:26').do(job2_task)
+    schedule.every().day.at('11:27').do(job3_task)
+    schedule.every().day.at('11:28').do(job4_task)
     while True:
         schedule.run_pending()
         time.sleep(60)
