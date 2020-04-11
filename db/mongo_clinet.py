@@ -13,3 +13,7 @@ def insert(collection_name, info):
 def get_data_by_url(collection, url):
     return db[collection].find_one({'url': url})
 
+
+def get_data_by_collection_name(collection_name):
+    return db[collection_name].find({})
+

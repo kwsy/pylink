@@ -7,25 +7,7 @@ from urllib.parse import quote
 from conf.bd_keywords import keywords
 from crawler.dispatch_worker import dispatch_url
 from conf.crawler_config import *
-
-
-def retry(retry_count=5, sleep_time=1):
-    def wrapper(func):
-        @wraps(func)
-        def inner(*args,**kwargs):
-            for i in range(retry_count):
-                try:
-                    res = func(*args,**kwargs)
-                    return res
-                except:
-                    time.sleep(sleep_time)
-                    continue
-            return None
-        return inner
-    return wrapper
-
-class HttpCodeException(Exception):
-    pass
+from crawler import *
 
 def extract_links_test(filename):
     """
