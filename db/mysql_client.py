@@ -26,3 +26,10 @@ def add_object(model, info):
     session.commit()
     session.close()
 
+
+def test():
+    session = DBSession()
+    datas = session.query(PyWebsite).all()
+    for data in datas:
+        print(data.href, data.score)
+

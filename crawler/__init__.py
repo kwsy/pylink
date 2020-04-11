@@ -101,7 +101,6 @@ def get_alexa_sort(netloc):
         'Connection': 'keep-alive',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
     }
-    url = 'http://www.alexa.cn/' + netloc
     url = 'http://www.alexa.cn/rank/' + netloc
     res = requests.get(url, headers=headers)
     token_index = res.text.find('token')

@@ -9,6 +9,9 @@ from db.mysql_client import *
 def move_py_web_site_to_mysql():
     datas = get_data_by_collection_name(PY_WEB_SITE)
     for data in datas:
+        if not data['state']:
+            continue
+
         netloc = get_url_netloc(data['url'])
         sort = get_alexa_sort(netloc)
         time.sleep(3)
