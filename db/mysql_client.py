@@ -12,7 +12,8 @@ engine = create_engine(connection_string, echo=False, pool_recycle=21600, pool_s
 DBSession = sessionmaker(bind=engine)
 
 
-class PyWebsiteiewwr(BaseModel):
+
+class PyWebsiteER(BaseModel):
     __tablename__ = 'py_website'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
     href = Column(VARCHAR(100), nullable=False)
