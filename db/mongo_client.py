@@ -39,6 +39,13 @@ def mongo_find_collect(collection, href):
     return mongo_db_hjf[collection].find_one({"href": href})
 
 
+def mongo_find_collect_all(collection):
+    """
+    查找href
+    """
+    return mongo_db_hjf[collection].find({})
+
+
 def mongo_remove_one(collection, href):
     """
     删除href对应信息

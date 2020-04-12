@@ -29,6 +29,7 @@ class PyWebsite(BaseModel):
     web_rank = Column(INT, nullable=False)
     insert_time = Column(VARCHAR(50), nullable=False)
 
+
 class Zhihu_hjf(BaseModel):
     """
     配置mysql的zhihu_hjf
@@ -50,7 +51,6 @@ class Zhihu_hjf(BaseModel):
     article_num = Column(INT, nullable=False)
     zhuanlan_html = Column(VARCHAR(100), nullable=False)
     insert_time = Column(VARCHAR(50), nullable=False)
-
 
 
 class Csdn_hjf(BaseModel):
@@ -83,9 +83,9 @@ def add_object(model, info):
     """
     session = DBSession()
     obj = model(**info)
-    session.add(obj)    # 添加一个对象
-    session.commit()    # 提交事务
-    session.close()     # 闭session，其实是将连接放回连接池
+    session.add(obj)  # 添加一个对象
+    session.commit()  # 提交事务
+    session.close()  # 闭session，其实是将连接放回连接池
 
 
 def update_object(model, info):
@@ -105,7 +105,6 @@ def update_object(model, info):
         session.close()  # 闭session，其实是将连接放回连接池
 
 
-
 def test():
     session = DBSession()  # 创建DBSession类型
     datas = session.query(Csdn_hjf).all()
@@ -114,11 +113,14 @@ def test():
 
 
 def test2():
-    info = {'week_rank': '13938', 'sum_rank': '9432', 'original': '155', 'fans_num': '85', 'like_num': '42', 'comment_num': '54', 'visit_num': '453570', 'blog_level': '6', 'href': 'https://me.csdn.net/KWSY2008', 'insert_time': datetime.datetime(2020, 4, 12, 12, 6, 57, 279460)}
+    info = {'week_rank': '13938', 'sum_rank': '9432', 'original': '155', 'fans_num': '85', 'like_num': '42',
+            'comment_num': '54', 'visit_num': '453570', 'blog_level': '6', 'href': 'https://me.csdn.net/KWSY2008',
+            'insert_time': datetime.datetime(2020, 4, 12, 12, 6, 57, 279460)}
     info['insert_time'] = info['insert_time'].strftime("%Y-%m-%d")
     print(info['insert_time'])
     model = Csdn_hjf
     add_object(model, info)
+
 
 def test3():
     info = {'week_rank': '13938', 'sum_rank': '9433', 'original': '155', 'fans_num': '85', 'like_num': '42',
@@ -132,4 +134,4 @@ def test3():
 
 if __name__ == "__main__":
     test3()
-    #test2()
+    # test2()
