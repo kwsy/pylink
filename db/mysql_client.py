@@ -22,7 +22,7 @@ class PyWebsite(BaseModel):
     mongo实例：
     {'score': 86, 'href': 'https://www.runoob.com/python3/python3-tutorial.html', 'insert_time': datetime.datetime(2020, 4, 11, 23, 3, 52, 52809)}
     """
-    __tablename__ = 'py_website'
+    __tablename__ = 'pywebsite_hjf'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
     href = Column(VARCHAR(100), nullable=False)
     score = Column(INT, nullable=False)
@@ -34,7 +34,7 @@ class Zhihu_hjf(BaseModel):
     """
     配置mysql的zhihu_hjf
     字段解释：
-     {'id':ID唯一自增,'zhuanlan_name':专栏名称, 'follower':关注人数, 'original':原创, 'article_num':文章篇数,
+     {'id':ID唯一自增,'zhuanlan_name':专栏名称, 'follower':关注人数, 'original':原创, 'article_num':文章篇数,'zhuanlan_html':专栏url,'insert_time':插入时间}
      mongo实例：
      'zhuanlan_html':专栏url,'insert_time': 插入时间}
      {'href': 'https://www.zhihu.com/people/qin-lu-17/columns',
@@ -47,7 +47,6 @@ class Zhihu_hjf(BaseModel):
     href = Column(VARCHAR(100), nullable=False)
     zhuanlan_name = Column(VARCHAR(30), nullable=False)
     follower = Column(INT, nullable=False)
-    original = Column(INT, nullable=False)
     article_num = Column(INT, nullable=False)
     zhuanlan_html = Column(VARCHAR(100), nullable=False)
     insert_time = Column(VARCHAR(50), nullable=False)
@@ -101,6 +100,23 @@ def update_object(model, info):
         add_object(model, info)
     else:
         session.query(model).filter(model.href == info['href']).update(info)
+        session.commit()
+        session.close()  # 闭session，其实是将连接放回连接池
+
+
+def update_object_zhihu(model, info):
+    """
+    执行更新ORM操作
+    :param model:
+    :param info:
+    :return:
+    """
+    session = DBSession()
+    it_exists = session.query(exists().where(model.zhuanlan_html == info['zhuanlan_html'])).scalar()
+    if not it_exists:
+        add_object(model, info)
+    else:
+        session.query(model).filter(model.zhuanlan_html == info['zhuanlan_html']).update(info)
         session.commit()
         session.close()  # 闭session，其实是将连接放回连接池
 
