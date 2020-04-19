@@ -26,6 +26,13 @@ class Zhihu(BaseModel):
     name = Column(VARCHAR(30), nullable=False)
     score = Column(Float, nullable=False)
 
+
+class Csdn(BaseModel):
+    __tablename__ = 'csdn'
+    id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
+    href = Column(VARCHAR(100), nullable=False)
+    score = Column(INT, nullable=False)
+
 def add_object(model, info):
     session = DBSession()
     obj = model(**info)
@@ -42,8 +49,8 @@ def test():
 
 
 def create_table(table):
-    BaseModel.metadata.create_all(engine, tables=[Zhihu.__table__])
+    BaseModel.metadata.create_all(engine, tables=[table.__table__])
 
 
 if __name__ == '__main__':
-    create_table(Zhihu)
+    create_table(Csdn)

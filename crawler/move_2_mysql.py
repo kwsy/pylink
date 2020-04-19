@@ -19,4 +19,30 @@ def move_py_web_site_to_mysql():
         add_object(PyWebsite, info)
 
 
-move_py_web_site_to_mysql()
+def move_zhihu_to_mysql():
+    datas = get_data_by_collection_name(ZHIHU_COLLECTION)
+    for data in datas:
+        for item in data['zhuanlan']:
+            publish_count = item['publish_count']
+            follow_count = item['follow_count']
+            score = follow_count/publish_count
+            info = {
+                'name': item['name'],
+                'href': item['href'],
+                'score': score
+            }
+
+            add_object(Zhihu, info)
+
+
+def move_csdn_to_mysql():
+    datas = get_data_by_collection_name(CSDN_COLLECTION)
+    for data in datas:
+        info = {
+            'href': data['url'],
+            'score': data['week_sort']
+        }
+        add_object(Csdn, info)
+
+if __name__ == '__main__':
+    move_csdn_to_mysql()
