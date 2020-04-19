@@ -17,3 +17,10 @@ def get_data_by_url(collection, url):
 def get_data_by_collection_name(collection_name):
     return db[collection_name].find({})
 
+
+def test():
+    datas = get_data_by_collection_name(mongo_conf.ZHIHU_COLLECTION)
+    for data in datas:
+        print(data)
+
+test()

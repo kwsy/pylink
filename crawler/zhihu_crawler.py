@@ -77,6 +77,6 @@ def test():
 
 
 if __name__ == '__main__':
-    # url = 'https://zhuanlan.zhihu.com/p/109450078'
-    # print(get_zhuanlan_info(url))
-    test()
+    url = 'https://zhuanlan.zhihu.com/p/109450078'
+    print(get_zhuanlan_info(url))
+    # test()
