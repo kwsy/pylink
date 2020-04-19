@@ -23,4 +23,5 @@ def test():
     for data in datas:
         print(data)
 
-test()
+if __name__ == '__main__':
+    test()

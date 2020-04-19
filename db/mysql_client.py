@@ -19,6 +19,13 @@ class PyWebsite(BaseModel):
     score = Column(INT, nullable=False)
 
 
+class Zhihu(BaseModel):
+    __tablename__ = 'zhihu'
+    id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
+    href = Column(VARCHAR(100), nullable=False)
+    name = Column(VARCHAR(30), nullable=False)
+    score = Column(Float, nullable=False)
+
 def add_object(model, info):
     session = DBSession()
     obj = model(**info)
@@ -33,3 +40,10 @@ def test():
     for data in datas:
         print(data.href, data.score)
 
+
+def create_table(table):
+    BaseModel.metadata.create_all(engine, tables=[Zhihu.__table__])
+
+
+if __name__ == '__main__':
+    create_table(Zhihu)

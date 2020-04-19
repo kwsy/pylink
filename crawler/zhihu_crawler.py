@@ -52,6 +52,9 @@ def get_zhuanlan_info_columns(session, url):
         title_node = item.xpath('.//h2[@class="ContentItem-title"]/a/div/div')[0]
         title = title_node.text
 
+        href_node = item.xpath('.//h2[@class="ContentItem-title"]/a[@class="ColumnLink"]')[0]
+        href = "http:" + href_node.attrib['href']
+
         publish_node = item.xpath('.//div[@class="ContentItem-status"]/a')[0]
         publish_text = publish_node.xpath('string(.)')
         publish_count = int(publish_text.split()[1])
@@ -62,7 +65,8 @@ def get_zhuanlan_info_columns(session, url):
         info = {
             'name': title,
             'publish_count': publish_count,
-            'follow_count': follow_count
+            'follow_count': follow_count,
+            'href':href
         }
         zhuanlan_lst.append(info)
 
@@ -78,5 +82,5 @@ def test():
 
 if __name__ == '__main__':
     url = 'https://zhuanlan.zhihu.com/p/109450078'
-    print(get_zhuanlan_info(url))
-    # test()
+    #print(get_zhuanlan_info(url))
+    test()
