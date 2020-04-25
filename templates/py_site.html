@@ -11,24 +11,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>网址</th>
-                <th>排名</th>
-            </tr>
-        </thead>
-            {% for data in py_data %}
-                <tr>
-                    <td><a href="{{ data.href }}" target="_blank">{{ data.href }}</a></td>
-                    <td>{{ data.score }}</td>
-                </tr>
-            {% endfor %}
-        <tbody>
-        </tbody>
-    </table>
-                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>网址</th>
+                            <th>排名</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for data in py_data %}
+                            <tr>
+                                <td><a href="{{ data.href }}" target="_blank">{{ data.href }}</a></td>
+                                <td>{{ data.score }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
 </body>
 </html>
