@@ -33,6 +33,7 @@ class Csdn(BaseModel):
     href = Column(VARCHAR(100), nullable=False)
     score = Column(INT, nullable=False)
 
+
 def add_object(model, info):
     session = DBSession()
     obj = model(**info)
@@ -41,16 +42,24 @@ def add_object(model, info):
     session.close()
 
 
-def test():
+def query_data(model):
     session = DBSession()
-    datas = session.query(PyWebsite).all()
+    return session.query(model).order_by(model.score).all()
+
+
+def query(model):
+    session = DBSession()
+    # select * from csdn where score > 12500
+    # datas = session.query(model).filter(model.score > 12500)
+    datas = session.query(model).order_by(model.score).all()
     for data in datas:
         print(data.href, data.score)
 
+    session.close()
 
 def create_table(table):
     BaseModel.metadata.create_all(engine, tables=[table.__table__])
 
 
 if __name__ == '__main__':
-    create_table(Csdn)
+    query(PyWebsite)
