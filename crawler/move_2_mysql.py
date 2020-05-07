@@ -47,3 +47,7 @@ def move_zhihu_to_mysql():
             'total_score': data['publish_count']*50+data['follow_count']*50
         }
         add_object(ZHIHU_COLLECTION, info)
+
+
+if __name__ == '__main__':
+    move_py_web_site_to_mysql()

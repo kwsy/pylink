@@ -12,7 +12,7 @@ engine = create_engine(connection_string, echo=False, pool_recycle=21600, pool_s
 DBSession = sessionmaker(bind=engine)
 
 
-class PyWebsiteER(BaseModel):
+class PyWebsite(BaseModel):
     __tablename__ = 'py_website'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
     href = Column(VARCHAR(100), nullable=False)
@@ -49,9 +49,23 @@ def add_object(model, info):
     session.close()
 
 
-def test():
+def query_data(model):
     session = DBSession()
-    datas = session.query(PyWebsite).all()
+    return session.query(model).all()
+
+def query(model):
+    session = DBSession()
+    # select * from casdn where score > 12500
+    # datas = session.query(model).filter(model.score > 12500)
+    datas = session.query(model).all()
     for data in datas:
         print(data.href, data.score)
 
+    session.close()
+
+
+def create_table(table):
+    BaseModel.metadata.create_all(engine, tables=[table.__table__])
+
+if __name__=="__main__":
+    query(Csdn)

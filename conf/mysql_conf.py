@@ -3,5 +3,5 @@ mysql_setting = {
     'port': 3309,
     'password': '123456!',
     'user': 'root',
-    'database': 'kwsy_pylink'
+    'database': 'lg_pylink'
 }
