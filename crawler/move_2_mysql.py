@@ -53,6 +53,6 @@ def move_zhihu_to_mysql():
 
 
 if __name__ == '__main__':
-    move_csdn_to_mysql()
     move_zhihu_to_mysql()
+    move_csdn_to_mysql()
     move_py_web_site_to_mysql()

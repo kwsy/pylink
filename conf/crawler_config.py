@@ -14,7 +14,7 @@ URL_BAIDU = 'https://www.baidu.com/s'    # 搜索引擎url
 
 # 爬虫参数配置
 
-TOTALNUM_SEARCH_PAGE = 10                # 单个关键词搜索引擎爬取页数
+TOTALNUM_SEARCH_PAGE = 50               # 单个关键词搜索引擎爬取页数
 
 TIMES_REQUESTS_MAX = 5                   # request请求异常重复请求最大次数
 TIME_REQUEST_SLEEP = 5                   # request请求间隔时间
