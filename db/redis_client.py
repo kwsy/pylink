@@ -25,7 +25,12 @@ def push_queue(queue_name,content):#专门写一个函数用于把数据push到�
     r_dict.lpush(queue_name,content)
 
 
+def pop_queue(queue_name):
+    content =r_dict.rpop(queue_name)
+    content =content.decode('utf-8')
+    print(content)
 
 if __name__ == '__main__':
     test_global()
     test_dict()
+    pop_queue('zhihu_zhuanlan_queue')

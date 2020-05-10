@@ -26,18 +26,18 @@ def get_blogger_info(url):
     tree = etree.HTML(html)
     title = tree.xpath('/html/body/header/div/div[1]/h1/a')[0]
     author=tree.xpath('//*[@id="uid"]')[0]
-    总排名 =tree.xpath('//*[@id="asideProfile"]/div[3]/dl[4]/dt')[0]
+    paiming =tree.xpath('//*[@id="asideProfile"]/div[3]/dl[4]/dt')[0]
     ranking=tree.xpath('//*[@id="asideProfile"]/div[3]/dl[4]')[0]
-    等级 =tree.xpath('//*[@id="asideProfile"]/div[3]/dl[1]/dt')[0]
+    dengji =tree.xpath('//*[@id="asideProfile"]/div[3]/dl[1]/dt')[0]
     blog_level=tree.xpath('//*[@id="asideProfile"]/div[3]/dl[1]/dd/a/svg/use')[0]
-    原创=tree.xpath('//*[@id="asideProfile"]/div[2]/dl[1]/dt/a')[0]
+    yuanchuang=tree.xpath('//*[@id="asideProfile"]/div[2]/dl[1]/dt/a')[0]
     yuanchuang_num=tree.xpath('//*[@id="asideProfile"]/div[2]/dl[1]/dd/a/span')[0]
 
     d['博客标题']=title.text
     d['作者']=author.attrib['title']
-    d[总排名.text]=ranking.attrib['title']
-    d[等级.text]=blog_level.attrib['xlink:href']
-    d[原创.text]=yuanchuang_num.text
+    d[paiming.text]=ranking.attrib['title']
+    d[dengji.text]=blog_level.attrib['xlink:href']
+    d[yuanchuang.text]=yuanchuang_num.text
 
     return d
 

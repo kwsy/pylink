@@ -108,6 +108,7 @@ def get_real_link(url):
 
 
 if __name__ == '__main__':
+    pass
     # test_extract_links()
     # url = 'http://www.baidu.com/link?url=LzQCUqcFg9l7-w4pu86rYjgudDCyhQ2RR-nW65NLhXOLq_MFHc7XaSeoct2KVQKdipQ48ZuXYIPNvlVtXjznRq'
     # get_real_link(url)
