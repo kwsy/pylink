@@ -3,7 +3,7 @@ mongo_setting = {
     'port': 27019
 }
 
-DB_NAME = 'kwsy_db'
+DB_NAME = 'lg_db'
 CSDN_COLLECTION = 'csdn'
 ZHIHU_COLLECTION = 'zhihu'
 PY_WEB_SITE = 'pysite'
