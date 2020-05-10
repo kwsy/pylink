@@ -51,13 +51,15 @@ def add_object(model, info):
 
 def query_data(model):
     session = DBSession()
-    return session.query(model).all()
+    return session.query(model).order_by(model.total_score).all()
+
+
 
 def query(model):
     session = DBSession()
     # select * from casdn where score > 12500
     # datas = session.query(model).filter(model.score > 12500)
-    datas = session.query(model).all()
+    datas = session.query(model).order_by(model.total_score).all()
     for data in datas:
         print(data.href, data.score)
 
@@ -68,4 +70,4 @@ def create_table(table):
     BaseModel.metadata.create_all(engine, tables=[table.__table__])
 
 if __name__=="__main__":
-    query(Csdn)
+    query(Zhihu)
