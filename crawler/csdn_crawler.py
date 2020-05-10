@@ -110,21 +110,24 @@ def extract_grade_info(personal_box):
     grade_box = personal_box.xpath("//div[@class='grade-box clearfix']")[0]
     dl_nodes = grade_box.xpath(".//dl")
     data = {
-        'grade': '',
-        'access': '',
-        'score': '',
-        'sort': ''
+        'integral': '',
+        'collection': '',
+        'week_sort': '',
+        'total_sort': '',
+        'grade': ''
     }
 
     for index, item in enumerate(dl_nodes):
         if index == 0:
-            data['grade'] = item.xpath('.//a')[0].attrib['title']
+            data['integral'] = item.xpath('.//a')[0].attrib['title']
         if index == 1:
-            data['week_sort'] = item.attrib['title']
+            data['collection'] = item.attrib['title']
         if index == 2:
-            data['score'] = item.xpath(".//dd")[0].attrib['title']
+            data['week_sort'] = item.xpath(".//dd")[0].attrib['title']
         if index == 3:
-            data['sort'] = item.attrib['title']
+            data['total_sort'] = item.attrib['title']
+        if index == 4:
+            data['grade'] = item.attrib['title']
 
     return data
 
@@ -139,6 +142,6 @@ def test():
 
 
 if __name__ == '__main__':
-    test()
-    # url = 'https://blog.csdn.net/KWSY2008'
-    # print(get_blogger_info(url))
+    # test()
+    url = 'https://blog.csdn.net/KWSY2008'
+    print(get_blogger_info(url))

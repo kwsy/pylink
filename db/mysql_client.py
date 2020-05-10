@@ -21,20 +21,23 @@ class PyWebsite(BaseModel):
 class Csdn(BaseModel):
     __tablename__ = 'csdn'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
+    href = Column(VARCHAR(100), nullable=False)
     original = Column(INT, nullable=False)
     fans = Column(INT, nullable=False)
     enjoy = Column(INT, nullable=False)
     comment = Column(INT, nullable=False)
     access = Column(INT, nullable=False)
-    grade = Column(INT, nullable=False)
+    integral = Column(INT, nullable=False)
+    collection = Column(INT, nullable=False)
     week_sort = Column(INT, nullable=False)
-    score = Column(INT, nullable=False)
-    sort = Column(INT, nullable=False)
+    total_sort = Column(INT, nullable=False)
+    grade = Column(INT, nullable=False)
     total_score = Column(INT, nullable=False)
 
 class Zhihu(BaseModel):
     __tablename__ = 'zhihu'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
+    href = Column(VARCHAR(100), nullable=False)
     name = Column(VARCHAR(100), nullable=False)
     publish_count = Column(INT, nullable=False)
     follow_count = Column(INT, nullable=False)

@@ -23,6 +23,7 @@ def move_csdn_to_mysql():
     datas = get_data_by_collection_name(CSDN_COLLECTION)
     for data in datas:
         info = {
+            'href': data['url'],
             'original': data['original'],
             'fans': data['fans'],
             'enjoy': data['enjoy'],
@@ -41,6 +42,7 @@ def move_zhihu_to_mysql():
     datas = get_data_by_collection_name(ZHIHU_COLLECTION)
     for data in datas:
         info = {
+            'href': data['url'],
             'name': data['name'],
             'publish_count': data['publish_count'],
             'follow_count': data['follow_count'],

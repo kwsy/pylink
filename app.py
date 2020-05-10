@@ -16,7 +16,7 @@ def py_site():
 @app.route('/csdn', methods=['GET'])
 def csdn():
     datas = query_data(Csdn)
-    return render_template('csdn.html', py_data=datas)
+    return render_template('csdn.html', csdn_data=datas)
 
 if __name__ == '__main__':
     app.run(port=9001, debug=True)
