@@ -15,10 +15,11 @@ def move_py_web_site_to_mysql():
         netloc = get_url_netloc(data['url'])
         sort = get_alexa_sort(netloc)
         time.sleep(3)
-        info = {'href': data['url'], 'score': sort}
+        info = {'href': data['url'], 'total_score': sort}
         add_object(PyWebsite, info)
 
 
+<<<<<<< HEAD
 def move_zhihu_to_mysql():
     datas = get_data_by_collection_name(ZHIHU_COLLECTION)
     for data in datas:
@@ -35,10 +36,13 @@ def move_zhihu_to_mysql():
             add_object(Zhihu, info)
 
 
+=======
+>>>>>>> f3e2e2fd367e468ee56b92667826e0d43bb6acdb
 def move_csdn_to_mysql():
     datas = get_data_by_collection_name(CSDN_COLLECTION)
     for data in datas:
         info = {
+<<<<<<< HEAD
             'href': data['url'],
             'score': data['week_sort']
         }
@@ -46,3 +50,29 @@ def move_csdn_to_mysql():
 
 if __name__ == '__main__':
     move_csdn_to_mysql()
+=======
+            'original': data['original'],
+            'fans': data['fans'],
+            'enjoy': data['enjoy'],
+            'comment': data['comment'],
+            'access': data['access'],
+            'grade': data['grade'],
+            'week_sort': data['week_sort'],
+            'score': data['score'],
+            'sort': data['sort'],
+            'total_socore': data['original']*10+data['fans']*20+data['enjoy']*30+data['comment']*30+data['access']*10
+        }
+        add_object(CSDN_COLLECTION, info)
+
+
+def move_zhihu_to_mysql():
+    datas = get_data_by_collection_name(ZHIHU_COLLECTION)
+    for data in datas:
+        info = {
+            'name': data['name'],
+            'publish_count': data['publish_count'],
+            'follow_count': data['follow_count'],
+            'total_score': data['publish_count']*50+data['follow_count']*50
+        }
+        add_object(ZHIHU_COLLECTION, info)
+>>>>>>> f3e2e2fd367e468ee56b92667826e0d43bb6acdb
