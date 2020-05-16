@@ -41,6 +41,7 @@ def move_csdn_to_mysql():
 def move_zhihu_to_mysql():
     datas = get_data_by_collection_name(ZHIHU_COLLECTION)
     for data in datas:
+        print(data, type(data))
         info = {
             'href': data['url'],
             'name': data['name'],
@@ -52,4 +53,4 @@ def move_zhihu_to_mysql():
 
 
 if __name__ == '__main__':
-    move_py_web_site_to_mysql()
+    move_zhihu_to_mysql()

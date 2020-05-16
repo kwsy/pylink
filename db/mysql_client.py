@@ -12,7 +12,7 @@ engine = create_engine(connection_string, echo=False, pool_recycle=21600, pool_s
 DBSession = sessionmaker(bind=engine)
 
 
-class PyWebsiteER(BaseModel):
+class PyWebsite(BaseModel):
     __tablename__ = 'py_website'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
     href = Column(VARCHAR(100), nullable=False)
@@ -37,7 +37,7 @@ class Csdn(BaseModel):
 class Zhihu(BaseModel):
     __tablename__ = 'zhihu'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
-    href = Column(VARCHAR(100), nullable=False)
+    # href = Column(VARCHAR(100), nullable=False)
     name = Column(VARCHAR(100), nullable=False)
     publish_count = Column(INT, nullable=False)
     follow_count = Column(INT, nullable=False)

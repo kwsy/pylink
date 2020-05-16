@@ -25,7 +25,7 @@
                 <th>总分数</th>
             </tr>
         </thead>
-            {% for data in py_data %}
+            {% for data in csdn_data %}
                 <tr>
                     <td><a href="{{  data.href }}" target="_blank">{{  data.href }}</a></td>
                     <td>{{  data.original }}</td>
@@ -36,7 +36,7 @@
                     <td>{{  data.grade }}</td>
                     <td>{{  data.week_sort }}</td>
                     <td>{{  data.score }}</td>
-                     <td>{{  data.sort }}</td>
+                    <td>{{  data.sort }}</td>
                     <td>{{  data.total_score }}</td>
                 </tr>
             {%  endfor %}

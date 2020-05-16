@@ -25,4 +25,4 @@ def pop_queue(queue_name):
 
 
 if __name__ == '__main__':
-    print(pop_queue(redis_conf.QueueConfig.py_website))
+    print(pop_queue(redis_conf.QueueConfig.zhihu_queue))
