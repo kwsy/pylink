@@ -19,7 +19,6 @@ def get_netloc(url):
     result_url = result.scheme + "://" + result.netloc
     return result_url
 
-
 def url_to_html(url, params=None):
     """
     解析url网站获取html

@@ -74,11 +74,14 @@ def get_alexa_sort_ex(netloc):
     tree = etree.HTML(res.text)
 
     div_lst = tree.xpath("//div[@class='row_title clearfix']")
+    print(div_lst)
     if not div_lst:
-        return 2 ** 32 - 1
+        return 2 ** 32 - 1      # ?
 
     div = div_lst[0]
+    print(div)
     text = div.xpath('string(.)')
+    print(text)
     if not text:
         return 2 ** 32 - 1
 
@@ -114,3 +117,7 @@ def get_alexa_sort(netloc):
     data = res.json()
 
     return data['data']['world_rank']
+
+
+if __name__ == "__main__":
+    print(get_alexa_sort('www.zhihu.com'), type(get_alexa_sort('www.zhihu.com')))
