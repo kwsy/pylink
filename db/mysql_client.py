@@ -15,6 +15,7 @@ engine = create_engine(connection_string, echo=False, pool_recycle=21600,
 DBSession = sessionmaker(bind=engine)
 
 
+
 class PyWebsite(BaseModel):
     """
     配置mysql的pywebsite_hjf
@@ -27,7 +28,7 @@ class PyWebsite(BaseModel):
     href = Column(VARCHAR(100), nullable=False)
     score = Column(INT, nullable=False)
     web_rank = Column(INT, nullable=False)
-    insert_time = Column(VARCHAR(50), nullable=False)
+    insert_time = Column(DATETIME, nullable=False, default=datetime.datetime.now())
 
 
 class Zhihu_hjf(BaseModel):
@@ -49,7 +50,7 @@ class Zhihu_hjf(BaseModel):
     follower = Column(INT, nullable=False)
     article_num = Column(INT, nullable=False)
     zhuanlan_html = Column(VARCHAR(100), nullable=False)
-    insert_time = Column(VARCHAR(50), nullable=False)
+    insert_time = Column(DATETIME, nullable=False, default=datetime.datetime.now())
 
 
 class Csdn_hjf(BaseModel):
@@ -70,9 +71,40 @@ class Csdn_hjf(BaseModel):
     comment_num = Column(INT, nullable=False)
     visit_num = Column(INT, nullable=False)
     blog_level = Column(INT, nullable=False)
-    insert_time = Column(VARCHAR(50), nullable=False)
+    insert_time = Column(DATETIME, nullable=False, default=datetime.datetime.now())
+
+class test11(BaseModel):
+    """
+    配置mysql——csdn_hjf
+    字段解释：
+    {'id':ID唯一自增,'week_rank':周排名, 'sum_rank':总排名, 'original':原创, 'fans_num':粉丝,
+     'like_num':获赞, 'comment_num':评论,'visit_num':访客, 'blog_level':博客等级, 'href':博主个人url，'insert_time': 插入时间}
+    """
+    __tablename__ = 'test11'
+    id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
+    href = Column(VARCHAR(100), nullable=False)
+    week_rank = Column(INT, nullable=False)
+    sum_rank = Column(INT, nullable=False)
+    original = Column(INT, nullable=False)
+    fans_num = Column(INT, nullable=False)
+    like_num = Column(INT, nullable=False)
+    comment_num = Column(INT, nullable=False)
+    visit_num = Column(INT, nullable=False)
+    blog_level = Column(INT, nullable=False)
+    insert_time = Column(DATETIME, nullable=False, default=datetime.datetime.now())
+
+def create_table_by_name(table):
+    """
+
+    :param table: 类名
+    :return:
+    """
+    BaseModel.metadata.drop_all(engine, tables=[table.__table__])
+    BaseModel.metadata.create_all(engine, tables=[table.__table__])     # 创建表结构,已存在不会覆盖
+    # BaseModel.metadata.tables["test11"].create(bind=engine)  # 创建表结构
 
 
+session = DBSession()
 def add_object(model, info):
     """
     执行添加ORM操作
@@ -80,45 +112,30 @@ def add_object(model, info):
     :param info: 添加列
     :return:
     """
-    session = DBSession()
+    # session = DBSession()
     obj = model(**info)
     session.add(obj)  # 添加一个对象
     session.commit()  # 提交事务
     session.close()  # 闭session，其实是将连接放回连接池
 
 
-def update_object(model, info):
+def update_object(model, info, key):
     """
     执行更新ORM操作
     :param model:
     :param info:
+    :param key
     :return:
     """
-    session = DBSession()
-    it_exists = session.query(exists().where(model.href == info['href'])).scalar()
+    # session = DBSession()
+    it_exists = session.query(exists().where(getattr(model, key) == info[key])).scalar()    # getattr() 函数用于返回一个对象属性值
     if not it_exists:
         add_object(model, info)
     else:
-        session.query(model).filter(model.href == info['href']).update(info)
+        session.query(model).filter(getattr(model, key) == info[key]).update(info)
         session.commit()
         session.close()  # 闭session，其实是将连接放回连接池
 
-
-def update_object_zhihu(model, info):
-    """
-    执行更新ORM操作
-    :param model:
-    :param info:
-    :return:
-    """
-    session = DBSession()
-    it_exists = session.query(exists().where(model.zhuanlan_html == info['zhuanlan_html'])).scalar()
-    if not it_exists:
-        add_object(model, info)
-    else:
-        session.query(model).filter(model.zhuanlan_html == info['zhuanlan_html']).update(info)
-        session.commit()
-        session.close()  # 闭session，其实是将连接放回连接池
 
 
 def test():
@@ -142,12 +159,17 @@ def test3():
     info = {'week_rank': '13938', 'sum_rank': '9433', 'original': '155', 'fans_num': '85', 'like_num': '42',
             'comment_num': '54', 'visit_num': '453570', 'blog_level': '6', 'href': 'https://me.csdn.net/KWSY2008',
             'insert_time': datetime.datetime(2020, 4, 12, 12, 6, 57, 279460)}
-    info['insert_time'] = info['insert_time'].strftime("%Y-%m-%d")
     print(info['insert_time'])
-    model = Csdn_hjf
-    update_object(model, info)
+    model = test11
+    update_object(model, info, 'href')
 
 
 if __name__ == "__main__":
     test3()
     # test2()
+    # BaseModel.metadata.drop_all(engine)   删除所有表
+    # create_table()
+    # print(getattr(Csdn_hjf, 'href'))
+    #BaseModel.metadata.create_all(engine, tables= [Zhihu_hjf.__table__])  # 创建表结构
+    # print(dir(Zhihu_hjf))  # 返回当前范围内的变量、方法和定义的类型列表
+    # BaseModel.metadata.tables["test11"].create(bind=engine)  # 创建表结构
