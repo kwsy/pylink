@@ -23,7 +23,7 @@ def csdn():
 @app.route('/zhihu', methods=['GET'])
 def zhihu():
     datas = query_data(Zhihu)
-    return render_template('zhihu.html', csdn_data=datas)
+    return render_template('zhihu.html', zhihu_data=datas)
 
 if __name__ == '__main__':
     app.run(port=9001, debug=True)

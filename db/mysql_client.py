@@ -64,7 +64,7 @@ def query(model):
     # datas = session.query(model).filter(model.score > 12500)
     datas = session.query(model).order_by(model.total_score).all()
     for data in datas:
-        print(data.href, data.score)
+        print(data.href, data.total_score)
 
     session.close()
 

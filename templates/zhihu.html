@@ -13,17 +13,14 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
-
                     <th>专栏名</th>
                     <th>发表</th>
-                    <th>总文章数</th>
                     <th>关注</th>
                     <th>总分数</th>
                 </tr>
             </thead>
                 {% for data in zhihu_data %}
                     <tr>
-
                         <td>{{  data.name }}</td>
                         <td>{{  data.publish_count }}</td>
                         <td>{{  data.follow_count }}</td>

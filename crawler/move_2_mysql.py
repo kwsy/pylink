@@ -35,21 +35,22 @@ def move_csdn_to_mysql():
             'sort': data['sort'],
             'total_socore': data['original']*10+data['fans']*20+data['enjoy']*30+data['comment']*30+data['access']*10
         }
+
         add_object(CSDN_COLLECTION, info)
 
 
 def move_zhihu_to_mysql():
     datas = get_data_by_collection_name(ZHIHU_COLLECTION)
     for data in datas:
-        print(data, type(data))
-        info = {
-            'href': data['url'],
-            'name': data['name'],
-            'publish_count': data['publish_count'],
-            'follow_count': data['follow_count'],
-            'total_score': data['publish_count']*50+data['follow_count']*50
-        }
-        add_object(ZHIHU_COLLECTION, info)
+        for item in data['zhuanlan']:
+            info = {
+                # 'href': data['url'],
+                'name': item['name'],
+                'publish_count': item['publish_count'],
+                'follow_count': item['follow_count'],
+                'total_score': (item['publish_count']*50+item['follow_count']*50)
+            }
+            add_object(Zhihu, info)
 
 
 if __name__ == '__main__':
