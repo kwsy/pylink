@@ -137,6 +137,21 @@ def update_object(model, info, key):
         session.close()  # 闭session，其实是将连接放回连接池
 
 
+def pysite_query(model):
+    #session = DBSession()  # 创建DBSession类型
+    return session.query(model).order_by(model.web_rank.asc(), model.score.desc()).all()
+
+def zhihu_query(model):
+    #session = DBSession()  # 创建DBSession类型
+    return session.query(model).order_by(model.follower.desc(), model.article_num.desc()).all()
+
+def query(model):
+    session = DBSession()  # 创建DBSession类型
+    #datas = session.query(model).filter(model.score>12500)
+    datas = session.query(model).order_by(model.web_rank.asc(), model.score.desc()).all()
+    for data in datas:
+        print(data.href, data.score, data.web_rank,data.insert_time)
+
 
 def test():
     session = DBSession()  # 创建DBSession类型
@@ -165,11 +180,14 @@ def test3():
 
 
 if __name__ == "__main__":
-    test3()
+    #test2()
+    print(query(PyWebsite))
     # test2()
-    # BaseModel.metadata.drop_all(engine)   删除所有表
+    # BaseModel.metadata.drop_all(engine)   #删除所有表
     # create_table()
     # print(getattr(Csdn_hjf, 'href'))
-    #BaseModel.metadata.create_all(engine, tables= [Zhihu_hjf.__table__])  # 创建表结构
+    # BaseModel.metadata.create_all(engine, tables= [Zhihu_hjf.__table__])  # 创建表结构
+    # BaseModel.metadata.create_all(engine)  # 创建表结构
+
     # print(dir(Zhihu_hjf))  # 返回当前范围内的变量、方法和定义的类型列表
     # BaseModel.metadata.tables["test11"].create(bind=engine)  # 创建表结构

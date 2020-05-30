@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>python主题个人网站</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body>
+    <div class="container">
+    <h1>python主题个人网站</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>网址</th>
+                <th>分数</th>
+                <th>网站排名</th>
+                <th>更新时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in py_datas %}
+                <tr>
+                    <td><a href="{{ data.href }}" target="_blank">{{ data.href }}</a></td>
+                    <td>{{ data.score}}</td>
+                    <td>{{ data.web_rank}}</td>
+                    <td>{{ data.insert_time}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

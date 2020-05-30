@@ -50,3 +50,6 @@ def test():
 
 if __name__ == "__main__":
     test()
+    # connect_redis.flushdb(redis_conf.QueueConfig.csdn_queue)
+    # connect_redis.flushdb(redis_conf.QueueConfig.zhihu_queue)
+    # connect_redis.flushdb(redis_conf.QueueConfig.pywebsite_queue)

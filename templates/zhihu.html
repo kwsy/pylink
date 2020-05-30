@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>知乎优质专栏网站</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<body>
+    <div class="container">
+    <h1>知乎优质专栏网站</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>专栏名称</th>
+                <th>关注人数</th>
+                <th>文章数量</th>
+                <th>专栏网址</th>
+                <th>更新时间</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for data in zhihu_datas %}
+                <tr>
+                    <td>{{ data.zhuanlan_name}}</td>
+                    <td>{{ data.follower}}</td>
+                    <td>{{ data.article_num}}</td>
+                    <td><a href="{{ data.href }}" target="_blank">{{ data.href }}</a></td>
+                    <td>{{ data.insert_time}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

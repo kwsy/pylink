@@ -147,5 +147,7 @@ def run():
 
 if __name__ == '__main__':
     #print(judge_py_website('http://www.kidscode.cn/python'))
-    test()
-
+    # test()
+    mongo_drop_collect(MongoCollection.pywebsite_mongo)
+    mongo_drop_collect(MongoCollection.csdn_mongo)
+    mongo_drop_collect(MongoCollection.zhihu_mongo)

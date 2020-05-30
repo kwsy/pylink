@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 def move_py_web_site_to_mysql():
     datas = mongo_find_collect_all(MongoCollection.pywebsite_mongo)
     for data in datas:
+
         print(data)
         # try:
             # netloc = get_netloc(data['href'])
@@ -18,10 +19,13 @@ def move_py_web_site_to_mysql():
         # time.sleep(3)
         # url_netloc = urlparse(data['href']).netloc  # http://www.zhihu.com → www.zhihu.com
         # rank = get_alexa_sort(url_netloc)
+        if not data["web_rank"]:
+            data["web_rank"] = 1000000
         info = {'href': data['href'], 'web_rank': data["web_rank"], 'score': data['score'], 'insert_time': data['insert_time']}
-        update_object(PyWebsite, info)
-        # except Exception as e:
-        #     print(e)
+        try:
+            update_object(PyWebsite, info, 'href')
+        except Exception as e:
+            print(e)
 
 
 def move_csdn_to_mysql():
@@ -53,6 +57,6 @@ def move_zhihu_to_mysql():
 
 
 if __name__ == '__main__':
-    move_zhihu_to_mysql()
+    #move_zhihu_to_mysql()
     move_csdn_to_mysql()
-    move_py_web_site_to_mysql()
+    # move_py_web_site_to_mysql()
