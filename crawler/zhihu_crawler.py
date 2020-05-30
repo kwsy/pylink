@@ -60,7 +60,7 @@ def get_zhuanlan_info_columns(session, url):
         publish_count = int(publish_text.split()[1])
 
         follow_node = item.xpath('.//div[@class="ContentItem-status"]/span[2]')[0]
-        follow_count = int(follow_node.text.split()[0])
+        follow_count = int(follow_node.text.split()[0].replace(',', ''))
 
         info = {
             'name': title,
@@ -81,6 +81,7 @@ def test():
 
 
 if __name__ == '__main__':
-    url = 'https://zhuanlan.zhihu.com/p/109450078'
-    #print(get_zhuanlan_info(url))
-    test()
+    # url = 'https://zhuanlan.zhihu.com/pydatalysis?utm_source=wechat_timeline'
+    # print(get_zhuanlan_info(url))
+    #test()
+    run()

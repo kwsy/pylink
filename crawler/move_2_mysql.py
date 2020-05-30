@@ -14,8 +14,11 @@ def move_py_web_site_to_mysql():
 
         netloc = get_url_netloc(data['url'])
         sort = get_alexa_sort(netloc)
+        if sort == None or sort == 0:
+            sort = 2000000
+
         time.sleep(3)
-        info = {'href': data['url'], 'total_score': sort}
+        info = {'href': data['url'], 'score': sort}
         add_object(PyWebsite, info)
 
 
@@ -44,6 +47,13 @@ def move_csdn_to_mysql():
         }
         add_object(Csdn, info)
 
-if __name__ == '__main__':
+
+def move():
+    clear()
+    move_py_web_site_to_mysql()
+    move_zhihu_to_mysql()
     move_csdn_to_mysql()
+
+if __name__ == '__main__':
+    move()
 

@@ -17,6 +17,7 @@ def run_crawler_worker(queue_name, collection_name, function):
         if not is_need_crawler(url, collection_name):
             continue
 
+        print(url)
         info = function(url)
         if not info:
             time.sleep(3)

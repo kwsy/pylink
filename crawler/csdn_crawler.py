@@ -15,6 +15,10 @@ def get_blogger_info(url):
     :return:
     """
 
+    article_index = url.find('article')
+    if article_index != -1:
+        url = url[:article_index]
+
     headers = {
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Encoding': 'gzip, deflate, compress',
@@ -59,7 +63,7 @@ def extract_info(html):
         'access': csdn_int(basic_info['access']),
         'grade': csdn_grade(grade_info['grade']),
         'week_sort': csdn_int(grade_info['week_sort']),
-        'score': csdn_int(grade_info['score']),
+        'collect': csdn_int(grade_info['collect']),
         'sort': csdn_int(grade_info['sort'])
     }
 
@@ -107,24 +111,24 @@ def extract_grade_info(personal_box):
     :param personal_box:
     :return:
     """
-    grade_box = personal_box.xpath("//div[@class='grade-box clearfix']")[0]
+    grade_box = personal_box.xpath("//div[@class='data-info d-flex item-tiling']")[1]
     dl_nodes = grade_box.xpath(".//dl")
     data = {
         'grade': '',
-        'access': '',
-        'score': '',
+        'collect': '',
+        'week_sort': '',
         'sort': ''
     }
 
     for index, item in enumerate(dl_nodes):
-        if index == 0:
-            data['grade'] = item.xpath('.//a')[0].attrib['title']
         if index == 1:
-            data['week_sort'] = item.attrib['title']
+            data['collect'] = item.attrib['title']
         if index == 2:
-            data['score'] = item.xpath(".//dd")[0].attrib['title']
+            data['week_sort'] = item.attrib['title']
         if index == 3:
             data['sort'] = item.attrib['title']
+        if index == 4:
+            data['grade'] = item.attrib['title']
 
     return data
 
@@ -139,6 +143,5 @@ def test():
 
 
 if __name__ == '__main__':
-    test()
-    # url = 'https://blog.csdn.net/KWSY2008'
-    # print(get_blogger_info(url))
+    run()
+    # print(get_blogger_info('https://blog.csdn.net/luanpeng825485697/article/details/78347433'))

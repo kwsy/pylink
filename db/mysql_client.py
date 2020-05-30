@@ -17,7 +17,7 @@ class PyWebsite(BaseModel):
     __tablename__ = 'py_website'
     id = Column(BIGINT, nullable=False, primary_key=True, autoincrement=True)
     href = Column(VARCHAR(100), nullable=False)
-    total_score = Column(INT, nullable=False)
+    score = Column(INT, nullable=False)
 
 
 class Zhihu(BaseModel):
@@ -62,5 +62,15 @@ def create_table(table):
     BaseModel.metadata.create_all(engine, tables=[table.__table__])
 
 
+def clear():
+    session = DBSession()
+    sql = "delete from {table}"
+    tables = ['py_website', 'zhihu', 'csdn']
+    for table in tables:
+        del_sql = sql.format(table=table)
+        session.execute(del_sql)
+
+    session.commit()
+
 if __name__ == '__main__':
-    query(PyWebsite)
+    clear()

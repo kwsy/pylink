@@ -5,6 +5,7 @@ from conf.redis_conf import QueueConfig
 from crawler import run_crawler_worker
 from conf.mongo_conf import PY_WEB_SITE
 
+requests.packages.urllib3.disable_warnings()
 
 def judge_py_website(url):
     """
@@ -21,7 +22,7 @@ def judge_py_website(url):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
     }
 
-    res = requests.get(url, headers=headers)
+    res = requests.get(url, headers=headers, verify=False)
     res.encoding = 'utf-8'
 
     if judge_py_site_by_keywords_description(res.text):
@@ -60,7 +61,12 @@ def _judge_py_site_by_keywords_description_ex(tree, tag_name):
     node_lst = tree.xpath("//meta[@name='{tag_name}']".format(tag_name=tag_name))
     if node_lst:
         node = node_lst[0]
-        content = node.attrib['content'].lower()
+        content = ''
+        if 'content' in node.attrib:
+            content = node.attrib['content']
+            if content:
+                content = content.lower()
+
         if content.find('python') != -1 and content.find('教程') != -1:
             return True
 
@@ -75,7 +81,7 @@ def judge_py_site_by_menu(html):
     a_lst = tree.xpath('//li/a')
     for node in a_lst:
         text = node.text
-        if len(text) <= 10 and text.lower().find('python') != -1:
+        if text and len(text) <= 10 and text.lower().find('python') != -1:
             return True
 
     return False
@@ -91,8 +97,8 @@ def test():
 
 
 if __name__ == '__main__':
-    test()
-    # url = 'http://www.kidscode.cn/python'
+    run()
+    # url = 'http://www.downcc.com/soft/304841.html'  # https://www.mycodes.net/ http://www.downcc.com/soft/304841.html
     # print(judge_py_website(url))
     #
     # url = 'https://www.itcodemonkey.com/'
