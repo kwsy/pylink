@@ -62,7 +62,10 @@ def query_data_by_page(model, page=1, count=10):
     session = DBSession()
     datas = session.query(model).order_by(model.score)
     page_data = datas.limit(count).offset((page-1)*count)
-    page_count = datas.count()//count + 1
+    page_count = datas.count()//count
+    if datas.count() % count != 0:
+        page_count += 1
+    
     return page_data, page_count
 
 def create_table(table):
