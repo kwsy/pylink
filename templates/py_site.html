@@ -28,6 +28,27 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <ul class="pagination">
+                    {% if current_page!=1 %}
+                        <li><a href="/py-site?page={{ current_page -1 }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><a href="#">&laquo;</a></li>
+                    {% endif %}
+
+                    {% for page in range(page_count) %}
+                        {% if page+1 == current_page %}
+                            <li class="disabled"><a href="/py-site?page={{ page+1 }}">{{ page+1 }}</a></li>
+                        {% else %}
+                            <li><a href="/py-site?page={{ page+1 }}">{{ page+1 }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if current_page ==page_count %}
+                        <li class="disabled"><a href="#">&raquo;</a></li>
+                    {% else %}
+                        <li><a href="/py-site?page={{ current_page + 1 }}">&laquo;</a></li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </div>
