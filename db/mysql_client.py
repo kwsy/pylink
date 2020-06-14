@@ -48,6 +48,18 @@ def query_data(model):
     return session.query(model).order_by(model.score).all()
 
 
+def query_data_by_page(model, page=1, count=10):
+    session = DBSession()
+    datas = session.query(model).order_by(model.score)
+    limit_data = datas.limit(count).offset((page-1)*count)
+    data_count = datas.count()
+    page_count = data_count//count
+    if data_count % count != 0:
+        page_count += 1
+
+    return limit_data, page_count
+
+
 def query(model):
     session = DBSession()
     # select * from csdn where score > 12500
@@ -73,4 +85,5 @@ def clear():
     session.commit()
 
 if __name__ == '__main__':
-    clear()
+    data = query_data_by_page(PyWebsite, 2, 10)
+    print(data)
